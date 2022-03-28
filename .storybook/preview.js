@@ -1,3 +1,5 @@
+import GlobalStyles from '../src/GlobalStyles.js';
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
