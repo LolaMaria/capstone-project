@@ -1,5 +1,6 @@
 const plantList = [
   {
+    _id: '1',
     name: 'Nasturtium',
     fact: 'You can eat the whole plant including seeds! Make a flower salad.',
     water: 'Once or twice a week',
@@ -7,6 +8,7 @@ const plantList = [
     info: '',
   },
   {
+    _id: '2',
     name: 'Aloe Vera',
     fact: 'You can eat it or use it for skin care!',
     water: 'Once a week',
@@ -14,7 +16,8 @@ const plantList = [
     info: '',
   },
   {
-    name: 'Black Gold Philodendron Philodendron melanochrysum ',
+    _id: '3',
+    name: 'Black Gold Philodendron melanochrysum ',
     fact: ' This plant purifies the air',
     water:
       ' Water freely when in full growth and add a monthly liquid feed; water sparingly in winter',
@@ -22,6 +25,7 @@ const plantList = [
     info: ' Grow it up a moss pole and spray regularly to create humidity ',
   },
   {
+    _id: '4',
     name: 'Aglaonema Chinese Evergreen',
     fact: 'Aglaonema have been grown as luck-bringing ornamental plants in Asia for centuries',
     water:
@@ -30,6 +34,7 @@ const plantList = [
     info: ' The NASA Clean Air Study determined that the species modestum of this plant genus was effective at removing common household air toxins formaldehyde and benzene. ',
   },
   {
+    _id: '5',
     name: 'White Fusion Calathea',
     fact: 'The calathea comes from the tropical forests of South America. In the rain forests they grow in the shade of trees and other large plants, which is why they are also calles "shade plants".',
     water:
