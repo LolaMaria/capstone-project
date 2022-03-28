@@ -1,16 +1,20 @@
 import PlantCard from './components/Card';
-import data from './components/data.js';
+import plantList from './components/data.js';
+import { useState } from 'react';
+
 function App() {
+  const [plants, setPlants] = useState(plantList);
   return (
     <>
       <header>Find your perfect plant!</header>
-      {data.map(({ name, fact, water, spot, info }) => (
+      {plants.map(plantList => (
         <PlantCard
-          name={name}
-          fact={fact}
-          water={water}
-          spot={spot}
-          info={info}
+          key={plantList._id}
+          name={plantList.name}
+          fact={plantList.fact}
+          water={plantList.water}
+          spot={plantList.spot}
+          info={plantList.info}
         />
       ))}
     </>
