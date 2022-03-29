@@ -1,20 +1,15 @@
-import PlantCard from './components/Card';
 import data from './components/data.js';
-function App() {
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import BookmarkPage from './pages/BookmarkPage';
+
+export default function App() {
   return (
-    <>
-      <header>Find your perfect plant!</header>
-      {data.map(({ name, fact, water, spot, info }) => (
-        <PlantCard
-          name={name}
-          fact={fact}
-          water={water}
-          spot={spot}
-          info={info}
-        />
-      ))}
-    </>
+    <div>
+      <Routes>
+        <Route path="/" element={<HomePage data={data} />} />
+        <Route path="/bookmark" element={<BookmarkPage />} />
+      </Routes>
+    </div>
   );
 }
-
-export default App;
