@@ -1,20 +1,18 @@
 import PlantCard from './components/Card';
 import plantList from './components/data.js';
-import { useState } from 'react';
+import styled from 'styled-components';
 
 function App() {
-  const [plants, setPlants] = useState(plantList);
   return (
     <>
-      <header>Find your perfect plant!</header>
-      {plants.map(plantList => (
+      <Header>Find your perfect plant!</Header>
+      {plantList.map(({ name, fact, water, spot, info }) => (
         <PlantCard
-          key={plantList._id}
-          name={plantList.name}
-          fact={plantList.fact}
-          water={plantList.water}
-          spot={plantList.spot}
-          info={plantList.info}
+          name={name}
+          fact={fact}
+          water={water}
+          spot={spot}
+          info={info}
         />
       ))}
     </>
@@ -22,3 +20,8 @@ function App() {
 }
 
 export default App;
+
+const Header = styled.header`
+  display: flex;
+  justify-content: center;
+`;

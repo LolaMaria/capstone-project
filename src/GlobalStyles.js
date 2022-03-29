@@ -8,8 +8,9 @@ export default createGlobalStyle`
 
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: yesteryear;
     font-size : 112.5%;
+    background-color: #F2F3F8;
 
 }
 
