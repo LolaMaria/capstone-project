@@ -1,4 +1,4 @@
-import PlantCard from './Card.js';
+import PlantCard from './Card';
 
 export default {
   title: 'components/Card',
@@ -10,5 +10,5 @@ const Template = args => <PlantCard {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   name: 'Farn',
-  fact: 'clean',
+  fact: 'Fancy',
 };
