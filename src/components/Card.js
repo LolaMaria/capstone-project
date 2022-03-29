@@ -23,7 +23,7 @@ export default function PlantCard({ name, fact, water, spot, info, img }) {
         {name}
       </Name>
       <PlantPic>{img}</PlantPic>
-      <List>
+      <List role="list">
         <Info>Interesting and useful facts:</Info>
         <li>{fact}</li>
         <Info>Water intake:</Info>
