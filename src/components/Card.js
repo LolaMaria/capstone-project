@@ -58,7 +58,7 @@ const List = styled.ul`
   list-style: none;
   color: #590202;
 `;
-const Info = styled.p`
+const Info = styled.dl`
   font-weight: bold;
   color: #5c9875;
 `;
