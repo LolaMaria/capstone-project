@@ -9,7 +9,6 @@ export default function App() {
   const [savedPlants, setSavedPlants] = useState(data);
 
   function handleBookmarkClick(_id) {
-    console.log(savedPlants);
     setSavedPlants(
       savedPlants.map(card => {
         if (card._id === _id) {
@@ -32,8 +31,12 @@ export default function App() {
         />
         <Route
           path="/bookmark"
-          element={<BookmarkPage savedPlants={savedPlants} />}
-          onHandleBookmarkClick={handleBookmarkClick}
+          element={
+            <BookmarkPage
+              savedPlants={savedPlants}
+              onHandleBookmarkClick={handleBookmarkClick}
+            />
+          }
         />
       </Routes>
       <Navigation />

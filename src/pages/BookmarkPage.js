@@ -6,19 +6,20 @@ export default function BookmarkPage({ savedPlants, onHandleBookmarkClick }) {
     <>
       <Header>Your saved Plants</Header>
       {savedPlants.map(
-        ({ name, fact, water, spot, info, img, _id, isBooked }) => (
-          <PlantCard
-            name={name}
-            fact={fact}
-            water={water}
-            spot={spot}
-            info={info}
-            img={img}
-            id={_id}
-            onBookmarkClick={onHandleBookmarkClick}
-            isBooked={isBooked}
-          />
-        )
+        ({ name, fact, water, spot, info, img, _id, isBooked }) =>
+          isBooked && (
+            <PlantCard
+              name={name}
+              fact={fact}
+              water={water}
+              spot={spot}
+              info={info}
+              img={img}
+              id={_id}
+              onBookmarkClick={onHandleBookmarkClick}
+              isBooked={isBooked}
+            />
+          )
       )}
     </>
   );

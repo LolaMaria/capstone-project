@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
-export default function BookmarkButton({ onClick }) {
-  return <Button onClick={onClick}>Save this plant</Button>;
+export default function BookmarkButton({ onClick, isBooked }) {
+  console.log(isBooked);
+  return (
+    <Button onClick={onClick} isBooked={isBooked}>
+      Save this plant
+    </Button>
+  );
 }
 
 const Button = styled.button`
@@ -9,7 +14,6 @@ const Button = styled.button`
   position: absolute;
   right: 5px;
   top: -10px;
-  background-color: #c2fbd7;
   border-radius: 100px;
   box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
     rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
@@ -28,6 +32,7 @@ const Button = styled.button`
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  background: ${props => (props.isBooked ? 'pink' : '#c2fbd7')};
 
   :hover {
     box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,

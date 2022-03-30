@@ -15,11 +15,10 @@ export default function PlantCard({
   function handleBookmark(event) {
     event.preventDefault();
     onBookmarkClick(id);
-    console.log(id);
   }
   return (
     <Card isBooked={isBooked}>
-      <BookmarkButton onClick={handleBookmark} />
+      <BookmarkButton onClick={handleBookmark} isBooked={isBooked} />
       <div>
         <Name>
           <PlantIcon>
@@ -87,4 +86,6 @@ const PlantIcon = styled.div`
   margin: 3px 5px 0px 5px;
 `;
 
-const PlantPic = styled.section``;
+const PlantPic = styled.section`
+  border-radius: 100%;
+`;
