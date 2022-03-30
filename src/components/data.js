@@ -1,11 +1,12 @@
 const plantList = [
   {
     _id: '1',
-    name: 'Nasturtium',
-    fact: 'You can eat the whole plant including seeds! Make a flower salad.',
-    water: 'Needs to be watered once or twice a week.',
-    spot: 'Relishes in full sun!',
-    info: 'It is really cute',
+    name: 'Moon cactus',
+    fact: 'It is hard to mistake a moon cactus you will always recognize them by their bright pink, yellow, or orange colors. The bright neon colors are usually in the shape of round looking balls, with thorns, and they are sitting on top of another green colored cactus. The little moon cactus is a funny plant because it is actually two plants in one and the product of human design. In order for the bright section of the plant, to survive, it had to be grafted to the second plant beneath. Many people do not realize that they are actually looking at two separate plants.',
+    water:
+      'The water requirements for moon cactus are minimal, it is recommended to stop the watering completely for the older moon cactus during the winter season, that would be those that are a year old or more.',
+    spot: 'They do the best in bright but indirect sunlight',
+    info: 'Growing and taking care of these unique little cacti plants is not very difficult at all. They are extremely low maintenance.',
     isBooked: false,
   },
   {
@@ -51,7 +52,7 @@ const plantList = [
   {
     _id: '6',
     name: 'Monstera',
-    fact: 'The Monstera is an easy-going plant as well as easy on the eyes.',
+    fact: 'The Monstera is the most famous hipster plant and very easy-going.',
     water:
       'Water every 1-2 weeks, allowing soil to dry out between waterings. Expect to water more often in brighter light and less often in lower light.',
     spot: 'Thrives in bright to medium indirect light.',
@@ -87,12 +88,11 @@ const plantList = [
   },
   {
     _id: '9',
-    name: 'Moon cactus',
-    fact: 'It is hard to mistake a moon cactus you will always recognize them by their bright pink, yellow, or orange colors. The bright neon colors are usually in the shape of round looking balls, with thorns, and they are sitting on top of another green colored cactus. The little moon cactus is a funny plant because it is actually two plants in one and the product of human design. In order for the bright section of the plant, to survive, it had to be grafted to the second plant beneath. Many people do not realize that they are actually looking at two separate plants.',
-    water:
-      'The water requirements for moon cactus are minimal, it is recommended to stop the watering completely for the older moon cactus during the winter season, that would be those that are a year old or more.',
-    spot: 'They do the best in bright but indirect sunlight',
-    info: 'Growing and taking care of these unique little cacti plants is not very difficult at all. They are extremely low maintenance.',
+    name: 'Nasturtium',
+    fact: 'You can eat the whole plant including seeds! Make a flower salad.',
+    water: 'Needs to be watered once or twice a week.',
+    spot: 'Relishes in full sun!',
+    info: 'It is really cute',
     isBooked: false,
   },
 ];

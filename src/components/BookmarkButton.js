@@ -10,6 +10,7 @@ export default function BookmarkButton({ onClick, isBooked }) {
 }
 
 const Button = styled.button`
+  text-transform: uppercase;
   height: 50px;
   position: absolute;
   right: 5px;

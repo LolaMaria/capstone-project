@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export default function BookmarkPage({ savedPlants, onHandleBookmarkClick }) {
   return (
     <>
-      <Header>Your saved Plants</Header>
+      <Header>YOUR SAVED PLANTS</Header>
       {savedPlants.map(
         ({ name, fact, water, spot, info, img, _id, isBooked }) =>
           isBooked && (
@@ -27,4 +27,6 @@ export default function BookmarkPage({ savedPlants, onHandleBookmarkClick }) {
 
 const Header = styled.header`
   color: green;
+  display: flex;
+  justify-content: center;
 `;

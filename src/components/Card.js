@@ -59,15 +59,22 @@ const Card = styled.div`
   display: flex;
   justify-content: center;
   padding: 20px;
-  margin: 50px;
-  background-color: #f2e8df;
+  margin: 100px;
+  background-color: #d4e5ed;
   border-radius: 3%;
+
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   position: relative;
+
+  :hover {
+    transform: scale(1.09);
+    border-color: pink;
+    border-style: bold;
+  }
 `;
-const Name = styled.h2`
-  font-size: 20 px;
+const Name = styled.h1`
+  font-size: 10 px;
   display: flex;
   justify-content: left;
   color: #5c9875;

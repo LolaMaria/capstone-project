@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export default function HomePage({ savedPlants, onHandleBookmarkClick }) {
   return (
     <>
-      <Header>Your saved Plants</Header>
+      <Header>FIND YOUR PERFECT PLANT!</Header>
       {savedPlants.map(
         ({ name, fact, water, spot, info, img, _id, isBooked }) => (
           <PlantCard

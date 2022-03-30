@@ -18,16 +18,21 @@ const LinkStyled = styled(NavLink)`
   color: white;
   width: 100%;
   border-radius: 3%;
-
+  font-weight: bold;
+  :hover {
+    color: pink;
+  }
   &.active {
-    background: green;
-    color: white;
+    background: #d4e5ed;
+    color: pink;
   }
 `;
 const Nav = styled.nav`
+  font-size: 1.2em;
+  text-transform: uppercase;
   display: flex;
   justify-content: space-between;
-  background: lightblue;
+  background: #d4e5ed;
   color: white;
   height: 48px;
   border-radius: 3%;
