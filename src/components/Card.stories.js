@@ -1,7 +1,7 @@
 import PlantCard from './Card';
 
 export default {
-  title: 'components/Card',
+  title: 'components/PlantCard',
   component: PlantCard,
 };
 
