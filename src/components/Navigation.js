@@ -4,21 +4,39 @@ import { NavLink } from 'react-router-dom';
 export default function Navigation() {
   return (
     <Nav>
-      <LinkStyled to="/">Homepage</LinkStyled>
+      <LinkStyled to="/">Plants</LinkStyled>
       <LinkStyled to="/bookmark">Saved Plants</LinkStyled>
+      <LinkStyled to="/input">Create Plant</LinkStyled>
     </Nav>
   );
 }
 
+const Nav = styled.nav`
+  margin-top: 5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100vw;
+  background: #d4e5ed;
+  color: white;
+  height: 48px;
+  border-radius: 3%;
+  bottom: 0px;
+  position: fixed;
+`;
+
 const LinkStyled = styled(NavLink)`
-  display: flex;
+  text-decoration: none;
+  display: grid;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
   color: white;
   width: 100%;
   border-radius: 3%;
   font-weight: bold;
+
+  bottom: 0px;
   :hover {
     color: pink;
   }
@@ -26,14 +44,4 @@ const LinkStyled = styled(NavLink)`
     background: #d4e5ed;
     color: pink;
   }
-`;
-const Nav = styled.nav`
-  font-size: 1.2em;
-  text-transform: uppercase;
-  display: flex;
-  justify-content: space-between;
-  background: #d4e5ed;
-  color: white;
-  height: 48px;
-  border-radius: 3%;
 `;

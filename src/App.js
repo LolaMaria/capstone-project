@@ -48,4 +48,5 @@ export default function App() {
 const AppGrid = styled.div`
   display: grid;
   grid-template-rows: auto 1fr;
+  position: relative;
 `;
