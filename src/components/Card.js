@@ -1,9 +1,25 @@
 import styled from 'styled-components';
+import BookmarkButton from './BookmarkButton';
 
-export default function PlantCard({ name, fact, water, spot, info, img }) {
+export default function PlantCard({
+  name,
+  fact,
+  water,
+  spot,
+  info,
+  img,
+  onBookmarkClick,
+  isBooked,
+  id,
+}) {
+  function handleBookmark(event) {
+    event.preventDefault();
+    onBookmarkClick(id);
+  }
   return (
-    <Card>
-      <Name>
+    <Card isBooked={isBooked}>
+      <BookmarkButton onClick={handleBookmark} isBooked={isBooked} />
+      <div>
         <PlantIcon>
           <svg
             width="40"
@@ -20,18 +36,18 @@ export default function PlantCard({ name, fact, water, spot, info, img }) {
             />
           </svg>
         </PlantIcon>
-        {name}
-      </Name>
-      <PlantPic>{img}</PlantPic>
+        <Name>{name}</Name>
+        <PlantPic>{img}</PlantPic>
+      </div>
       <List role="list">
         <Info>Interesting and useful facts:</Info>
-        <li>{fact}</li>
+        <ListInfo>{fact}</ListInfo>
         <Info>Water intake:</Info>
-        <li>{water}</li>
+        <ListInfo>{water}</ListInfo>
         <Info>Plant spot:</Info>
-        <li>{spot}</li>
+        <ListInfo>{spot}</ListInfo>
         <Info>Additional info:</Info>
-        <li>{info}</li>
+        <ListInfo>{info}</ListInfo>
       </List>
     </Card>
   );
@@ -39,35 +55,47 @@ export default function PlantCard({ name, fact, water, spot, info, img }) {
 
 const Card = styled.div`
   display: flex;
-  justify-content: center;
-  padding: 20px;
-  margin: 50px;
-  background-color: #f2e8df;
+  justify-content: column;
+  padding: 1rem;
+  margin: 1rem 0.1rem 1rem 0.1rem;
+  background-color: #d4e5ed;
   border-radius: 3%;
+
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  position: relative;
+
+  :hover {
+    transform: scale(1.09);
+    border-color: pink;
+    border-style: bold;
+  }
 `;
-const Name = styled.h2`
-  font-size: 20 px;
-  display: flex;
-  justify-content: left;
+const Name = styled.h1`
+  font-size: 1rem;
+
   color: #5c9875;
 `;
 
 const List = styled.ul`
+  margin: 3rem 1rem 1rem 1rem;
   list-style: none;
   color: #590202;
 `;
 const Info = styled.dl`
   font-weight: bold;
+  font-size: 0.7rem;
+  margin: 0.3rem 0rem 0.3rem 0rem;
   color: #5c9875;
+`;
+const ListInfo = styled.li`
+  font-size: 0.7rem;
 `;
 
 const PlantIcon = styled.div`
-  margin: 3px 5px 0px 5px;
+  margin: 0.1rem;
 `;
 
 const PlantPic = styled.section`
-  display: flex;
-  justify-content: left;
+  border-radius: 100%;
 `;

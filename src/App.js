@@ -1,27 +1,62 @@
-import PlantCard from './components/Card';
-import plantList from './components/data.js';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import BookmarkPage from './pages/BookmarkPage';
+import Navigation from './components/Navigation.js';
+import data from './components/data.js';
+import { useState } from 'react';
 import styled from 'styled-components';
+import InputPage from './pages/InputPage';
 
-function App() {
+export default function App() {
+  const [savedPlants, setSavedPlants] = useState(data);
+
+  function handleBookmarkClick(_id) {
+    setSavedPlants(
+      savedPlants.map(card => {
+        if (card._id === _id) {
+          return { ...card, isBooked: !card.isBooked };
+        } else return card;
+      })
+    );
+  }
   return (
-    <>
-      <Header>Find your perfect plant!</Header>
-      {plantList.map(({ name, fact, water, spot, info }) => (
-        <PlantCard
-          name={name}
-          fact={fact}
-          water={water}
-          spot={spot}
-          info={info}
+    <AppGrid>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <HomePage
+              savedPlants={savedPlants}
+              onHandleBookmarkClick={handleBookmarkClick}
+            />
+          }
         />
-      ))}
-    </>
+        <Route
+          path="/bookmark"
+          element={
+            <BookmarkPage
+              savedPlants={savedPlants}
+              onHandleBookmarkClick={handleBookmarkClick}
+            />
+          }
+        />
+        <Route
+          path="/input"
+          element={
+            <InputPage
+              savedPlants={savedPlants}
+              onHandleBookmarkClick={handleBookmarkClick}
+            />
+          }
+        />
+      </Routes>
+      <Navigation />
+    </AppGrid>
   );
 }
 
-export default App;
-
-const Header = styled.header`
-  display: flex;
-  justify-content: center;
+const AppGrid = styled.div`
+  display: grid;
+  grid-template-rows: auto 1fr;
+  position: relative;
 `;
