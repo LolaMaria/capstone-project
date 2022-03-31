@@ -4,6 +4,7 @@ import BookmarkPage from './pages/BookmarkPage';
 import Navigation from './components/Navigation.js';
 import data from './components/data.js';
 import { useState } from 'react';
+import styled from 'styled-components';
 
 export default function App() {
   const [savedPlants, setSavedPlants] = useState(data);
@@ -18,7 +19,7 @@ export default function App() {
     );
   }
   return (
-    <div>
+    <AppGrid>
       <Routes>
         <Route
           path="/"
@@ -40,6 +41,11 @@ export default function App() {
         />
       </Routes>
       <Navigation />
-    </div>
+    </AppGrid>
   );
 }
+
+const AppGrid = styled.div`
+  display: grid;
+  grid-template-rows: auto 1fr;
+`;

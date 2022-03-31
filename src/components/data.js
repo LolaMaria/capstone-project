@@ -62,8 +62,8 @@ const plantList = [
       <img
         src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1664&q=80"
         alt="Monstera"
-        witdth="300px"
-        height="300px"
+        witdth="100rem"
+        height="100rem"
       />
     ),
   },
