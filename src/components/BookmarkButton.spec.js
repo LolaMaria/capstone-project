@@ -5,10 +5,10 @@ describe('BookmarkButton', () => {
   it('renders a button', () => {
     render(<BookmarkButton />);
 
-    const BookmarkButton = screen.getByRole('button', {
+    const bookmarkButton = screen.getByRole('button', {
       name: /save this plant/i,
     });
 
-    expect(BookmarkButton).toBeInTheDocument();
+    expect(bookmarkButton).toBeInTheDocument();
   });
 });
