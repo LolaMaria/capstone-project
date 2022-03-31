@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import HomePage from './Pages/HomePage';
-import BookmarkPage from './Pages/BookmarkPage';
+import HomePage from './pages/HomePage';
+import BookmarkPage from './pages/BookmarkPage';
 import Navigation from './components/Navigation.js';
 import data from './components/data.js';
 import { useState } from 'react';
