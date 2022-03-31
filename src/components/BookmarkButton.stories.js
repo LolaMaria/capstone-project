@@ -9,5 +9,5 @@ const Template = args => <BookmarkButton {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  name: 'Save this plant',
+  name: 'children',
 };

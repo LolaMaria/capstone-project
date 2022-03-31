@@ -5,6 +5,7 @@ import Navigation from './components/Navigation.js';
 import data from './components/data.js';
 import { useState } from 'react';
 import styled from 'styled-components';
+import InputPage from './pages/InputPage';
 
 export default function App() {
   const [savedPlants, setSavedPlants] = useState(data);
@@ -34,6 +35,15 @@ export default function App() {
           path="/bookmark"
           element={
             <BookmarkPage
+              savedPlants={savedPlants}
+              onHandleBookmarkClick={handleBookmarkClick}
+            />
+          }
+        />
+        <Route
+          path="/input"
+          element={
+            <InputPage
               savedPlants={savedPlants}
               onHandleBookmarkClick={handleBookmarkClick}
             />

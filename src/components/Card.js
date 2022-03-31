@@ -41,13 +41,13 @@ export default function PlantCard({
       </div>
       <List role="list">
         <Info>Interesting and useful facts:</Info>
-        <Li>{fact}</Li>
+        <ListInfo>{fact}</ListInfo>
         <Info>Water intake:</Info>
-        <Li>{water}</Li>
+        <ListInfo>{water}</ListInfo>
         <Info>Plant spot:</Info>
-        <Li>{spot}</Li>
+        <ListInfo>{spot}</ListInfo>
         <Info>Additional info:</Info>
-        <Li>{info}</Li>
+        <ListInfo>{info}</ListInfo>
       </List>
     </Card>
   );
@@ -88,7 +88,7 @@ const Info = styled.dl`
   margin: 0.3rem 0rem 0.3rem 0rem;
   color: #5c9875;
 `;
-const Li = styled.li`
+const ListInfo = styled.li`
   font-size: 0.7rem;
 `;
 

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export default function BookmarkButton({ onClick, isBooked }) {
-  console.log(isBooked);
   return (
     <Button onClick={onClick} isBooked={isBooked}>
       Save this plant

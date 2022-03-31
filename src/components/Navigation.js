@@ -24,6 +24,7 @@ const Nav = styled.nav`
   border-radius: 3%;
   bottom: 0px;
   position: fixed;
+  justify-content: space-around;
 `;
 
 const LinkStyled = styled(NavLink)`
