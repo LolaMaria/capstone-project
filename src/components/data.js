@@ -1,13 +1,25 @@
+//import React from 'react';
+import shamrock from '../images/false_shamrock.png';
+import aloevera from '../images/aloevera.png';
+import aglaonema from '../images/aglaonema.png';
+import snake from '../images/snake.png';
+import monstera from '../images/monstera.png';
+import moon_cactus from '../images/moon_cactus.png';
+import nasturtium from '../images/nasturtium.png';
+import philodendron from '../images/philodendron.png';
+import calathea from '../images/calathea.png';
+
 const plantList = [
   {
     _id: '1',
     name: 'Moon cactus',
-    fact: 'It is hard to mistake a moon cactus you will always recognize them by their bright pink, yellow, or orange colors. The bright neon colors are usually in the shape of round looking balls, with thorns, and they are sitting on top of another green colored cactus. The little moon cactus is a funny plant because it is actually two plants in one and the product of human design. In order for the bright section of the plant, to survive, it had to be grafted to the second plant beneath. Many people do not realize that they are actually looking at two separate plants.',
+    fact: 'The little moon cactus is a funny plant because it is actually two plants in one and the product of human design. In order for the bright section of the plant, to survive, it had to be grafted to the second plant beneath. Many people do not realize that they are actually looking at two separate plants.',
     water:
       'The water requirements for moon cactus are minimal, it is recommended to stop the watering completely for the older moon cactus during the winter season, that would be those that are a year old or more.',
     spot: 'They do the best in bright but indirect sunlight',
     info: 'Growing and taking care of these unique little cacti plants is not very difficult at all. They are extremely low maintenance.',
     isBooked: false,
+    img: <img src={moon_cactus} alt="" width="100px" />,
   },
   {
     _id: '2',
@@ -16,8 +28,9 @@ const plantList = [
     water:
       'Plan to water your aloe vera about every 2 weeks in the spring and summer and even more sparingly during the fall and winter.',
     spot: 'The plant can be positioned in full or indirect sunlight.',
-    info: 'Hipster plant',
+    info: 'Such a Hipster plant',
     isBooked: false,
+    img: <img src={aloevera} alt="" width="100px" />,
   },
   {
     _id: '3',
@@ -28,6 +41,7 @@ const plantList = [
     spot: 'Bright location with indirect sunlight.',
     info: ' Grow it up a moss pole and spray regularly to create humidity.',
     isBooked: false,
+    img: <img src={philodendron} alt="" width="100px" />,
   },
   {
     _id: '4',
@@ -38,6 +52,7 @@ const plantList = [
     spot: 'The plant can be placed near a window on the west or east, as long as there is 1 to 2 meters space between the plant and the window, so that it still catches some shade. Calatheas thrive in medium to bright indirect light, but can tolerate low indirect light. ',
     info: 'Aglaonema have been grown as luck-bringing ornamental plants in Asia for centuries.',
     isBooked: false,
+    img: <img src={aglaonema} alt="" width="100px" />,
   },
   {
     _id: '5',
@@ -48,6 +63,7 @@ const plantList = [
     spot: ' Calatheas thrive in medium to bright indirect light, but can tolerate low indirect light. ',
     info: 'The calathea comes from the tropical forests of South America. In the rain forests they grow in the shade of trees and other large plants, which is why they are also calles "shade plants".',
     isBooked: false,
+    img: <img src={calathea} alt="" width="100px" />,
   },
   {
     _id: '6',
@@ -58,14 +74,7 @@ const plantList = [
     spot: 'Thrives in bright to medium indirect light.',
     info: 'Monsteras can be irritating to cats, dogs, and humans if foliage consumed. ',
     isBooked: false,
-    img: (
-      <img
-        src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1664&q=80"
-        alt="Monstera"
-        witdth="100rem"
-        height="100rem"
-      />
-    ),
+    img: <img src={monstera} alt="" width="100px" />,
   },
   {
     _id: '7',
@@ -76,6 +85,7 @@ const plantList = [
     spot: 'It enjoys bright indirect light. In low light conditions, the leaves may turn a darker green but keep its silvery sheen.',
     info: 'It is very low maintnance!',
     isBooked: false,
+    img: <img src={snake} alt="" width="100px" />,
   },
   {
     _id: '8',
@@ -85,6 +95,7 @@ const plantList = [
     spot: 'The plant generally needs bright to moderate light',
     info: 'It is very low maintnance!',
     isBooked: false,
+    img: <img src={shamrock} alt="" width="100px" />,
   },
   {
     _id: '9',
@@ -94,6 +105,7 @@ const plantList = [
     spot: 'Relishes in full sun!',
     info: 'It is really cute',
     isBooked: false,
+    img: <img src={nasturtium} alt="" width="100px" />,
   },
 ];
 export default plantList;

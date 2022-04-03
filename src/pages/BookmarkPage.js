@@ -1,4 +1,4 @@
-import PlantCard from '../components/Card';
+import PlantCard from '../components/PlantCard';
 import styled from 'styled-components';
 
 export default function BookmarkPage({ savedPlants, onHandleBookmarkClick }) {
@@ -25,8 +25,9 @@ export default function BookmarkPage({ savedPlants, onHandleBookmarkClick }) {
   );
 }
 
-const Header = styled.header`
-  color: green;
+const Header = styled.h2`
   display: flex;
   justify-content: center;
+  font-size: 3rem;
+  color: #5c9875;
 `;

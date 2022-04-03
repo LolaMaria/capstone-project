@@ -1,4 +1,4 @@
-import PlantCard from './Card';
+import PlantCard from './PlantCard';
 
 export default {
   title: 'components/PlantCard',

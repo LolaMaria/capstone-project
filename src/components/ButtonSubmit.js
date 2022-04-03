@@ -1,19 +1,12 @@
 import styled from 'styled-components';
 
-export default function BookmarkButton({ onClick, name, isBooked }) {
-  return (
-    <Button onClick={onClick} isBooked={isBooked}>
-      {(name = 'Save this plant')}
-    </Button>
-  );
+export default function Button() {
+  return <ButtonSubmit type="submit">Submit</ButtonSubmit>;
 }
 
-const Button = styled.button`
+const ButtonSubmit = styled.button`
   text-transform: uppercase;
   height: 30px;
-  position: absolute;
-  right: 5px;
-  top: -10px;
   border-radius: 100px;
   box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
     rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
@@ -26,9 +19,10 @@ const Button = styled.button`
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;
-  transition: all 250ms;
   border: 0;
   font-size: 10px;
   user-select: none;
+  width: 200px;
+  margin: 50px;
   background: ${props => (props.isBooked ? 'pink' : '#c2fbd7')};
 `;

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import PlantCard from './Card';
+import PlantCard from './PlantCard';
 
 describe('PlantCard', () => {
   it('renders a list of cards with information about plants', () => {
