@@ -17,9 +17,9 @@ const plantList = [
     water:
       'The water requirements for moon cactus are minimal, it is recommended to stop the watering completely for the older moon cactus during the winter season, that would be those that are a year old or more.',
     spot: 'They do the best in bright but indirect sunlight',
-    info: 'Growing and taking care of these unique little cacti plants is not very difficult at all. They are extremely low maintenance.',
+    info: 'Growing and taking care of these unique plants is not very difficult at all. They are extremely low maintenance.',
     isBooked: false,
-    img: <img src={moon_cactus} alt="" width="100px" />,
+    img: moon_cactus,
   },
   {
     _id: '2',
@@ -30,7 +30,7 @@ const plantList = [
     spot: 'The plant can be positioned in full or indirect sunlight.',
     info: 'Such a Hipster plant',
     isBooked: false,
-    img: <img src={aloevera} alt="" width="100px" />,
+    img: aloevera,
   },
   {
     _id: '3',
@@ -41,7 +41,7 @@ const plantList = [
     spot: 'Bright location with indirect sunlight.',
     info: ' Grow it up a moss pole and spray regularly to create humidity.',
     isBooked: false,
-    img: <img src={philodendron} alt="" width="100px" />,
+    img: philodendron,
   },
   {
     _id: '4',
@@ -52,7 +52,7 @@ const plantList = [
     spot: 'The plant can be placed near a window on the west or east, as long as there is 1 to 2 meters space between the plant and the window, so that it still catches some shade. Calatheas thrive in medium to bright indirect light, but can tolerate low indirect light. ',
     info: 'Aglaonema have been grown as luck-bringing ornamental plants in Asia for centuries.',
     isBooked: false,
-    img: <img src={aglaonema} alt="" width="100px" />,
+    img: aglaonema,
   },
   {
     _id: '5',
@@ -63,7 +63,7 @@ const plantList = [
     spot: ' Calatheas thrive in medium to bright indirect light, but can tolerate low indirect light. ',
     info: 'The calathea comes from the tropical forests of South America. In the rain forests they grow in the shade of trees and other large plants, which is why they are also calles "shade plants".',
     isBooked: false,
-    img: <img src={calathea} alt="" width="100px" />,
+    img: calathea,
   },
   {
     _id: '6',
@@ -74,7 +74,7 @@ const plantList = [
     spot: 'Thrives in bright to medium indirect light.',
     info: 'Monsteras can be irritating to cats, dogs, and humans if foliage consumed. ',
     isBooked: false,
-    img: <img src={monstera} alt="" width="100px" />,
+    img: monstera,
   },
   {
     _id: '7',
@@ -85,7 +85,7 @@ const plantList = [
     spot: 'It enjoys bright indirect light. In low light conditions, the leaves may turn a darker green but keep its silvery sheen.',
     info: 'It is very low maintnance!',
     isBooked: false,
-    img: <img src={snake} alt="" width="100px" />,
+    img: snake,
   },
   {
     _id: '8',
@@ -95,7 +95,7 @@ const plantList = [
     spot: 'The plant generally needs bright to moderate light',
     info: 'It is very low maintnance!',
     isBooked: false,
-    img: <img src={shamrock} alt="" width="100px" />,
+    img: shamrock,
   },
   {
     _id: '9',
@@ -105,7 +105,7 @@ const plantList = [
     spot: 'Relishes in full sun!',
     info: 'It is really cute',
     isBooked: false,
-    img: <img src={nasturtium} alt="" width="100px" />,
+    img: nasturtium,
   },
 ];
 export default plantList;

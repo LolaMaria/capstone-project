@@ -18,6 +18,7 @@ export default function BookmarkPage({ savedPlants, onHandleBookmarkClick }) {
               id={_id}
               onBookmarkClick={onHandleBookmarkClick}
               isBooked={isBooked}
+              key={_id}
             />
           )
       )}

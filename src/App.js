@@ -3,14 +3,14 @@ import HomePage from './pages/HomePage';
 import BookmarkPage from './pages/BookmarkPage';
 import Navigation from './components/Navigation.js';
 import data from './components/data.js';
-import { useState } from 'react';
+//import { useState } from 'react';
 import styled from 'styled-components';
 import InputPage from './pages/InputPage';
 import { nanoid } from 'nanoid';
-//import { useLocalStorage } from 'usehooks-ts';
+import { useLocalStorage } from 'usehooks-ts';
 
 export default function App() {
-  const [savedPlants, setSavedPlants] = useState(data);
+  const [savedPlants, setSavedPlants] = useLocalStorage('data', data);
 
   const navigate = useNavigate();
 

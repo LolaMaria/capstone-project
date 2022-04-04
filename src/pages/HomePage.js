@@ -17,6 +17,7 @@ export default function HomePage({ savedPlants, onHandleBookmarkClick }) {
             id={_id}
             onBookmarkClick={onHandleBookmarkClick}
             isBooked={isBooked}
+            key={_id}
           />
         )
       )}
