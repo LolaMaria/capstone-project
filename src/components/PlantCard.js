@@ -57,7 +57,7 @@ const Card = styled.div`
   display: flex;
   justify-content: column;
   padding: 1rem;
-  margin: 1rem 0.1rem 1rem 0.1rem;
+  margin: 1rem 0rem 1rem 0rem;
   background-color: #d4e5ed;
   border-radius: 3%;
 
@@ -65,12 +65,13 @@ const Card = styled.div`
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   position: relative;
 
-  :hover {
+  /*:hover {
     transform: scale(1.09);
     border-color: pink;
     border-style: bold;
-  }
+  }*/
 `;
+
 const Name = styled.h1`
   font-size: 1rem;
 
@@ -97,5 +98,5 @@ const PlantIcon = styled.div`
 `;
 
 const PlantPic = styled.section`
-  border-radius: 100%;
+  margin: 2rem 0rem 2rem 0rem;
 `;

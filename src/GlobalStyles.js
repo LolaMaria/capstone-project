@@ -10,7 +10,7 @@ body {
     margin: 0;
     font-family: yesteryear, sans-serif;
     font-size : 112.5%;
-    background-color: #F2F3F8;
+    background-color: lightcoral;
 
 }
 

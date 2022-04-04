@@ -1,4 +1,4 @@
-import PlantCard from '../components/Card';
+import PlantCard from '../components/PlantCard';
 import styled from 'styled-components';
 
 export default function HomePage({ savedPlants, onHandleBookmarkClick }) {
@@ -24,7 +24,9 @@ export default function HomePage({ savedPlants, onHandleBookmarkClick }) {
   );
 }
 
-const Header = styled.header`
+const Header = styled.h2`
   display: flex;
   justify-content: center;
+  font-size: 2rem;
+  color: #5c9875;
 `;

@@ -12,7 +12,6 @@ export default function Navigation() {
 }
 
 const Nav = styled.nav`
-  margin-top: 5rem;
   font-size: 1rem;
   text-transform: uppercase;
   display: grid;
