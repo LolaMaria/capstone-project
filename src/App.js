@@ -13,7 +13,6 @@ export default function App() {
   const [savedPlants, setSavedPlants] = useState(data);
 
   const navigate = useNavigate();
-  console.log(localStorage);
 
   function handleBookmarkClick(_id) {
     setSavedPlants(

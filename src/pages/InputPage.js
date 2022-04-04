@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import ButtonSubmit from '../components/ButtonSubmit';
 import { useState } from 'react';
-//import { useNavigate } from 'react-router-dom';
 
 export default function InputPage({ onCreatePlant }) {
   const [plantName, setPlantName] = useState('');
@@ -9,7 +8,6 @@ export default function InputPage({ onCreatePlant }) {
   const [plantWater, setPlantWater] = useState('');
   const [plantSpot, setPlantSpot] = useState('');
   const [plantInfo, setPlantInfo] = useState('');
-  //const navigate = useNavigate();
 
   return (
     <>
@@ -44,7 +42,7 @@ export default function InputPage({ onCreatePlant }) {
               onChange={event => setPlantFact(event.target.value)}
             />
 
-            <Label htmlFor="water">Whats your plants water?</Label>
+            <Label htmlFor="water">Whats your plants water intake?</Label>
             <Input
               name="water"
               required
@@ -70,7 +68,7 @@ export default function InputPage({ onCreatePlant }) {
               onChange={event => setPlantSpot(event.target.value)}
             />
 
-            <Label htmlFor="info">additional info about your plant:</Label>
+            <Label htmlFor="info">Additional info about your plant:</Label>
 
             <Input
               name="info"
