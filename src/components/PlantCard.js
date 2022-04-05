@@ -13,7 +13,7 @@ export default function PlantCard({
   onBookmarkClick,
   isBooked,
   id,
-  onDeleteCard,
+  onDeletePlant,
 }) {
   function handleBookmark(event) {
     event.preventDefault();
@@ -53,10 +53,7 @@ export default function PlantCard({
         <ListInfo>{info}</ListInfo>
       </List>
       <ButtonEdit />
-      <ButtonDelete
-        onClick={() => onDeleteCard(id)}
-        aria-label="delete this card"
-      />
+      <ButtonDelete onClick={() => onDeletePlant(id)} />
     </Card>
   );
 }

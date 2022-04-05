@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export default function HomePage({
   savedPlants,
   onHandleBookmarkClick,
-  onDeleteCard,
+  onDeletePlant,
 }) {
   return (
     <>
@@ -25,7 +25,7 @@ export default function HomePage({
                     id={_id}
                     onBookmarkClick={onHandleBookmarkClick}
                     isBooked={isBooked}
-                    onDeleteCard={onDeleteCard}
+                    onDeletePlant={onDeletePlant}
                   />
                 </li>
               );

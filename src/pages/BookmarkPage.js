@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export default function BookmarkPage({
   savedPlants,
   onHandleBookmarkClick,
-  onDeleteCard,
+  onDeletePlant,
 }) {
   return (
     <>
@@ -23,7 +23,7 @@ export default function BookmarkPage({
               onBookmarkClick={onHandleBookmarkClick}
               isBooked={isBooked}
               key={_id}
-              onDeleteCard={onDeleteCard}
+              onDeletePlant={onDeletePlant}
             />
           )
       )}
