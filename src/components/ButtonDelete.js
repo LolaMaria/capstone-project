@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-export default function ButtonDelete() {
+export default function ButtonDelete({ onClick }) {
   return (
     <>
-      <DeleteButton>
+      <DeleteButton onClick={onClick}>
         <svg
           width="28"
           height="30"

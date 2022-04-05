@@ -25,7 +25,6 @@ export default function HomePage({
                     id={_id}
                     onBookmarkClick={onHandleBookmarkClick}
                     isBooked={isBooked}
-                    key={_id}
                     onDeleteCard={onDeleteCard}
                   />
                 </li>

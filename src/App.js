@@ -64,7 +64,7 @@ export default function App() {
     inputValueInfo
   ) {
     const newPlant = {
-      id: nanoid(),
+      _id: nanoid(),
       name: inputValue,
       fact: inputValueFact,
       spot: inputValueSpot,
