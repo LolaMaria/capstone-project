@@ -3,14 +3,13 @@ import HomePage from './pages/HomePage';
 import BookmarkPage from './pages/BookmarkPage';
 import Navigation from './components/Navigation.js';
 import data from './components/data.js';
-import { useState } from 'react';
 import styled from 'styled-components';
 import InputPage from './pages/InputPage';
 import { nanoid } from 'nanoid';
-//import { useLocalStorage } from 'usehooks-ts';
+import { useLocalStorage } from 'usehooks-ts';
 
 export default function App() {
-  const [savedPlants, setSavedPlants] = useState(data);
+  const [savedPlants, setSavedPlants] = useLocalStorage('plants', data);
 
   const navigate = useNavigate();
 
@@ -32,6 +31,7 @@ export default function App() {
             <HomePage
               savedPlants={savedPlants}
               onHandleBookmarkClick={handleBookmarkClick}
+              onDeletePlant={handleDeletePlant}
             />
           }
         />
@@ -41,6 +41,7 @@ export default function App() {
             <BookmarkPage
               savedPlants={savedPlants}
               onHandleBookmarkClick={handleBookmarkClick}
+              onDeletePlant={handleDeletePlant}
             />
           }
         />
@@ -61,7 +62,7 @@ export default function App() {
     inputValueInfo
   ) {
     const newPlant = {
-      id: nanoid(),
+      _id: nanoid(),
       name: inputValue,
       fact: inputValueFact,
       spot: inputValueSpot,
@@ -72,6 +73,9 @@ export default function App() {
     setSavedPlants([...savedPlants, newPlant]);
 
     navigate('/');
+  }
+  function handleDeletePlant(id) {
+    setSavedPlants(savedPlants.filter(card => card._id !== id));
   }
 }
 

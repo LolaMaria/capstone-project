@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-export default function BookmarkButton({ onClick, name, isBooked }) {
+export default function BookmarkButton({ onClick, isBooked }) {
   return (
     <Button onClick={onClick} isBooked={isBooked}>
-      {(name = 'Save this plant')}
+      {isBooked ? 'Saved Plant' : 'Click to save this plant'}
     </Button>
   );
 }

@@ -17,7 +17,7 @@ const Nav = styled.nav`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100vw;
-  background: #d4e5ed;
+  background: #5c9875;
   color: white;
   height: 48px;
   border-radius: 3%;
@@ -41,7 +41,7 @@ const LinkStyled = styled(NavLink)`
     color: pink;
   }
   &.active {
-    background: #d4e5ed;
+    background: #5c9875;
     color: pink;
   }
 `;
