@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export default function BookmarkButton({ onClick, name, isBooked }) {
   return (
     <Button onClick={onClick} isBooked={isBooked}>
-      {isBooked ? 'Do not save this plant' : 'Save this plant'}
+      {isBooked ? 'Saved Plant' : 'Click to save this plant'}
     </Button>
   );
 }

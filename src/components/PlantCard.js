@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import BookmarkButton from './BookmarkButton';
+import ButtonDelete from './ButtonDelete';
+import ButtonEdit from './ButtonEdit';
 
 export default function PlantCard({
   name,
@@ -11,6 +13,7 @@ export default function PlantCard({
   onBookmarkClick,
   isBooked,
   id,
+  onDeleteCard,
 }) {
   function handleBookmark(event) {
     event.preventDefault();
@@ -37,7 +40,7 @@ export default function PlantCard({
           </svg>
         </PlantIcon>
         <Name>{name}</Name>
-        <img src={img} alt="" width="100px" />
+        <PlantPic src={img} alt="" width="100px" />
       </div>
       <List role="list">
         <Info>Interesting and useful facts:</Info>
@@ -49,6 +52,11 @@ export default function PlantCard({
         <Info>Additional info:</Info>
         <ListInfo>{info}</ListInfo>
       </List>
+      <ButtonEdit />
+      <ButtonDelete
+        onClick={() => onDeleteCard(id)}
+        aria-label="delete this card"
+      />
     </Card>
   );
 }
@@ -57,7 +65,7 @@ const Card = styled.div`
   display: flex;
   justify-content: column;
   padding: 1rem;
-  margin: 1rem 0rem 1rem 0rem;
+  margin: 1rem 0rem 2rem 0rem;
   background-color: #d4e5ed;
   border-radius: 3%;
 
@@ -97,6 +105,6 @@ const PlantIcon = styled.div`
   margin: 0.1rem;
 `;
 
-const PlantPic = styled.section`
+const PlantPic = styled.img`
   margin: 2rem 0rem 2rem 0rem;
 `;

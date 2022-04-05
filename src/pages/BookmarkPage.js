@@ -1,7 +1,11 @@
 import PlantCard from '../components/PlantCard';
 import styled from 'styled-components';
 
-export default function BookmarkPage({ savedPlants, onHandleBookmarkClick }) {
+export default function BookmarkPage({
+  savedPlants,
+  onHandleBookmarkClick,
+  onDeleteCard,
+}) {
   return (
     <>
       <Header>YOUR SAVED PLANTS</Header>
@@ -19,6 +23,7 @@ export default function BookmarkPage({ savedPlants, onHandleBookmarkClick }) {
               onBookmarkClick={onHandleBookmarkClick}
               isBooked={isBooked}
               key={_id}
+              onDeleteCard={onDeleteCard}
             />
           )
       )}

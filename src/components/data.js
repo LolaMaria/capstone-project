@@ -68,7 +68,7 @@ const plantList = [
   {
     _id: '6',
     name: 'Monstera',
-    fact: 'The Monstera is the most famous hipster plant and very easy-going.',
+    fact: 'The Monstera is the most famous hipster plant and it is also very easy-going.',
     water:
       'Water every 1-2 weeks, allowing soil to dry out between waterings. Expect to water more often in brighter light and less often in lower light.',
     spot: 'Thrives in bright to medium indirect light.',
@@ -106,6 +106,85 @@ const plantList = [
     info: 'It is really cute',
     isBooked: false,
     img: nasturtium,
+  },
+  {
+    _id: '10',
+    name: 'Senecio rowleyanus (string of pearls) ',
+    fact: 'String of pearls bloom tiny white flowers with scent like cinnamon. To encourage spring flowers, cut back on watering and keep the plant in a consistent temperature of 60 degree during winter. Cool and dry condition during winter often promote blooming during summer.',
+    water:
+      'String of Pearls are very sensitive to overwatering, so make sure that you give them just enough water. Recommended amount is once every two weeks.',
+    spot: 'Senecio rowleyanus plants need to be placed in a spot where it can get at least 6 to 8 hours of bright, indirect sunlight per day. ',
+    info: 'The vegetation of Senecio rowleyanus is somewhat poisonous and should not be consumed.',
+    isBooked: false,
+  },
+  {
+    _id: '11',
+    name: 'Boston fern',
+    fact: 'This fern is also called the sword fern; its fountain of arching makes it very popular ',
+    water:
+      'From spring to autumn the compost must be kept moist, not wet. Mist regular. In winter let the compost dry out between waterings.',
+    spot: 'Place out of direct sunlight in filtered ligth or part shade. A hanging basket ist a good place ',
+    info: 'According to NASAs clean air study in 1989, Boston Ferns are a superb choice for an air purifying housplant.',
+    isBooked: false,
+  },
+  {
+    _id: '12',
+    name: 'Japanese Aralia. Fatsia japonica',
+    fact: 'In autumn suprisingly there may appear spherical cream flowers',
+    water:
+      'Keep the compost moist from spring to autumn and just moist in winter.',
+    spot: 'A room in light shade is perfect, dark green leaves need a litte more light ',
+    info: 'This plant is a great choice for beginners as it is easy to handle',
+    isBooked: false,
+  },
+  {
+    _id: '13',
+    name: 'Boat Lily. Tradescantia spathacea',
+    fact: 'Small, white flowers appear throughout the year, nestled between the leaves',
+    water:
+      'mist every day or two and allow the top of compost get dry between watering.',
+    spot: 'Set in a bright spot, out of direct sun. It tolerates some shade, may then lose its purple tones ',
+    info: 'Purple and green sword shaped leaves make an eye catching bourquet',
+    isBooked: false,
+  },
+  {
+    _id: '14',
+    name: 'Calla Lily, Zantedeschia species',
+    fact: 'All parts of this plant are toxic ',
+    water:
+      'Keep the compost moist from late spring to summer and almost dry in winter.',
+    spot: 'In a warm spot and with filtered sun, planted in a wide pot the calla lily will feel most comfortable ',
+    info: 'The Calla Lily was named after the Greek word for beautiful - calla',
+    isBooked: false,
+  },
+  {
+    _id: '15',
+    name: 'Cape Jasmine, Gardenia jasminoides',
+    fact: 'Besides its wonderful look this plant provides you a sweetly scent',
+    water:
+      'Keep the compost moist and mist the leaves regularly (not the flower). in winter allow the top of the compost to dry.',
+    spot: ' Place it in a bright spot, out of direct sun. It needs a temperature of 21-24°C by day, and by night 15-18°C. ',
+    info: 'All parts are toxic to pets',
+    isBooked: false,
+  },
+  {
+    _id: '16',
+    name: 'African Daisy. Gerbera jamesonii.',
+    fact: 'The name is because of their tall stems which are topped with colourful, daisy-like blooms. To take care of these beauties ist fairly easy',
+    water:
+      'From spring to summer they like a moist, not wet compost. In winter the top of the compost should have the time to get dry between waterings.',
+    spot: 'Set in a bright, cool, well-ventilated area, out of midday sun in summer. Night temperatur should not drop under 10°-C.',
+    info: 'Given them a warm home and enough light, they can not only bloom in summer, but intermittently they will flower all year around',
+    isBooked: false,
+  },
+  {
+    _id: '17',
+    name: 'Echeveria agavoides',
+    fact: 'Echeveria agavoides is a stemless, star-shaped plant that grows up to 20 cm in diameter',
+    water:
+      'Water moderately at the rate of once every 4-5 days in summer; water every 8-10 days in autumn and spring; in winter reduce watering to a minimum or suspend it if it is very cold.',
+    spot: 'Most varieties of Echeveria react badly to cold weather and should be planted in a sunny spot. Potted Echeverias can be placed outside during the summer months but should be kept indoors during the winter.',
+    info: ' Echeveria plants often drop their leaves during the winter months. It is advisable to collect fallen leaves, as they can be susceptible to fungal infection',
   },
 ];
 export default plantList;

@@ -11,6 +11,7 @@ import { useLocalStorage } from 'usehooks-ts';
 
 export default function App() {
   const [savedPlants, setSavedPlants] = useLocalStorage('data', data);
+  console.log(savedPlants);
 
   const navigate = useNavigate();
 
@@ -32,6 +33,7 @@ export default function App() {
             <HomePage
               savedPlants={savedPlants}
               onHandleBookmarkClick={handleBookmarkClick}
+              onDeleteCard={handleDeletePlant}
             />
           }
         />
@@ -41,6 +43,7 @@ export default function App() {
             <BookmarkPage
               savedPlants={savedPlants}
               onHandleBookmarkClick={handleBookmarkClick}
+              onDeleteCard={handleDeletePlant}
             />
           }
         />
@@ -72,6 +75,9 @@ export default function App() {
     setSavedPlants([...savedPlants, newPlant]);
 
     navigate('/');
+  }
+  function handleDeletePlant(Id) {
+    setSavedPlants(savedPlants.filter(card => card._id !== Id));
   }
 }
 
