@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import BookmarkButton from './BookmarkButton';
 import ButtonDelete from './ButtonDelete';
 import ButtonEdit from './ButtonEdit';
+import { useState } from 'react';
+import DeleteMessage from './ModalDelete';
 
 export default function PlantCard({
   name,
@@ -14,11 +16,16 @@ export default function PlantCard({
   isBooked,
   id,
   onDeletePlant,
+  savedPlants,
+  onEdit,
 }) {
   function handleBookmark(event) {
     event.preventDefault();
     onBookmarkClick(id);
   }
+  const [showMessage, setShowMessage] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+
   return (
     <Card isBooked={isBooked}>
       <BookmarkButton onClick={handleBookmark} isBooked={isBooked} />
@@ -43,19 +50,56 @@ export default function PlantCard({
         <PlantPic src={img} alt="" width="100px" />
       </div>
       <List role="list">
-        <Info>Interesting and useful facts:</Info>
-        <ListInfo>{fact}</ListInfo>
-        <Info>Water intake:</Info>
-        <ListInfo>{water}</ListInfo>
-        <Info>Plant spot:</Info>
-        <ListInfo>{spot}</ListInfo>
-        <Info>Additional info:</Info>
-        <ListInfo>{info}</ListInfo>
+        {isEditing ? (
+          <Form onSubmit={handleSubmit}>
+            <label htmlFor="name">edit name:</label>
+            <input id="name" defaultValue={savedPlants.name} />
+            <label htmlFor="content">edit content:</label>
+            <input id="content" defaultValue={savedPlants.fact} />
+            <label htmlFor="name">edit name:</label>
+            <input id="name" defaultValue={savedPlants.water} />
+            <label htmlFor="content">edit content:</label>
+            <input id="content" defaultValue={savedPlants.spot} />
+            <label htmlFor="name">edit name:</label>
+            <input id="name" defaultValue={savedPlants.info} />
+            <button type="submit">Save</button>
+          </Form>
+        ) : (
+          <>
+            <Info>Interesting and useful facts:</Info>
+            <ListInfo>{fact}</ListInfo>
+            <Info>Water intake:</Info>
+            <ListInfo>{water}</ListInfo>
+            <Info>Plant spot:</Info>
+            <ListInfo>{spot}</ListInfo>
+            <Info>Additional info:</Info>
+            <ListInfo>{info}</ListInfo>
+          </>
+        )}
       </List>
-      <ButtonEdit />
-      <ButtonDelete onClick={() => onDeletePlant(id)} />
+      <ButtonEdit onClick={() => setIsEditing(!isEditing)} />
+      <ButtonDelete onClick={() => setShowMessage(true)} />
+      {showMessage && (
+        <DeleteMessage
+          onConfirmDelete={() => onDeletePlant(id)}
+          onCancelDelete={() => setShowMessage(false)}
+        />
+      )}
     </Card>
   );
+  function handleSubmit(event) {
+    event.preventDefault();
+    const { name, fact, water, spot, info } = event.target.elements;
+    onEdit({
+      id: savedPlants._id,
+      name: name.value,
+      fact: fact.value,
+      water: water.value,
+      spot: spot.vaue,
+      info: info.value,
+    });
+    setIsEditing(false);
+  }
 }
 
 const Card = styled.div`
@@ -84,14 +128,14 @@ const Name = styled.h1`
 `;
 
 const List = styled.ul`
-  margin: 3rem 1rem 1rem 1rem;
+  margin: 1rem;
   list-style: none;
   color: #590202;
 `;
 const Info = styled.dl`
   font-weight: bold;
   font-size: 0.7rem;
-  margin: 0.3rem 0rem 0.3rem 0rem;
+  margin: 0.3rem 0rem;
   color: #5c9875;
 `;
 const ListInfo = styled.li`
@@ -103,5 +147,13 @@ const PlantIcon = styled.div`
 `;
 
 const PlantPic = styled.img`
-  margin: 2rem 0rem 2rem 0rem;
+  margin: 2rem 0rem;
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 2px solid red;
+  padding: 10px;
 `;

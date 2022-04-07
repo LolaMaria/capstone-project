@@ -20,6 +20,7 @@ const plantList = [
     info: 'Growing and taking care of these unique plants is not very difficult at all. They are extremely low maintenance.',
     isBooked: false,
     img: moon_cactus,
+    waterIntake: 'weekly',
   },
   {
     _id: '2',

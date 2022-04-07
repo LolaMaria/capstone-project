@@ -1,10 +1,12 @@
 import PlantCard from '../components/PlantCard';
 import styled from 'styled-components';
+//import Searchbar from '../components/Searchbar';
 
 export default function HomePage({
   savedPlants,
   onHandleBookmarkClick,
   onDeletePlant,
+  onEdit,
 }) {
   return (
     <>
@@ -14,7 +16,7 @@ export default function HomePage({
           {savedPlants.map(
             ({ name, fact, water, spot, info, img, _id, isBooked }) => {
               return (
-                <li key={_id}>
+                <li key={_id} onEdit={onEdit} savedPlants={savedPlants}>
                   <PlantCard
                     name={name}
                     fact={fact}
@@ -26,6 +28,7 @@ export default function HomePage({
                     onBookmarkClick={onHandleBookmarkClick}
                     isBooked={isBooked}
                     onDeletePlant={onDeletePlant}
+                    onEdit={onEdit}
                   />
                 </li>
               );
