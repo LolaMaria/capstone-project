@@ -16,7 +16,6 @@ export default function PlantCard({
   isBooked,
   id,
   onDeletePlant,
-  savedPlants,
   onEdit,
 }) {
   function handleBookmark(event) {
@@ -49,34 +48,32 @@ export default function PlantCard({
         <Name>{name}</Name>
         <PlantPic src={img} alt="" width="100px" />
       </div>
-      <List role="list">
-        {isEditing ? (
-          <Form onSubmit={handleSubmit}>
-            <label htmlFor="name">edit name:</label>
-            <input id="name" defaultValue={savedPlants.name} />
-            <label htmlFor="content">edit content:</label>
-            <input id="content" defaultValue={savedPlants.fact} />
-            <label htmlFor="name">edit name:</label>
-            <input id="name" defaultValue={savedPlants.water} />
-            <label htmlFor="content">edit content:</label>
-            <input id="content" defaultValue={savedPlants.spot} />
-            <label htmlFor="name">edit name:</label>
-            <input id="name" defaultValue={savedPlants.info} />
-            <button type="submit">Save</button>
-          </Form>
-        ) : (
-          <>
-            <Info>Interesting and useful facts:</Info>
-            <ListInfo>{fact}</ListInfo>
-            <Info>Water intake:</Info>
-            <ListInfo>{water}</ListInfo>
-            <Info>Plant spot:</Info>
-            <ListInfo>{spot}</ListInfo>
-            <Info>Additional info:</Info>
-            <ListInfo>{info}</ListInfo>
-          </>
-        )}
-      </List>
+      {isEditing ? (
+        <Form onSubmit={handleSubmit}>
+          <label htmlFor="name">edit name:</label>
+          <input id="name" defaultValue={name} />
+          <label htmlFor="fact">edit content:</label>
+          <input id="fact" defaultValue={fact} />
+          <label htmlFor="water">edit name:</label>
+          <input id="water" defaultValue={water} />
+          <label htmlFor="spot">edit spot:</label>
+          <input id="spot" defaultValue={spot} />
+          <label htmlFor="info">edit name:</label>
+          <input id="info" defaultValue={info} />
+          <button type="submit">Save</button>
+        </Form>
+      ) : (
+        <List role="list">
+          <Info>Interesting and useful facts:</Info>
+          <ListInfo>{fact}</ListInfo>
+          <Info>Water intake:</Info>
+          <ListInfo>{water}</ListInfo>
+          <Info>Plant spot:</Info>
+          <ListInfo>{spot}</ListInfo>
+          <Info>Additional info:</Info>
+          <ListInfo>{info}</ListInfo>
+        </List>
+      )}
       <ButtonEdit onClick={() => setIsEditing(!isEditing)} />
       <ButtonDelete onClick={() => setShowMessage(true)} />
       {showMessage && (
@@ -87,15 +84,16 @@ export default function PlantCard({
       )}
     </Card>
   );
+
   function handleSubmit(event) {
     event.preventDefault();
     const { name, fact, water, spot, info } = event.target.elements;
     onEdit({
-      id: savedPlants._id,
+      id: id,
       name: name.value,
       fact: fact.value,
       water: water.value,
-      spot: spot.vaue,
+      spot: spot.value,
       info: info.value,
     });
     setIsEditing(false);

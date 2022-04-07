@@ -16,7 +16,7 @@ export default function BookmarkPage({
           {savedPlants.map(
             ({ name, fact, water, spot, info, img, _id, isBooked }) =>
               isBooked && (
-                <li key={_id} onEdit={onEdit} savedPlants={savedPlants}>
+                <li key={_id}>
                   <PlantCard
                     name={name}
                     fact={fact}
