@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-export default function ButtonEdit({ onClick, onEdit }) {
+export default function ButtonEdit({ onClick }) {
   return (
     <>
-      <EditButton onClick={onClick} onEdit={onEdit}>
+      <EditButton onClick={onClick}>
         <svg
           width="30"
           height="32"

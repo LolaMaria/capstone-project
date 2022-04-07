@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ButtonSubmit from '../components/ButtonSubmit';
+import ButtonSub from '../components/ButtonSubmit';
 import { useState } from 'react';
 
 export default function InputPage({ onCreatePlant }) {
@@ -80,7 +80,7 @@ export default function InputPage({ onCreatePlant }) {
               onChange={event => setPlantInfo(event.target.value)}
             />
           </CardBox>
-          <ButtonSubmit />
+          <ButtonSub type="submit" />
         </form>
       </FormBox>
     </>

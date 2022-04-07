@@ -14,13 +14,12 @@ export default function PlantCard({
   img,
   onBookmarkClick,
   isBooked,
-  id,
+  _id,
   onDeletePlant,
   onEdit,
 }) {
-  function handleBookmark(event) {
-    event.preventDefault();
-    onBookmarkClick(id);
+  function handleBookmark() {
+    onBookmarkClick(_id);
   }
   const [showMessage, setShowMessage] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -49,19 +48,19 @@ export default function PlantCard({
         <PlantPic src={img} alt="" width="100px" />
       </div>
       {isEditing ? (
-        <Form onSubmit={handleSubmit}>
-          <label htmlFor="name">edit name:</label>
+        <FormBox onSubmit={handleSubmit}>
+          <Label htmlFor="name">Edit name:</Label>
           <input id="name" defaultValue={name} />
-          <label htmlFor="fact">edit content:</label>
+          <Label htmlFor="fact">Edit facts:</Label>
           <input id="fact" defaultValue={fact} />
-          <label htmlFor="water">edit name:</label>
+          <Label htmlFor="water">Edit water intake:</Label>
           <input id="water" defaultValue={water} />
-          <label htmlFor="spot">edit spot:</label>
+          <Label htmlFor="spot">Edit plant spot:</Label>
           <input id="spot" defaultValue={spot} />
-          <label htmlFor="info">edit name:</label>
+          <Label htmlFor="info">Edit info:</Label>
           <input id="info" defaultValue={info} />
-          <button type="submit">Save</button>
-        </Form>
+          <XYZ type="submit">Save changes</XYZ>
+        </FormBox>
       ) : (
         <List role="list">
           <Info>Interesting and useful facts:</Info>
@@ -78,7 +77,7 @@ export default function PlantCard({
       <ButtonDelete onClick={() => setShowMessage(true)} />
       {showMessage && (
         <DeleteMessage
-          onConfirmDelete={() => onDeletePlant(id)}
+          onConfirmDelete={() => onDeletePlant(_id)}
           onCancelDelete={() => setShowMessage(false)}
         />
       )}
@@ -89,12 +88,13 @@ export default function PlantCard({
     event.preventDefault();
     const { name, fact, water, spot, info } = event.target.elements;
     onEdit({
-      id: id,
+      _id: _id,
       name: name.value,
       fact: fact.value,
       water: water.value,
       spot: spot.value,
       info: info.value,
+      img,
     });
     setIsEditing(false);
   }
@@ -148,10 +148,42 @@ const PlantPic = styled.img`
   margin: 2rem 0rem;
 `;
 
-const Form = styled.form`
+const Label = styled.label`
+  font-size: 1rem;
+  font-weight: bold;
+  font-size: 0.7rem;
+
+  color: #5c9875;
+`;
+
+const FormBox = styled.form`
   display: flex;
   flex-direction: column;
   gap: 5px;
-  border: 2px solid red;
-  padding: 10px;
+  background-color: #d4e5ef;
+  padding: 5px;
+  border-radius: 3%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border: 2px solid blue;
+`;
+
+const XYZ = styled.button`
+  text-transform: uppercase;
+  height: 30px;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
+    rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
+    rgba(44, 187, 99, 0.15) 0 16px 32px;
+  color: blue;
+  cursor: pointer;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 10px;
+  user-select: none;
 `;

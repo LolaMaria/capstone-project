@@ -24,7 +24,7 @@ export default function HomePage({
                     spot={spot}
                     info={info}
                     img={img}
-                    id={_id}
+                    _id={_id}
                     onBookmarkClick={onHandleBookmarkClick}
                     isBooked={isBooked}
                     onDeletePlant={onDeletePlant}

@@ -15,8 +15,9 @@ export default function App() {
 
   function onEdit(updatedPlant) {
     const newPlants = savedPlants.map(savedPlants => {
-      if (savedPlants._id === updatedPlant.id) {
-        return updatedPlant;
+      if (savedPlants._id === updatedPlant._id) {
+        const newPlant = { ...savedPlants, ...updatedPlant };
+        return newPlant;
       }
       return savedPlants;
     });
