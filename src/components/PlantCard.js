@@ -178,6 +178,7 @@ const FormBox = styled.form`
 
 const SubmitButton = styled.button`
   text-transform: uppercase;
+  background-color: #c2fbd7;
   height: 30px;
   border-radius: 100px;
   box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
