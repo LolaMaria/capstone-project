@@ -1,20 +1,19 @@
 import { render, screen } from '@testing-library/react';
-import BookmarkButton from './BookmarkButton';
+import ButtonEdit from './ButtonEdit';
 import userEvent from '@testing-library/user-event';
 
-describe('BookmarkButton', () => {
+describe('ButtonEdit', () => {
   it('renders a button', () => {
-    render(<BookmarkButton />);
+    render(<ButtonEdit />);
 
-    const bookmarkButton = screen.getByRole('button', {
-      name: /save this plant/i,
-    });
+    const buttonEdit = screen.getByRole('button', {});
 
-    expect(bookmarkButton).toBeInTheDocument();
+    expect(buttonEdit).toBeInTheDocument();
   });
+
   it('has onClick function', () => {
     const handleOnClick = jest.fn();
-    render(<BookmarkButton onClick={handleOnClick}></BookmarkButton>);
+    render(<ButtonEdit onClick={handleOnClick}></ButtonEdit>);
 
     const button = screen.getByRole('button');
     userEvent.click(button);

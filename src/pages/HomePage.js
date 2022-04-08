@@ -1,10 +1,12 @@
 import PlantCard from '../components/PlantCard';
 import styled from 'styled-components';
+//import Searchbar from '../components/Searchbar';
 
 export default function HomePage({
   savedPlants,
   onHandleBookmarkClick,
   onDeletePlant,
+  onEdit,
 }) {
   return (
     <>
@@ -22,10 +24,11 @@ export default function HomePage({
                     spot={spot}
                     info={info}
                     img={img}
-                    id={_id}
+                    _id={_id}
                     onBookmarkClick={onHandleBookmarkClick}
                     isBooked={isBooked}
                     onDeletePlant={onDeletePlant}
+                    onEdit={onEdit}
                   />
                 </li>
               );

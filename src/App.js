@@ -13,6 +13,17 @@ export default function App() {
 
   const navigate = useNavigate();
 
+  function onEdit(updatedPlant) {
+    const newPlants = savedPlants.map(savedPlants => {
+      if (savedPlants._id === updatedPlant._id) {
+        const newPlant = { ...savedPlants, ...updatedPlant };
+        return newPlant;
+      }
+      return savedPlants;
+    });
+    setSavedPlants(newPlants);
+  }
+
   function handleBookmarkClick(_id) {
     setSavedPlants(
       savedPlants.map(card => {
@@ -32,6 +43,7 @@ export default function App() {
               savedPlants={savedPlants}
               onHandleBookmarkClick={handleBookmarkClick}
               onDeletePlant={handleDeletePlant}
+              onEdit={onEdit}
             />
           }
         />
@@ -42,6 +54,7 @@ export default function App() {
               savedPlants={savedPlants}
               onHandleBookmarkClick={handleBookmarkClick}
               onDeletePlant={handleDeletePlant}
+              onEdit={onEdit}
             />
           }
         />
