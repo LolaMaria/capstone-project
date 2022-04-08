@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export default function ButtonDelete({ onClick }) {
   return (
-    <DeleteButton aria-label="delete this card" onClick={onClick}>
+    <DeleteButton type="button" aria-label="delete this card" onClick={onClick}>
       <svg
         width="28"
         height="30"

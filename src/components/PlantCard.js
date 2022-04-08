@@ -26,21 +26,25 @@ export default function PlantCard({
 
   return (
     <Card isBooked={isBooked}>
-      <BookmarkButton onClick={handleBookmark} isBooked={isBooked} />
+      <BookmarkButton
+        type="button"
+        onClick={handleBookmark}
+        isBooked={isBooked}
+      />
 
       {isEditing ? (
         <FormBox onSubmit={handleSubmit}>
           <Label htmlFor="name">Edit NAME:</Label>
-          <input id="name" defaultValue={name} />
+          <input autocomplete="off" id="name" defaultValue={name} />
           <Label htmlFor="fact">Edit FACTS:</Label>
-          <input id="fact" defaultValue={fact} />
+          <input autocomplete="off" id="fact" defaultValue={fact} />
           <Label htmlFor="water">Edit WATER INTAKE:</Label>
-          <input id="water" defaultValue={water} />
+          <input autocomplete="off" id="water" defaultValue={water} />
           <Label htmlFor="spot">Edit PLANT SPOT:</Label>
-          <input id="spot" defaultValue={spot} />
+          <input autocomplete="off" id="spot" defaultValue={spot} />
           <Label htmlFor="info">Edit INFO:</Label>
-          <input id="info" defaultValue={info} />
-          <XYZ type="submit">Save changes</XYZ>
+          <input autocomplete="off" id="info" defaultValue={info} />
+          <SubmitButton type="submit">Save changes</SubmitButton>
         </FormBox>
       ) : (
         <>
@@ -172,7 +176,7 @@ const FormBox = styled.form`
   border: 2px solid blue;
 `;
 
-const XYZ = styled.button`
+const SubmitButton = styled.button`
   text-transform: uppercase;
   height: 30px;
   border-radius: 100px;
