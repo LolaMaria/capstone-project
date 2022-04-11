@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import InputPage from './pages/InputPage';
 import { nanoid } from 'nanoid';
 import { useLocalStorage } from 'usehooks-ts';
+import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
   const [savedPlants, setSavedPlants] = useLocalStorage('plants', data);
@@ -35,6 +36,7 @@ export default function App() {
   }
   return (
     <AppGrid>
+      <ScrollToTop />
       <Routes>
         <Route
           path="/"
