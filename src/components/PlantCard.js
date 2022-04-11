@@ -17,6 +17,7 @@ export default function PlantCard({
   _id,
   onDeletePlant,
   onEdit,
+  image,
 }) {
   function handleBookmark() {
     onBookmarkClick(_id);
@@ -68,6 +69,7 @@ export default function PlantCard({
             </PlantIcon>
             <Name>{name}</Name>
             <PlantPic src={img} alt="" width="100px" />
+            <img src={image} alt="" />
           </div>
           <List role="list">
             <Info>Interesting and useful facts:</Info>

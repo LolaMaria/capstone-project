@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import ButtonSubmit from '../components/ButtonSubmit';
 import { useState } from 'react';
+import axios from 'axios';
+
+const CLOUDNAME = process.env.REACT_APP_CLOUDINARY_CLOUDNAME;
+const PRESET = process.env.REACT_APP_CLOUDINARY_PRESET;
 
 export default function InputPage({ onCreatePlant }) {
   const [plantName, setPlantName] = useState('');
@@ -8,6 +12,27 @@ export default function InputPage({ onCreatePlant }) {
   const [plantWater, setPlantWater] = useState('');
   const [plantSpot, setPlantSpot] = useState('');
   const [plantInfo, setPlantInfo] = useState('');
+  const [image, setImage] = useState('');
+
+  function upload(event) {
+    const url = `https://api.cloudinary.com/v1_1/${CLOUDNAME}/upload`;
+    const formData = new FormData();
+    formData.append('file', event.target.files[0]);
+    formData.append('upload_preset', PRESET);
+
+    axios
+      .post(url, formData, {
+        headers: {
+          'Content-type': 'multipart/form-data',
+        },
+      })
+      .then(onImageSave)
+      .catch(err => console.error(err));
+  }
+
+  function onImageSave(response) {
+    setImage(response.data.url);
+  }
 
   return (
     <>
@@ -41,7 +66,6 @@ export default function InputPage({ onCreatePlant }) {
               value={plantFact}
               onChange={event => setPlantFact(event.target.value)}
             />
-
             <Label htmlFor="water">Whats your plants water intake?</Label>
             <Input
               name="water"
@@ -53,7 +77,6 @@ export default function InputPage({ onCreatePlant }) {
               value={plantWater}
               onChange={event => setPlantWater(event.target.value)}
             />
-
             <Label htmlFor="plantspot">
               How much light does your plant need?
             </Label>
@@ -67,9 +90,7 @@ export default function InputPage({ onCreatePlant }) {
               value={plantSpot}
               onChange={event => setPlantSpot(event.target.value)}
             />
-
             <Label htmlFor="info">Additional info about your plant:</Label>
-
             <Input
               name="info"
               maxLength="50"
@@ -80,6 +101,25 @@ export default function InputPage({ onCreatePlant }) {
               onChange={event => setPlantInfo(event.target.value)}
             />
           </CardBox>
+          <div>
+            {image ? (
+              <img
+                src={image}
+                alt=""
+                style={{
+                  width: '90vw',
+                  margin: '5vw',
+                }}
+              />
+            ) : (
+              <input
+                type="file"
+                name="file"
+                aria-label="upload-your-picture"
+                onChange={upload}
+              />
+            )}
+          </div>
           <ButtonSubmit />
         </form>
       </FormBox>
@@ -98,7 +138,8 @@ export default function InputPage({ onCreatePlant }) {
       inputValueFact,
       inputValueSpot,
       inputValueWater,
-      inputValueInfo
+      inputValueInfo,
+      image
     );
     form.reset();
     setPlantName('');
