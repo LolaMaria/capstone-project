@@ -252,7 +252,7 @@ const plantList = [
   },
   {
     _id: '25',
-    name: 'Pony Tail Palm. Beaucarnea recurvata AGM ',
+    name: 'Pony Tail Palm. Beaucarnea recurvata',
     fact: ' Native to mexico, its one of the stars in houshold all over the world. Although officially not a palm, its similiar features make that its often grouped with them ',
     water:
       'In summer, water once a week; in winter the compost should be almost dry.',
