@@ -154,8 +154,6 @@ const PlantPic = styled.img`
 
   :hover {
     transform: scale(1.6);
-    border-color: pink;
-    border-style: bold;
   }
 `;
 
@@ -202,10 +200,10 @@ const SubmitButton = styled.button`
 
 const UploadImg = styled.img`
   border-radius: 50%;
-
+  width: 90px;
+  height: 90px;
+  margin: 2rem 0rem;
   :hover {
     transform: scale(1.6);
-    border-color: pink;
-    border-style: bold;
   }
 `;
