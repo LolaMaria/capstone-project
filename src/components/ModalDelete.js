@@ -40,22 +40,19 @@ const MessageContent = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
-  width: 40%;
+  width: 50%;
   margin: 30vh auto;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
-  h2 {
-    padding-top: 5px;
-    font-size: 1rem;
-  }
+
   p {
-    font-size: 0.8rem;
-    white-space: no-wrap;
+    font-size: 0.9rem;
+    color: #556b2f;
+    text-align: center;
   }
 `;
 
 const MessageWindowWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 50%;
 `;
