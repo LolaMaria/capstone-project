@@ -75,7 +75,7 @@ export default function App() {
     inputValueSpot,
     inputValueWater,
     inputValueInfo,
-    image
+    img
   ) {
     const newPlant = {
       _id: nanoid(),
@@ -84,7 +84,7 @@ export default function App() {
       spot: inputValueSpot,
       water: inputValueWater,
       info: inputValueInfo,
-      image: image,
+      img,
     };
 
     setSavedPlants([...savedPlants, newPlant]);

@@ -70,7 +70,7 @@ export default function PlantCard({
           </div>
           <List role="list">
             <Name>{name}</Name>
-            <UploadImg src={image} alt="" width="100px" />
+
             <PlantPic src={img} alt="" width="100px" />
             <Info>Interesting and useful facts:</Info>
             <ListInfo>{fact}</ListInfo>
@@ -114,7 +114,7 @@ const Card = styled.div`
   display: flex;
   justify-content: column;
   padding: 1rem;
-  margin: 1rem 0rem 2rem 0rem;
+  margin: 2rem 1rem 2rem 1rem;
   background-color: #d4e5ed;
   border-radius: 3%;
 
@@ -125,7 +125,6 @@ const Card = styled.div`
 
 const Name = styled.h1`
   font-size: 1rem;
-
   color: #5c9875;
 `;
 
@@ -151,6 +150,9 @@ const PlantIcon = styled.div`
 
 const PlantPic = styled.img`
   margin: 2rem 0rem;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
 
   :hover {
     transform: scale(1.6);
@@ -196,14 +198,4 @@ const SubmitButton = styled.button`
   border: 0;
   font-size: 10px;
   user-select: none;
-`;
-
-const UploadImg = styled.img`
-  border-radius: 50%;
-  width: 90px;
-  height: 90px;
-  margin: 2rem 0rem;
-  :hover {
-    transform: scale(1.6);
-  }
 `;

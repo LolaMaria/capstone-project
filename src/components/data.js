@@ -1,4 +1,3 @@
-import React from 'react';
 import shamrock from '../images/false_shamrock.png';
 import aloevera from '../images/aloevera.png';
 import aglaonema from '../images/aglaonema.png';

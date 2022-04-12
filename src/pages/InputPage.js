@@ -134,13 +134,14 @@ export default function InputPage({ onCreatePlant }) {
     const inputValueSpot = form.elements.spot.value.trim();
     const inputValueWater = form.elements.water.value.trim();
     const inputValueInfo = form.elements.info.value.trim();
+    const img = image;
     onCreatePlant(
       inputValue,
       inputValueFact,
       inputValueSpot,
       inputValueWater,
       inputValueInfo,
-      image
+      img
     );
     form.reset();
     setPlantName('');
