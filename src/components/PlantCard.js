@@ -70,7 +70,6 @@ export default function PlantCard({
           </div>
           <List role="list">
             <Name>{name}</Name>
-
             <PlantPic src={img} alt="" width="100px" />
             <Info>Interesting and useful facts:</Info>
             <ListInfo>{fact}</ListInfo>

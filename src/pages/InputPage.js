@@ -101,7 +101,7 @@ export default function InputPage({ onCreatePlant }) {
               onChange={event => setPlantInfo(event.target.value)}
             />
           </CardBox>
-          <div>
+          <ImageUpload>
             {image ? (
               <img
                 src={image}
@@ -113,14 +113,18 @@ export default function InputPage({ onCreatePlant }) {
                 }}
               />
             ) : (
-              <Input
-                type="file"
-                name="file"
-                aria-label="upload-your-picture"
-                onChange={upload}
-              />
+              <div>
+                <Input
+                  type="file"
+                  name="file"
+                  aria-label="upload-your-picture"
+                  onChange={upload}
+                  id="files"
+                />
+                <label htmlFor="files">UPLOAD YOUR PLANT PICTURE</label>
+              </div>
             )}
-          </div>
+          </ImageUpload>
           <ButtonSubmit />
         </form>
       </FormBox>
@@ -153,17 +157,15 @@ export default function InputPage({ onCreatePlant }) {
 }
 
 const CreatePlant = styled.h2`
-  display: flex;
-  justify-content: center;
   font-size: 1.5rem;
   color: #5c9875;
+  display: flex;
+  justify-content: center;
 `;
 
 const FormBox = styled.div`
-  display: flex;
-  justify-content: column;
   padding: 1rem;
-  margin: 1rem 0.1rem 1rem 0.1rem;
+
   background-color: #d4e5ed;
   border-radius: 3%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
@@ -188,4 +190,29 @@ const Label = styled.label`
   font-size: 0.7rem;
   margin: 0.3rem 0rem 0.3rem 0rem;
   color: #5c9875;
+`;
+
+const ImageUpload = styled.div`
+  padding: 5px;
+  margin-left: 40px;
+
+  input[type='file'] {
+    width: 0.1px;
+    height: 0.1px;
+    user-select: none;
+  }
+
+  label[for='files'] {
+    background-color: #c2fbd7;
+    padding: 10px;
+    font-size: 13px;
+    font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto,
+      sans-serif;
+    color: hotpink;
+    border-radius: 100px;
+  }
+
+  label[for='files']:hover {
+    background-color: #2e8b57;
+  }
 `;
