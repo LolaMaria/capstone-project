@@ -23,6 +23,6 @@ const ButtonSubmit = styled.button`
   font-size: 10px;
   user-select: none;
   width: 200px;
-  margin: 50px;
+  margin: 40px 60px 60px 60px;
   background: ${props => (props.isBooked ? 'pink' : '#c2fbd7')};
 `;

@@ -70,8 +70,8 @@ export default function PlantCard({
           </div>
           <List role="list">
             <Name>{name}</Name>
+            <UploadImg src={image} alt="" width="100px" />
             <PlantPic src={img} alt="" width="100px" />
-            <UploadImg src={image} alt="" />
             <Info>Interesting and useful facts:</Info>
             <ListInfo>{fact}</ListInfo>
             <Info>Water intake:</Info>
@@ -132,6 +132,7 @@ const Name = styled.h1`
 const List = styled.ul`
   margin: 0.1rem;
   list-style: none;
+  text-align: left;
   color: #590202;
 `;
 const Info = styled.dl`
@@ -200,6 +201,11 @@ const SubmitButton = styled.button`
 `;
 
 const UploadImg = styled.img`
-  border-radius: 100%;
-  margin: 2rem 0rem;
+  border-radius: 50%;
+
+  :hover {
+    transform: scale(1.6);
+    border-color: pink;
+    border-style: bold;
+  }
 `;

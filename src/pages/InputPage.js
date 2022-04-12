@@ -107,12 +107,13 @@ export default function InputPage({ onCreatePlant }) {
                 src={image}
                 alt=""
                 style={{
-                  width: '90vw',
-                  margin: '5vw',
+                  width: '40vw',
+                  margin: '3vw 12vw 3vw 12vw',
+                  border_radius: '50%',
                 }}
               />
             ) : (
-              <input
+              <Input
                 type="file"
                 name="file"
                 aria-label="upload-your-picture"
