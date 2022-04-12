@@ -164,8 +164,8 @@ const CreatePlant = styled.h2`
 `;
 
 const FormBox = styled.div`
+  margin: 1rem 0.1rem;
   padding: 1rem;
-
   background-color: #d4e5ed;
   border-radius: 3%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,

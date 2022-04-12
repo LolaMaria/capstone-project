@@ -113,7 +113,7 @@ const Card = styled.div`
   display: flex;
   justify-content: column;
   padding: 1rem;
-  margin: 2rem 1rem 2rem 1rem;
+  margin: 2rem 0.1rem;
   background-color: #d4e5ed;
   border-radius: 3%;
 
