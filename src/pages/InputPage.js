@@ -153,7 +153,7 @@ export default function InputPage({ onCreatePlant }) {
 const CreatePlant = styled.h2`
   display: flex;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: #5c9875;
 `;
 

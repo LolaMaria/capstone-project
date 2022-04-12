@@ -44,7 +44,7 @@ export default function HomePage({
 const Header = styled.h2`
   display: flex;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #5c9875;
 `;
 const ListWrapper = styled.ul`

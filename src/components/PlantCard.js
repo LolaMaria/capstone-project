@@ -121,12 +121,6 @@ const Card = styled.div`
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   position: relative;
-
-  :hover {
-    transform: scale(1.09);
-    border-color: pink;
-    border-style: bold;
-  }
 `;
 
 const Name = styled.h1`
@@ -156,6 +150,12 @@ const PlantIcon = styled.div`
 
 const PlantPic = styled.img`
   margin: 2rem 0rem;
+
+  :hover {
+    transform: scale(1.6);
+    border-color: pink;
+    border-style: bold;
+  }
 `;
 
 const Label = styled.label`

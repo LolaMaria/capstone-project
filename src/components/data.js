@@ -1,4 +1,4 @@
-//import React from 'react';
+import React from 'react';
 import shamrock from '../images/false_shamrock.png';
 import aloevera from '../images/aloevera.png';
 import aglaonema from '../images/aglaonema.png';
@@ -8,6 +8,20 @@ import moon_cactus from '../images/moon_cactus.png';
 import nasturtium from '../images/nasturtium.png';
 import philodendron from '../images/philodendron.png';
 import calathea from '../images/calathea.png';
+import africandaisy from '../images/africandaisy.png';
+import aralia from '../images/aralia.png';
+import arumfern from '../images/arumfern.png';
+import boatlily from '../images/boatlily.png';
+import bostonfern from '../images/bostonfern.png';
+import callalily from '../images/callalily.png';
+import capejasmine from '../images/capejasmine.png';
+import crocodilefern from '../images/crocodilefern.png';
+import orchid from '../images/orchid.png';
+import ponytail from '../images/ponytail.png';
+import rose from '../images/rose.png';
+import sage from '../images/sage.png';
+import spear from '../images/spear.png';
+import tulip from '../images/tulip.png';
 
 const plantList = [
   {
@@ -117,6 +131,7 @@ const plantList = [
     spot: 'Senecio rowleyanus plants need to be placed in a spot where it can get at least 6 to 8 hours of bright, indirect sunlight per day. ',
     info: 'The vegetation of Senecio rowleyanus is somewhat poisonous and should not be consumed.',
     isBooked: false,
+    //img: pearls,
   },
   {
     _id: '11',
@@ -127,6 +142,7 @@ const plantList = [
     spot: 'Place out of direct sunlight in filtered ligth or part shade. A hanging basket ist a good place ',
     info: 'According to NASAs clean air study in 1989, Boston Ferns are a superb choice for an air purifying housplant.',
     isBooked: false,
+    img: bostonfern,
   },
   {
     _id: '12',
@@ -137,6 +153,7 @@ const plantList = [
     spot: 'A room in light shade is perfect, dark green leaves need a litte more light ',
     info: 'This plant is a great choice for beginners as it is easy to handle',
     isBooked: false,
+    img: aralia,
   },
   {
     _id: '13',
@@ -147,6 +164,7 @@ const plantList = [
     spot: 'Set in a bright spot, out of direct sun. It tolerates some shade, may then lose its purple tones ',
     info: 'Purple and green sword shaped leaves make an eye catching bourquet',
     isBooked: false,
+    img: boatlily,
   },
   {
     _id: '14',
@@ -157,6 +175,7 @@ const plantList = [
     spot: 'In a warm spot and with filtered sun, planted in a wide pot the calla lily will feel most comfortable ',
     info: 'The Calla Lily was named after the Greek word for beautiful - calla',
     isBooked: false,
+    img: callalily,
   },
   {
     _id: '15',
@@ -167,6 +186,7 @@ const plantList = [
     spot: ' Place it in a bright spot, out of direct sun. It needs a temperature of 21-24°C by day, and by night 15-18°C. ',
     info: 'All parts are toxic to pets',
     isBooked: false,
+    img: capejasmine,
   },
   {
     _id: '16',
@@ -177,6 +197,7 @@ const plantList = [
     spot: 'Set in a bright, cool, well-ventilated area, out of midday sun in summer. Night temperatur should not drop under 10°-C.',
     info: 'Given them a warm home and enough light, they can not only bloom in summer, but intermittently they will flower all year around',
     isBooked: false,
+    img: africandaisy,
   },
   {
     _id: '17',
@@ -186,6 +207,7 @@ const plantList = [
       'Water moderately at the rate of once every 4-5 days in summer; water every 8-10 days in autumn and spring; in winter reduce watering to a minimum or suspend it if it is very cold.',
     spot: 'Most varieties of Echeveria react badly to cold weather and should be planted in a sunny spot. Potted Echeverias can be placed outside during the summer months but should be kept indoors during the winter.',
     info: ' Echeveria plants often drop their leaves during the winter months. It is advisable to collect fallen leaves, as they can be susceptible to fungal infection',
+    //img: echeveria,
   },
   {
     _id: '18',
@@ -195,6 +217,7 @@ const plantList = [
       'Water once a month in winter, from spring to autumn let the top of the compost get dry between waterings.',
     spot: 'Light shade or filtered sun is ideal. Trim in spring to create a good shape. The compost should be mixed 2:1 with sand. It likes temperatures of 15–24 °C. ',
     info: 'Perfect for beginners!',
+    img: arumfern,
   },
   {
     _id: '19',
@@ -204,6 +227,7 @@ const plantList = [
       'Mist the plant regularly and also keep the compost moist. In winter, when the leaves will die off, the compost should be almost dry.',
     spot: 'Place in a light area out of direct sun. Repot anually. A temperatures of 18–24 °C is ideal. ',
     info: 'There is a hidden suprise : in addition to the wonderful pink blooms, small violet flowers emerge from the bracts.',
+    img: tulip,
   },
   {
     _id: '20',
@@ -211,8 +235,9 @@ const plantList = [
     fact: 'The long lasting blooms appear at any time of the year, but mostly in winter and spring.',
     water:
       'When the top of the compost is slightly dry you should apply water again, every 5-7 days you need to water the orchid. Mist the leaves every day or two.',
-    spot: ' Take special orchid compost. At daytime temperatures should be 10 to 24 °C at night make shure there is a 6°C drop. ',
-    info: ' This gordious flower is not widely available.',
+    spot: 'Take special orchid compost. At daytime temperatures should be 10 to 24 °C at night make shure there is a 6°C drop. ',
+    info: 'This gordious flower is not widely available.',
+    img: orchid,
   },
   {
     _id: '21',
@@ -222,6 +247,7 @@ const plantList = [
       'From spring to autumn the compost must be kept moist. allow the top to dry out between watering in winter.',
     spot: ' Rooms with bright light but out of direct sun, temperatur of 10-26°C. ',
     info: '  This plant is not poisonous at all, that means, theoretically you can eat (a little bit of) it.',
+    img: rose,
   },
   {
     _id: '22',
@@ -231,6 +257,7 @@ const plantList = [
       'From spring to autumn the compost must be kept moist, watering it every two weeks, in winter only keep it moist.',
     spot: ' Set it in full sun, temperatur of 10-25°C. ',
     info: '  Besides the lovely range of colours this plant gives off a honeylike scent. Delicious.',
+    img: sage,
   },
   {
     _id: '23',
@@ -240,6 +267,7 @@ const plantList = [
       'Water from spring to autumn when the top of the compost is almost dry; in winter, allow the top to dry out between waterings.',
     spot: 'Place out of direct sunlight in a lightly shaded spot, maybe moving it closer to the window in winter, with a temperature of 13-24°C. ',
     info: 'Looking up close at this plant you will admire its distinctive crocodile-skin leaf patterns.',
+    img: crocodilefern,
   },
   {
     _id: '24',
@@ -249,6 +277,7 @@ const plantList = [
       'Water the plant allowing the top of the compost to dry out in between. In winter only water it once a month .',
     spot: 'This plant grows easily in a living room. It prefers bright indirect light and temperatures of 15–24 °C. It also tolerates some shade, but the spears may stretch to the light',
     info: 'A plant, which also helps to purify the air, thank heaven.',
+    img: spear,
   },
   {
     _id: '25',
@@ -256,19 +285,9 @@ const plantList = [
     fact: ' Native to mexico, its one of the stars in houshold all over the world. Although officially not a palm, its similiar features make that its often grouped with them ',
     water:
       'In summer, water once a week; in winter the compost should be almost dry.',
-    spot: ' This plant preferres bright light and tolerates temperatures of 5–26 °C.',
-    info: '  Its bulbous stem stores water and will keep it alive even if you forget it accasionally.',
-  },
-  {
-    _id: '26',
-    name: 'Monkey Cups. Nepenthes hybrids',
-    fact: 'The pitschers`colour and nectar attracts insects, which drown when they fall in.',
-    water:
-      'Keep the compost moist but never let it stand in a tray of water. Water it from above and mist it daily.',
-
-    spot: 'Set in a bright spot out of direct sunlight with good ventilation. Only use special compost from a specialist, Temperatures of 13–25 °C.',
-
-    info: 'Although it does not look like it: the monkey cups ist fairly easy to care for ',
+    spot: 'This plant preferres bright light and tolerates temperatures of 5–26 °C.',
+    info: 'Its bulbous stem stores water and will keep it alive even if you forget it accasionally.',
+    img: ponytail,
   },
 ];
 export default plantList;

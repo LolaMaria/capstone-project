@@ -43,10 +43,19 @@ export default function BookmarkPage({
 const Header = styled.h2`
   display: flex;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: #5c9875;
 `;
-const ListWrapper = styled.ul``;
+const ListWrapper = styled.ul`
+  margin: 0rem 0rem 5rem -2.5rem;
+  list-style: none;
+  @media (min-width: 650px) {
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 950px) {
+    grid-template-columns: 1fr;
+  }
+`;
 const Wrapper = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
