@@ -122,11 +122,11 @@ const Card = styled.div`
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   position: relative;
 
-  /*:hover {
+  :hover {
     transform: scale(1.09);
     border-color: pink;
     border-style: bold;
-  }*/
+  }
 `;
 
 const Name = styled.h1`
