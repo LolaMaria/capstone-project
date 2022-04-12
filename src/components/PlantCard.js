@@ -36,15 +36,15 @@ export default function PlantCard({
       {isEditing ? (
         <FormBox onSubmit={handleSubmit}>
           <Label htmlFor="name">Edit NAME:</Label>
-          <input autocomplete="off" id="name" defaultValue={name} />
+          <input autoComplete="off" id="name" defaultValue={name} />
           <Label htmlFor="fact">Edit FACTS:</Label>
-          <input autocomplete="off" id="fact" defaultValue={fact} />
+          <input autoComplete="off" id="fact" defaultValue={fact} />
           <Label htmlFor="water">Edit WATER INTAKE:</Label>
-          <input autocomplete="off" id="water" defaultValue={water} />
+          <input autoComplete="off" id="water" defaultValue={water} />
           <Label htmlFor="spot">Edit PLANT SPOT:</Label>
-          <input autocomplete="off" id="spot" defaultValue={spot} />
+          <input autoComplete="off" id="spot" defaultValue={spot} />
           <Label htmlFor="info">Edit INFO:</Label>
-          <input autocomplete="off" id="info" defaultValue={info} />
+          <input autoComplete="off" id="info" defaultValue={info} />
           <SubmitButton type="submit">Save changes</SubmitButton>
         </FormBox>
       ) : (
@@ -67,11 +67,11 @@ export default function PlantCard({
                 />
               </svg>
             </PlantIcon>
-            <Name>{name}</Name>
-            <PlantPic src={img} alt="" width="100px" />
-            <img src={image} alt="" />
           </div>
           <List role="list">
+            <Name>{name}</Name>
+            <PlantPic src={img} alt="" width="100px" />
+            <UploadImg src={image} alt="" />
             <Info>Interesting and useful facts:</Info>
             <ListInfo>{fact}</ListInfo>
             <Info>Water intake:</Info>
@@ -136,7 +136,7 @@ const Name = styled.h1`
 `;
 
 const List = styled.ul`
-  margin: 1rem;
+  margin: 0.1rem;
   list-style: none;
   color: #590202;
 `;
@@ -151,7 +151,7 @@ const ListInfo = styled.li`
 `;
 
 const PlantIcon = styled.div`
-  margin: 0.1rem;
+  margin: 0.3rem;
 `;
 
 const PlantPic = styled.img`
@@ -197,4 +197,9 @@ const SubmitButton = styled.button`
   border: 0;
   font-size: 10px;
   user-select: none;
+`;
+
+const UploadImg = styled.img`
+  border-radius: 100%;
+  margin: 2rem 0rem;
 `;

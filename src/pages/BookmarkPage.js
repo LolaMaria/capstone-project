@@ -46,10 +46,7 @@ const Header = styled.h2`
   font-size: 3rem;
   color: #5c9875;
 `;
-const ListWrapper = styled.ul`
-  margin: 0rem 0rem 5rem -2.5rem;
-  list-style: none;
-`;
+const ListWrapper = styled.ul``;
 const Wrapper = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
