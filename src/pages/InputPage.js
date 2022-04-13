@@ -36,7 +36,7 @@ export default function InputPage({ onCreatePlant }) {
 
   return (
     <>
-      <CreatePlant id="title-form">CREATE PLANT</CreatePlant>
+      <CreatePlant id="title-form">CREATE YOUR PLANT</CreatePlant>
       <FormBox>
         <form
           autoComplete="off"
@@ -164,6 +164,8 @@ const CreatePlant = styled.h2`
 `;
 
 const FormBox = styled.div`
+  display: flex;
+  justify-content: center;
   margin: 1rem 0.1rem;
   padding: 1rem;
   background-color: #d4e5ed;
