@@ -5,6 +5,7 @@ export default function Navigation() {
   return (
     <Nav>
       <LinkStyled to="/">Plants</LinkStyled>
+      <LinkStyled to="/filter">Perfect plant</LinkStyled>
       <LinkStyled to="/bookmark">Saved Plants</LinkStyled>
       <LinkStyled to="/input">Create Plant</LinkStyled>
     </Nav>
@@ -15,7 +16,7 @@ const Nav = styled.nav`
   font-size: 0.9rem;
   text-transform: uppercase;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   width: 100vw;
   background: #5c9875;
   color: white;

@@ -8,7 +8,7 @@ import InputPage from './pages/InputPage';
 import { nanoid } from 'nanoid';
 import { useLocalStorage } from 'usehooks-ts';
 import ScrollToTop from './components/ScrollToTop';
-
+import FilterPage from './pages/FilterPage';
 export default function App() {
   const [savedPlants, setSavedPlants] = useLocalStorage('plants', data);
 
@@ -64,7 +64,12 @@ export default function App() {
           path="/input"
           element={<InputPage onCreatePlant={handleSubmitCreate} />}
         />
+        <Route
+          path="/filter"
+          element={<FilterPage savedPlants={savedPlants} />}
+        />
       </Routes>
+
       <Navigation />
     </AppGrid>
   );
@@ -98,6 +103,6 @@ export default function App() {
 
 const AppGrid = styled.div`
   display: grid;
-  grid-template-rows: auto 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr 1fr 1fr;
   position: relative;
 `;
