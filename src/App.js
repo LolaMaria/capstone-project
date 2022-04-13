@@ -66,7 +66,14 @@ export default function App() {
         />
         <Route
           path="/filter"
-          element={<FilterPage savedPlants={savedPlants} />}
+          element={
+            <FilterPage
+              savedPlants={savedPlants}
+              onHandleBookmarkClick={handleBookmarkClick}
+              onDeletePlant={handleDeletePlant}
+              onEdit={onEdit}
+            />
+          }
         />
       </Routes>
 

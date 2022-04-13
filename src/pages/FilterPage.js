@@ -1,36 +1,55 @@
-import PlantCard from '../components/PlantCard';
 import styled from 'styled-components';
+import React from 'react';
+import FilterButtons from '../components/FilterButton';
+import PlantCard from '../components/PlantCard';
 
 export default function FilterPage({
   savedPlants,
   onHandleBookmarkClick,
   onDeletePlant,
   onEdit,
+  setSavedPlants,
 }) {
+  const plantCards = [...new Set(savedPlants.map(Val => Val.category))];
+
+  const filterPlant = curcat => {
+    const perfectPlant = savedPlants.filter(perfectVal => {
+      return perfectVal.category === curcat;
+    });
+    setSavedPlants(perfectPlant);
+  };
   return (
     <>
       <Wrapper>
         <Header>FIND YOUR PERFECT PLANT!</Header>
+        <FilterButtons
+          filterPlant={filterPlant}
+          setSavedPlants={setSavedPlants}
+          plantCards={plantCards}
+        />
         <ListWrapper role="list" aria-labelledby="Header">
           {savedPlants.map(
             ({ name, fact, water, spot, info, img, _id, isBooked, image }) => {
               return (
-                <li key={_id}>
-                  <PlantCard
-                    name={name}
-                    fact={fact}
-                    water={water}
-                    spot={spot}
-                    info={info}
-                    img={img}
-                    _id={_id}
-                    onBookmarkClick={onHandleBookmarkClick}
-                    isBooked={isBooked}
-                    onDeletePlant={onDeletePlant}
-                    onEdit={onEdit}
-                    image={image}
-                  />
-                </li>
+                <>
+                  <li key={_id}>
+                    <PlantCard
+                      name={name}
+                      fact={fact}
+                      water={water}
+                      spot={spot}
+                      info={info}
+                      img={img}
+                      _id={_id}
+                      onBookmarkClick={onHandleBookmarkClick}
+                      isBooked={isBooked}
+                      onDeletePlant={onDeletePlant}
+                      onEdit={onEdit}
+                      image={image}
+                      savedPlants={savedPlants}
+                    />
+                  </li>
+                </>
               );
             }
           )}

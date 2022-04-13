@@ -33,7 +33,7 @@ const plantList = [
     info: 'Growing and taking care of these unique plants is not very difficult at all. They are extremely low maintenance.',
     isBooked: false,
     img: moon_cactus,
-    waterIntake: 'weekly',
+    category: 'food',
   },
   {
     _id: '2',
@@ -45,6 +45,7 @@ const plantList = [
     info: 'Such a Hipster plant',
     isBooked: false,
     img: aloevera,
+    category: 'water',
   },
   {
     _id: '3',
@@ -56,6 +57,7 @@ const plantList = [
     info: ' Grow it up a moss pole and spray regularly to create humidity.',
     isBooked: false,
     img: philodendron,
+    category: 'toxic',
   },
   {
     _id: '4',
