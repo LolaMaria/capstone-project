@@ -49,12 +49,6 @@ const Header = styled.h2`
 const ListWrapper = styled.ul`
   margin: 0rem 0rem 5rem -2.5rem;
   list-style: none;
-  @media (min-width: 650px) {
-    grid-template-columns: 1fr;
-  }
-  @media (min-width: 950px) {
-    grid-template-columns: 1fr;
-  }
 `;
 const Wrapper = styled.div`
   overflow-y: auto;
