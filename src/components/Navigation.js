@@ -12,7 +12,7 @@ export default function Navigation() {
 }
 
 const Nav = styled.nav`
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

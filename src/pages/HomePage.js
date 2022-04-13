@@ -14,7 +14,7 @@ export default function HomePage({
         <Header>FIND YOUR PERFECT PLANT!</Header>
         <ListWrapper role="list" aria-labelledby="Header">
           {savedPlants.map(
-            ({ name, fact, water, spot, info, img, _id, isBooked }) => {
+            ({ name, fact, water, spot, info, img, _id, isBooked, image }) => {
               return (
                 <li key={_id}>
                   <PlantCard
@@ -29,6 +29,7 @@ export default function HomePage({
                     isBooked={isBooked}
                     onDeletePlant={onDeletePlant}
                     onEdit={onEdit}
+                    image={image}
                   />
                 </li>
               );
@@ -43,7 +44,7 @@ export default function HomePage({
 const Header = styled.h2`
   display: flex;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #5c9875;
 `;
 const ListWrapper = styled.ul`

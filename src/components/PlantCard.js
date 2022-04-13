@@ -17,6 +17,7 @@ export default function PlantCard({
   _id,
   onDeletePlant,
   onEdit,
+  image,
 }) {
   function handleBookmark() {
     onBookmarkClick(_id);
@@ -35,15 +36,15 @@ export default function PlantCard({
       {isEditing ? (
         <FormBox onSubmit={handleSubmit}>
           <Label htmlFor="name">Edit NAME:</Label>
-          <input autocomplete="off" id="name" defaultValue={name} />
+          <input autoComplete="off" id="name" defaultValue={name} />
           <Label htmlFor="fact">Edit FACTS:</Label>
-          <input autocomplete="off" id="fact" defaultValue={fact} />
+          <input autoComplete="off" id="fact" defaultValue={fact} />
           <Label htmlFor="water">Edit WATER INTAKE:</Label>
-          <input autocomplete="off" id="water" defaultValue={water} />
+          <input autoComplete="off" id="water" defaultValue={water} />
           <Label htmlFor="spot">Edit PLANT SPOT:</Label>
-          <input autocomplete="off" id="spot" defaultValue={spot} />
+          <input autoComplete="off" id="spot" defaultValue={spot} />
           <Label htmlFor="info">Edit INFO:</Label>
-          <input autocomplete="off" id="info" defaultValue={info} />
+          <input autoComplete="off" id="info" defaultValue={info} />
           <SubmitButton type="submit">Save changes</SubmitButton>
         </FormBox>
       ) : (
@@ -66,10 +67,10 @@ export default function PlantCard({
                 />
               </svg>
             </PlantIcon>
-            <Name>{name}</Name>
-            <PlantPic src={img} alt="" width="100px" />
           </div>
           <List role="list">
+            <Name>{name}</Name>
+            <PlantPic src={img} alt="" width="100px" />
             <Info>Interesting and useful facts:</Info>
             <ListInfo>{fact}</ListInfo>
             <Info>Water intake:</Info>
@@ -112,30 +113,24 @@ const Card = styled.div`
   display: flex;
   justify-content: column;
   padding: 1rem;
-  margin: 1rem 0rem 2rem 0rem;
+  margin: 2rem 0.1rem;
   background-color: #d4e5ed;
   border-radius: 3%;
 
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   position: relative;
-
-  /*:hover {
-    transform: scale(1.09);
-    border-color: pink;
-    border-style: bold;
-  }*/
 `;
 
 const Name = styled.h1`
   font-size: 1rem;
-
   color: #5c9875;
 `;
 
 const List = styled.ul`
-  margin: 1rem;
+  margin: 0.1rem;
   list-style: none;
+  text-align: left;
   color: #590202;
 `;
 const Info = styled.dl`
@@ -149,11 +144,18 @@ const ListInfo = styled.li`
 `;
 
 const PlantIcon = styled.div`
-  margin: 0.1rem;
+  margin: 0.3rem;
 `;
 
 const PlantPic = styled.img`
   margin: 2rem 0rem;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+
+  :hover {
+    transform: scale(1.6);
+  }
 `;
 
 const Label = styled.label`

@@ -14,7 +14,6 @@ const ButtonSubmit = styled.button`
     rgba(44, 187, 99, 0.15) 0 16px 32px;
   color: green;
   cursor: pointer;
-  display: inline-block;
   font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
   padding: 5px 10px;
   text-align: center;
@@ -22,7 +21,7 @@ const ButtonSubmit = styled.button`
   border: 0;
   font-size: 10px;
   user-select: none;
-  width: 200px;
-  margin: 50px;
+  width: 170px;
+  margin: 40px 73px;
   background: ${props => (props.isBooked ? 'pink' : '#c2fbd7')};
 `;
