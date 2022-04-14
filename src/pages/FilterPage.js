@@ -8,15 +8,17 @@ export default function FilterPage({
   onHandleBookmarkClick,
   onDeletePlant,
   onEdit,
-  setSavedPlants,
+  setFilteredPlants,
+  filteredPlants,
 }) {
   const plantCards = [...new Set(savedPlants.map(Val => Val.category))];
+  console.log(plantCards);
 
   const filterPlant = curcat => {
     const perfectPlant = savedPlants.filter(perfectVal => {
       return perfectVal.category === curcat;
     });
-    setSavedPlants(perfectPlant);
+    setFilteredPlants(perfectPlant);
   };
   return (
     <>
@@ -24,32 +26,31 @@ export default function FilterPage({
         <Header>FIND YOUR PERFECT PLANT!</Header>
         <FilterButtons
           filterPlant={filterPlant}
-          setSavedPlants={setSavedPlants}
+          setFilteredPlants={setFilteredPlants}
+          savedPlants={savedPlants}
           plantCards={plantCards}
         />
         <ListWrapper role="list" aria-labelledby="Header">
-          {savedPlants.map(
+          {filteredPlants.map(
             ({ name, fact, water, spot, info, img, _id, isBooked, image }) => {
               return (
-                <>
-                  <li key={_id}>
-                    <PlantCard
-                      name={name}
-                      fact={fact}
-                      water={water}
-                      spot={spot}
-                      info={info}
-                      img={img}
-                      _id={_id}
-                      onBookmarkClick={onHandleBookmarkClick}
-                      isBooked={isBooked}
-                      onDeletePlant={onDeletePlant}
-                      onEdit={onEdit}
-                      image={image}
-                      savedPlants={savedPlants}
-                    />
-                  </li>
-                </>
+                <li key={_id}>
+                  <PlantCard
+                    name={name}
+                    fact={fact}
+                    water={water}
+                    spot={spot}
+                    info={info}
+                    img={img}
+                    _id={_id}
+                    onBookmarkClick={onHandleBookmarkClick}
+                    isBooked={isBooked}
+                    onDeletePlant={onDeletePlant}
+                    onEdit={onEdit}
+                    image={image}
+                    savedPlants={filteredPlants}
+                  />
+                </li>
               );
             }
           )}

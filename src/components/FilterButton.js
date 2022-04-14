@@ -1,7 +1,11 @@
 import React from 'react';
-import data from './data.js';
 
-const FilterButtons = ({ filterPlant, setPlant, plantCards }) => {
+const FilterButtons = ({
+  filterPlant,
+  plantCards,
+  savedPlants,
+  setFilteredPlants,
+}) => {
   return (
     <>
       <div className="d-flex justify-content-center">
@@ -12,9 +16,9 @@ const FilterButtons = ({ filterPlant, setPlant, plantCards }) => {
             </button>
           );
         })}
-        <button onClick={() => setPlant(data)}>All</button>
+        <button onClick={() => setFilteredPlants(savedPlants)}>All</button>
 
-        <button
+        {/* <button
           className="btn-warning text-white p-1 mx-5"
           onClick={() => filterPlant('water')}
         >
@@ -31,7 +35,7 @@ const FilterButtons = ({ filterPlant, setPlant, plantCards }) => {
           onClick={() => filterPlant('toxic')}
         >
           Toxic :)
-        </button>
+        </button> */}
       </div>
     </>
   );
