@@ -12,13 +12,12 @@ export default function FilterPage({
   filteredPlants,
 }) {
   const plantCardsFiltered = [
-    ...new Set(savedPlants.map(plant => plant.category)),
+    ...new Set(savedPlants.flatMap(plant => plant.category)),
   ];
-  console.log(plantCardsFiltered);
 
   const filterPlant = category => {
     const perfectPlant = savedPlants.filter(plant => {
-      return plant.category === category;
+      return plant.category.includes(category);
     });
     setFilteredPlants(perfectPlant);
   };
@@ -51,7 +50,6 @@ export default function FilterPage({
                     onEdit={onEdit}
                     image={image}
                     savedPlants={filteredPlants}
-                    plantCardsFiltered={plantCardsFiltered}
                   />
                 </li>
               );

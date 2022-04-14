@@ -5,7 +5,7 @@ export default function Navigation() {
   return (
     <Nav>
       <LinkStyled to="/">Plants</LinkStyled>
-      <LinkStyled to="/filter">Perfect plant</LinkStyled>
+      <LinkStyled to="/filter">Your Perfect plant</LinkStyled>
       <LinkStyled to="/bookmark">Saved Plants</LinkStyled>
       <LinkStyled to="/input">Create Plant</LinkStyled>
     </Nav>
