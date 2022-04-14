@@ -33,7 +33,7 @@ const plantList = [
     info: 'Growing and taking care of these unique plants is not very difficult at all. They are extremely low maintenance.',
     isBooked: false,
     img: moon_cactus,
-    category: 'food',
+    category: 'Minimal watering',
   },
   {
     _id: '2',
@@ -45,7 +45,7 @@ const plantList = [
     info: 'Such a Hipster plant',
     isBooked: false,
     img: aloevera,
-    category: 'water',
+    category: 'Eat it',
   },
   {
     _id: '3',
@@ -57,7 +57,7 @@ const plantList = [
     info: ' Grow it up a moss pole and spray regularly to create humidity.',
     isBooked: false,
     img: philodendron,
-    category: 'toxic',
+    category: 'Clean air',
   },
   {
     _id: '4',
@@ -69,6 +69,7 @@ const plantList = [
     info: 'Aglaonema have been grown as luck-bringing ornamental plants in Asia for centuries.',
     isBooked: false,
     img: aglaonema,
+    category: 'Clean air',
   },
   {
     _id: '5',
@@ -80,6 +81,7 @@ const plantList = [
     info: 'The calathea comes from the tropical forests of South America. In the rain forests they grow in the shade of trees and other large plants, which is why they are also calles "shade plants".',
     isBooked: false,
     img: calathea,
+    category: 'Plants that move',
   },
   {
     _id: '6',
@@ -91,6 +93,7 @@ const plantList = [
     info: 'Monsteras can be irritating to cats, dogs, and humans if foliage consumed. ',
     isBooked: false,
     img: monstera,
+    category: 'Hipster Plants',
   },
   {
     _id: '7',
@@ -102,6 +105,7 @@ const plantList = [
     info: 'It is very low maintnance!',
     isBooked: false,
     img: snake,
+    category: 'Minimal watering',
   },
   {
     _id: '8',
@@ -112,6 +116,7 @@ const plantList = [
     info: 'It is very low maintnance!',
     isBooked: false,
     img: shamrock,
+    category: 'Lucky plants',
   },
   {
     _id: '9',
@@ -122,6 +127,7 @@ const plantList = [
     info: 'It is really cute',
     isBooked: false,
     img: nasturtium,
+    category: 'Eat it',
   },
   {
     _id: '10',
@@ -133,6 +139,7 @@ const plantList = [
     info: 'The vegetation of Senecio rowleyanus is somewhat poisonous and should not be consumed.',
     isBooked: false,
     //img: pearls,
+    category: 'Toxic',
   },
   {
     _id: '11',
@@ -144,6 +151,7 @@ const plantList = [
     info: 'According to NASAs clean air study in 1989, Boston Ferns are a superb choice for an air purifying housplant.',
     isBooked: false,
     img: bostonfern,
+    category: 'Clean air',
   },
   {
     _id: '12',
@@ -155,6 +163,7 @@ const plantList = [
     info: 'This plant is a great choice for beginners as it is easy to handle',
     isBooked: false,
     img: aralia,
+    category: 'Beginner plants',
   },
   {
     _id: '13',
@@ -166,6 +175,7 @@ const plantList = [
     info: 'Purple and green sword shaped leaves make an eye catching bourquet',
     isBooked: false,
     img: boatlily,
+    category: 'May flower',
   },
   {
     _id: '14',
@@ -177,6 +187,7 @@ const plantList = [
     info: 'The Calla Lily was named after the Greek word for beautiful - calla',
     isBooked: false,
     img: callalily,
+    category: 'Toxic',
   },
   {
     _id: '15',
@@ -188,6 +199,7 @@ const plantList = [
     info: 'All parts are toxic to pets',
     isBooked: false,
     img: capejasmine,
+    category: 'Toxic',
   },
   {
     _id: '16',
@@ -199,6 +211,7 @@ const plantList = [
     info: 'Given them a warm home and enough light, they can not only bloom in summer, but intermittently they will flower all year around',
     isBooked: false,
     img: africandaisy,
+    category: 'Flowers',
   },
   {
     _id: '17',
@@ -209,6 +222,7 @@ const plantList = [
     spot: 'Most varieties of Echeveria react badly to cold weather and should be planted in a sunny spot. Potted Echeverias can be placed outside during the summer months but should be kept indoors during the winter.',
     info: ' Echeveria plants often drop their leaves during the winter months. It is advisable to collect fallen leaves, as they can be susceptible to fungal infection',
     //img: echeveria,
+    category: 'Sunny',
   },
   {
     _id: '18',
@@ -219,6 +233,7 @@ const plantList = [
     spot: 'Light shade or filtered sun is ideal. Trim in spring to create a good shape. The compost should be mixed 2:1 with sand. It likes temperatures of 15–24 °C. ',
     info: 'Perfect for beginners!',
     img: arumfern,
+    category: 'Beginner plants',
   },
   {
     _id: '19',
@@ -229,6 +244,7 @@ const plantList = [
     spot: 'Place in a light area out of direct sun. Repot anually. A temperatures of 18–24 °C is ideal. ',
     info: 'There is a hidden suprise : in addition to the wonderful pink blooms, small violet flowers emerge from the bracts.',
     img: tulip,
+    category: 'Tropical',
   },
   {
     _id: '20',
@@ -237,8 +253,9 @@ const plantList = [
     water:
       'When the top of the compost is slightly dry you should apply water again, every 5-7 days you need to water the orchid. Mist the leaves every day or two.',
     spot: 'Take special orchid compost. At daytime temperatures should be 10 to 24 °C at night make shure there is a 6°C drop. ',
-    info: 'This gordious flower is not widely available.',
+    info: 'This flower is not widely available.',
     img: orchid,
+    category: 'Flowers',
   },
   {
     _id: '21',
@@ -249,6 +266,7 @@ const plantList = [
     spot: ' Rooms with bright light but out of direct sun, temperatur of 10-26°C. ',
     info: '  This plant is not poisonous at all, that means, theoretically you can eat (a little bit of) it.',
     img: rose,
+    category: 'Flowers',
   },
   {
     _id: '22',
@@ -259,6 +277,7 @@ const plantList = [
     spot: ' Set it in full sun, temperatur of 10-25°C. ',
     info: '  Besides the lovely range of colours this plant gives off a honeylike scent. Delicious.',
     img: sage,
+    category: 'Flowers',
   },
   {
     _id: '23',
@@ -269,6 +288,7 @@ const plantList = [
     spot: 'Place out of direct sunlight in a lightly shaded spot, maybe moving it closer to the window in winter, with a temperature of 13-24°C. ',
     info: 'Looking up close at this plant you will admire its distinctive crocodile-skin leaf patterns.',
     img: crocodilefern,
+    category: 'Likes shade',
   },
   {
     _id: '24',
@@ -279,6 +299,7 @@ const plantList = [
     spot: 'This plant grows easily in a living room. It prefers bright indirect light and temperatures of 15–24 °C. It also tolerates some shade, but the spears may stretch to the light',
     info: 'A plant, which also helps to purify the air, thank heaven.',
     img: spear,
+    category: 'Clean air',
   },
   {
     _id: '25',
@@ -289,6 +310,7 @@ const plantList = [
     spot: 'This plant preferres bright light and tolerates temperatures of 5–26 °C.',
     info: 'Its bulbous stem stores water and will keep it alive even if you forget it accasionally.',
     img: ponytail,
+    category: 'Tropical',
   },
 ];
 export default plantList;

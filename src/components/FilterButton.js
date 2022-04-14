@@ -1,22 +1,24 @@
 import React from 'react';
+import styled from 'styled-components';
 
 const FilterButtons = ({
   filterPlant,
-  plantCards,
+  plantCardsFiltered,
   savedPlants,
   setFilteredPlants,
 }) => {
   return (
     <>
-      <div className="d-flex justify-content-center">
-        {plantCards.map((Val, _id) => {
+      {' '}
+      <AllButton onClick={() => setFilteredPlants(savedPlants)}>All</AllButton>
+      <div>
+        {plantCardsFiltered.map((category, _id) => {
           return (
-            <button onClick={() => filterPlant(Val)} key={_id}>
-              {Val}
-            </button>
+            <FilterButton onClick={() => filterPlant(category)} key={_id}>
+              {category}
+            </FilterButton>
           );
         })}
-        <button onClick={() => setFilteredPlants(savedPlants)}>All</button>
 
         {/* <button
           className="btn-warning text-white p-1 mx-5"
@@ -41,3 +43,14 @@ const FilterButtons = ({
   );
 };
 export default FilterButtons;
+
+const FilterButton = styled.button`
+  align-items: center;
+  margin: 1rem;
+`;
+
+const AllButton = styled.button`
+  display: flex;
+  justify-content: center;
+  margin: 3rem;
+`;

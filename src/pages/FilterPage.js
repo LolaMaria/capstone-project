@@ -11,12 +11,14 @@ export default function FilterPage({
   setFilteredPlants,
   filteredPlants,
 }) {
-  const plantCards = [...new Set(savedPlants.map(Val => Val.category))];
-  console.log(plantCards);
+  const plantCardsFiltered = [
+    ...new Set(savedPlants.map(plant => plant.category)),
+  ];
+  console.log(plantCardsFiltered);
 
-  const filterPlant = curcat => {
-    const perfectPlant = savedPlants.filter(perfectVal => {
-      return perfectVal.category === curcat;
+  const filterPlant = category => {
+    const perfectPlant = savedPlants.filter(plant => {
+      return plant.category === category;
     });
     setFilteredPlants(perfectPlant);
   };
@@ -28,7 +30,7 @@ export default function FilterPage({
           filterPlant={filterPlant}
           setFilteredPlants={setFilteredPlants}
           savedPlants={savedPlants}
-          plantCards={plantCards}
+          plantCardsFiltered={plantCardsFiltered}
         />
         <ListWrapper role="list" aria-labelledby="Header">
           {filteredPlants.map(
@@ -49,6 +51,7 @@ export default function FilterPage({
                     onEdit={onEdit}
                     image={image}
                     savedPlants={filteredPlants}
+                    plantCardsFiltered={plantCardsFiltered}
                   />
                 </li>
               );
