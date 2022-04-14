@@ -8,10 +8,12 @@ import InputPage from './pages/InputPage';
 import { nanoid } from 'nanoid';
 import { useLocalStorage } from 'usehooks-ts';
 import ScrollToTop from './components/ScrollToTop';
+import FilterPage from './pages/FilterPage';
+import { useState } from 'react';
 
 export default function App() {
   const [savedPlants, setSavedPlants] = useLocalStorage('plants', data);
-
+  const [filteredPlants, setFilteredPlants] = useState([]);
   const navigate = useNavigate();
 
   function onEdit(updatedPlant) {
@@ -23,11 +25,26 @@ export default function App() {
       return savedPlants;
     });
     setSavedPlants(newPlants);
+    const newFilteredPlants = filteredPlants.map(filteredPlants => {
+      if (filteredPlants._id === updatedPlant._id) {
+        const newFilteredPlant = { ...filteredPlants, ...updatedPlant };
+        return newFilteredPlant;
+      }
+      return filteredPlants;
+    });
+    setFilteredPlants(newFilteredPlants);
   }
 
   function handleBookmarkClick(_id) {
     setSavedPlants(
       savedPlants.map(card => {
+        if (card._id === _id) {
+          return { ...card, isBooked: !card.isBooked };
+        } else return card;
+      })
+    );
+    setFilteredPlants(
+      filteredPlants.map(card => {
         if (card._id === _id) {
           return { ...card, isBooked: !card.isBooked };
         } else return card;
@@ -64,7 +81,22 @@ export default function App() {
           path="/input"
           element={<InputPage onCreatePlant={handleSubmitCreate} />}
         />
+        <Route
+          path="/filter"
+          element={
+            <FilterPage
+              setSavedPlants={setSavedPlants}
+              savedPlants={savedPlants}
+              onHandleBookmarkClick={handleBookmarkClick}
+              onDeletePlant={handleDeletePlant}
+              onEdit={onEdit}
+              filteredPlants={filteredPlants}
+              setFilteredPlants={setFilteredPlants}
+            />
+          }
+        />
       </Routes>
+
       <Navigation />
     </AppGrid>
   );
@@ -86,18 +118,29 @@ export default function App() {
       info: inputValueInfo,
       img,
     };
+    const newFilteredPlant = {
+      _id: nanoid(),
+      name: inputValue,
+      fact: inputValueFact,
+      spot: inputValueSpot,
+      water: inputValueWater,
+      info: inputValueInfo,
+      img,
+    };
 
     setSavedPlants([...savedPlants, newPlant]);
+    setFilteredPlants([...filteredPlants, newFilteredPlant]);
 
     navigate('/');
   }
   function handleDeletePlant(id) {
     setSavedPlants(savedPlants.filter(card => card._id !== id));
+    setFilteredPlants(filteredPlants.filter(card => card._id !== id));
   }
 }
 
 const AppGrid = styled.div`
   display: grid;
-  grid-template-rows: auto 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr 1fr 1fr;
   position: relative;
 `;
