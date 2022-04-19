@@ -4,10 +4,11 @@ import { NavLink } from 'react-router-dom';
 export default function Navigation() {
   return (
     <Nav>
-      <LinkStyled to="/">Plants</LinkStyled>
+      {/* <LinkStyled to="/">Plants</LinkStyled> */}
       <LinkStyled to="/filter">Your Perfect plant</LinkStyled>
       <LinkStyled to="/bookmark">Saved Plants</LinkStyled>
       <LinkStyled to="/input">Create Plant</LinkStyled>
+      <LinkStyled to="/calendar">Calendar</LinkStyled>
     </Nav>
   );
 }

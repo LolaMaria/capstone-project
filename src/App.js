@@ -10,6 +10,7 @@ import { useLocalStorage } from 'usehooks-ts';
 import ScrollToTop from './components/ScrollToTop';
 import FilterPage from './pages/FilterPage';
 import { useState } from 'react';
+import CalendarPage from './pages/CalendarPage';
 
 export default function App() {
   const [savedPlants, setSavedPlants] = useLocalStorage('plants', data);
@@ -55,7 +56,7 @@ export default function App() {
     <AppGrid>
       <ScrollToTop />
       <Routes>
-        <Route
+        {/* <Route
           path="/"
           element={
             <HomePage
@@ -65,7 +66,7 @@ export default function App() {
               onEdit={onEdit}
             />
           }
-        />
+        /> */}
         <Route
           path="/bookmark"
           element={
@@ -95,8 +96,8 @@ export default function App() {
             />
           }
         />
+        <Route path="/calendar" element={<CalendarPage />} />
       </Routes>
-
       <Navigation />
     </AppGrid>
   );
@@ -128,10 +129,10 @@ export default function App() {
       img,
     };
 
-    setSavedPlants([...savedPlants, newPlant]);
-    setFilteredPlants([...filteredPlants, newFilteredPlant]);
+    setSavedPlants([newPlant, ...savedPlants]);
+    setFilteredPlants([newFilteredPlant, ...filteredPlants]);
 
-    navigate('/');
+    navigate('/filter');
   }
   function handleDeletePlant(id) {
     setSavedPlants(savedPlants.filter(card => card._id !== id));
