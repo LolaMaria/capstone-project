@@ -118,6 +118,7 @@ export default function App() {
       water: inputValueWater,
       info: inputValueInfo,
       img,
+      category: ['Created Plants', 'All plants'],
     };
     const newFilteredPlant = {
       _id: nanoid(),
@@ -129,7 +130,7 @@ export default function App() {
       img,
     };
 
-    setSavedPlants([newPlant, ...savedPlants]);
+    setSavedPlants([...savedPlants, newPlant]);
     setFilteredPlants([newFilteredPlant, ...filteredPlants]);
 
     navigate('/filter');
