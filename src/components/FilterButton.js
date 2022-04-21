@@ -17,32 +17,13 @@ const FilterButtons = ({
         All Plants
       </FilterButton>
       <div>
-        {plantCardsFiltered.map((category, index) => {
+        {plantCardsFiltered?.map((category, index) => {
           return (
             <FilterButton onClick={() => filterPlant(category)} key={index}>
               {category}
             </FilterButton>
           );
         })}
-
-        {/* <button
-         
-          onClick={() => filterPlant('water')}
-        >
-          Water almost never!
-        </button>
-        <button
-    
-          onClick={() => filterPlant('food')}
-        >
-          You can eat it
-        </button>
-        <button
-        
-          onClick={() => filterPlant('toxic')}
-        >
-          Toxic :)
-        </button> */}
       </div>
     </>
   );
@@ -68,7 +49,7 @@ const FilterButton = styled.button`
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   :hover {
-    color: hotpink;
+    color: pink;
   }
 
   ${props =>

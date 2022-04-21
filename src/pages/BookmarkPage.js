@@ -1,6 +1,6 @@
 import PlantCard from '../components/PlantCard';
 import styled from 'styled-components';
-import DeleteReminder from '../components/DeleteReminder';
+import DeleteReminder from '../components/DeleteReminderButton';
 
 export default function BookmarkPage({
   savedPlants,
@@ -111,11 +111,4 @@ const Today = styled.li`
   color: blue;
 
   margin: 3rem 1.5rem 0rem 1.5rem;
-`;
-const DateList = styled.li`
-  color: blue;
-  list-style: none;
-  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
-  text-transform: uppercase;
-  font-size: 12px;
 `;

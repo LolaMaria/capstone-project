@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import DeleteReminder from '../components/DeleteReminder';
+import DeleteReminder from '../components/DeleteReminderButton';
 
 export default function ReminderPage({
   onRemindPlant,
