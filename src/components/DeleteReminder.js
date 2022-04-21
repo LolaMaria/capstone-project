@@ -1,12 +1,18 @@
 import { GrClose } from 'react-icons/gr';
+import styled from 'styled-components';
 
-export default function DeleteReminder({ onClick }) {
+export default function DeleteReminder({ id, onClick }) {
   return (
     <>
-      <button type="button" onClick={onClick}>
+      <Button type="button" onClick={() => onClick(id)}>
         {' '}
         <GrClose />
-      </button>
+      </Button>
     </>
   );
 }
+
+const Button = styled.button`
+  cursor: pointer;
+  border-style: none;
+`;

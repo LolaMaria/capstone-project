@@ -6,6 +6,7 @@ export default function ReminderPage({
   onRemindPlant,
   reminder,
   onDeleteReminder,
+  id,
 }) {
   const [plantRemind, setPlantRemind] = useState('');
   const [plantDate, setPlantDate] = useState('');
@@ -49,7 +50,7 @@ export default function ReminderPage({
             <li key={el._id}>
               {el.plant} {el.date}
             </li>
-            <DeleteReminder onClick={onDeleteReminder} />
+            <DeleteReminder id={el._id} onClick={onDeleteReminder} />
           </>
         ))}
       </ul>

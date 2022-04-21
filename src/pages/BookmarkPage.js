@@ -1,5 +1,6 @@
 import PlantCard from '../components/PlantCard';
 import styled from 'styled-components';
+import DeleteReminder from '../components/DeleteReminder';
 
 export default function BookmarkPage({
   savedPlants,
@@ -8,6 +9,7 @@ export default function BookmarkPage({
   onEdit,
   reminder,
   handleDeleteReminder,
+  onDeleteReminder,
 }) {
   const todaysReminder = reminder.filter(el => {
     // el.date = "2002-04-21"
@@ -27,7 +29,10 @@ export default function BookmarkPage({
         <Header>YOUR SAVED PLANTS</Header>
         <ul>
           {todaysReminder.map(item => (
-            <li key={item._id}>{item.plant}</li>
+            <>
+              <li key={item._id}>{item.plant}</li>
+              <DeleteReminder id={item._id} onClick={onDeleteReminder} />
+            </>
           ))}
         </ul>
         <ListWrapper role="list" aria-labelledby="Header">
