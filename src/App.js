@@ -58,17 +58,6 @@ export default function App() {
     <AppGrid>
       <ScrollToTop />
       <Routes>
-        {/* <Route
-          path="/"
-          element={
-            <HomePage
-              savedPlants={savedPlants}
-              onHandleBookmarkClick={handleBookmarkClick}
-              onDeletePlant={handleDeletePlant}
-              onEdit={onEdit}
-            />
-          }
-        /> */}
         <Route
           path="/bookmark"
           element={
