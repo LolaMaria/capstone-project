@@ -6,7 +6,6 @@ export default function ReminderPage({
   onRemindPlant,
   reminder,
   onDeleteReminder,
-  id,
 }) {
   const [plantRemind, setPlantRemind] = useState('');
   const [plantDate, setPlantDate] = useState('');
@@ -25,7 +24,7 @@ export default function ReminderPage({
               id=""
               name="plant"
               required
-              maxLength="20"
+              maxLength="25"
               type="text"
               placeholder="Water my plant.."
               value={plantRemind}
@@ -44,16 +43,21 @@ export default function ReminderPage({
           <ButtonReminder>Remind me!</ButtonReminder>
         </form>
       </FormBox>
-      <ul>
-        {reminder.map(el => (
-          <>
-            <li key={el._id}>
-              {el.plant} {el.date}
-            </li>
-            <DeleteReminder id={el._id} onClick={onDeleteReminder} />
-          </>
-        ))}
-      </ul>
+      {reminder.length === 0 ? (
+        <></>
+      ) : (
+        <ListContainer>
+          {reminder.map(el => (
+            <>
+              <ReminderList key={el._id}>{el.plant}</ReminderList>
+              <DateList key={el._id}>
+                {el.date}
+                <DeleteReminder id={el._id} onClick={onDeleteReminder} />
+              </DateList>
+            </>
+          ))}
+        </ListContainer>
+      )}
     </>
   );
 
@@ -126,4 +130,32 @@ const ButtonReminder = styled.button`
   width: 170px;
   margin: 40px 73px;
   background-color: #c2fbd7;
+`;
+
+const ListContainer = styled.ul`
+  background-color: #c2fbd7;
+  border-radius: 50%;
+  margin: 1.5rem;
+  list-style: none;
+  border-radius: 5px;
+  border: solid blue 2px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+`;
+
+const ReminderList = styled.li`
+  list-style: none;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  color: green;
+`;
+
+const DateList = styled.li`
+  color: blue;
+  list-style: none;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 20px;
 `;

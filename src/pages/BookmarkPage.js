@@ -27,14 +27,21 @@ export default function BookmarkPage({
       {' '}
       <Wrapper>
         <Header>YOUR SAVED PLANTS</Header>
-        <ul>
-          {todaysReminder.map(item => (
-            <>
-              <li key={item._id}>{item.plant}</li>
-              <DeleteReminder id={item._id} onClick={onDeleteReminder} />
-            </>
-          ))}
-        </ul>
+        {todaysReminder.length === 0 ? (
+          <></>
+        ) : (
+          <ListContainer>
+            {todaysReminder.map(item => (
+              <>
+                <Today>Reminders for Today:</Today>
+                <ReminderList key={item._id}>
+                  {item.plant}
+                  <DeleteReminder id={item._id} onClick={onDeleteReminder} />
+                </ReminderList>
+              </>
+            ))}
+          </ListContainer>
+        )}
         <ListWrapper role="list" aria-labelledby="Header">
           {savedPlants.map(
             ({ name, fact, water, spot, info, img, _id, isBooked }) =>
@@ -77,4 +84,31 @@ const ListWrapper = styled.ul`
 const Wrapper = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
+`;
+
+const ListContainer = styled.ul`
+  background-color: #c2fbd7;
+  border-radius: 50%;
+  margin: 1.5rem;
+  list-style: none;
+  border-radius: 5px;
+  border: dotted hotpink 2px;
+  padding: 1rem;
+`;
+
+const ReminderList = styled.li`
+  list-style: none;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  color: green;
+`;
+
+const Today = styled.li`
+  list-style: none;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: blue;
+  margin: -10px 0px 5px 0px;
 `;
