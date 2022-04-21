@@ -83,12 +83,13 @@ const CreateReminder = styled.h2`
 const FormBox = styled.div`
   display: flex;
   justify-content: center;
-  margin: 1rem 0.1rem;
+  margin: 1rem 0.1rem 3rem 0.1rem;
   padding: 1rem;
   background-color: #d4e5ed;
   border-radius: 3%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  height: auto;
 `;
 
 const CardBox = styled.div`
@@ -107,7 +108,7 @@ const Label = styled.label`
   font-size: 1rem;
   font-weight: bold;
   font-size: 0.7rem;
-  margin: 0.3rem 0rem 0.3rem 0rem;
+  margin: 0.3rem 0rem;
   color: #5c9875;
 `;
 
@@ -136,7 +137,7 @@ const ButtonReminder = styled.button`
 const ListContainer = styled.ul`
   background-color: #c2fbd7;
   border-radius: 50%;
-  margin: 0.5rem 1.5rem;
+  margin: 0rem 1.5rem;
   list-style: none;
   border-radius: 5px;
   border: solid blue 2px;

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const FilterButtons = ({
   filterPlant,
@@ -10,7 +10,10 @@ const FilterButtons = ({
   return (
     <>
       {' '}
-      <FilterButton onClick={() => setFilteredPlants(savedPlants)}>
+      <FilterButton
+        variant="all"
+        onClick={() => setFilteredPlants(savedPlants)}
+      >
         All Plants
       </FilterButton>
       <div>
@@ -47,51 +50,31 @@ const FilterButtons = ({
 export default FilterButtons;
 
 const FilterButton = styled.button`
-  align-items: center;
-  margin: 1rem;
-  background-color: #fee6e3;
-  border: 2px solid #5c9875;
-  border-radius: 8px;
-  box-sizing: border-box;
-  cursor: pointer;
-  font-size: 12px;
-  height: 48px;
   font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
   text-transform: uppercase;
-  //background: ${plant => (plant.category ? 'pink' : '#c2fbd7')};
-  max-width: 100%;
-  padding: 0 25px;
-  position: relative;
-  text-align: center;
-  color: blue;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: white;
+  background-color: #097969;
+  align-items: center;
+  margin: 0.1rem;
+  border: none;
 
-  :after {
-    background-color: pink;
-    border-radius: 8px;
-    content: '';
-    display: block;
-    height: 48px;
-    left: 0;
-    width: 100%;
-    position: absolute;
-    top: -2px;
-    transform: translate(8px, 8px);
-    transition: transform 0.2s ease-out;
-    z-index: -1;
-  }
+  letter-spacing: 0.05em;
+  border-radius: 20em;
 
-  :hover:after {
-    transform: translate(0, 0);
-  }
-
-  :active {
-    background-color: green;
-    outline: 0;
-  }
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   :hover {
-    outline: 0;
+    color: hotpink;
   }
+
+  ${props =>
+    props.variant === 'all' &&
+    css`
+      font-size: 16px;
+      margin-left: 110px;
+    `};
 `;
