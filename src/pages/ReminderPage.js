@@ -11,7 +11,7 @@ export default function ReminderPage({
   const [plantDate, setPlantDate] = useState('');
   return (
     <>
-      <CreateReminder id="title-form">PLANT REMINDER!</CreateReminder>
+      <CreateReminder id="title-form">PLANT REMINDER</CreateReminder>
       <FormBox>
         <form
           autoComplete="off"
@@ -47,18 +47,16 @@ export default function ReminderPage({
         <></>
       ) : (
         <>
-          {reminder.map(el => (
-            <>
-              {' '}
-              <ListContainer>
+          {' '}
+          <ListContainer>
+            {reminder.map(el => (
+              <>
                 <ReminderList key={el._id}>{el.plant}</ReminderList>
-                <DateList key={el._id}>
-                  {el.date}
-                  <DeleteReminder id={el._id} onClick={onDeleteReminder} />
-                </DateList>
-              </ListContainer>
-            </>
-          ))}
+                <DateList key={el._id}>{el.date}</DateList>
+                <DeleteReminder id={el._id} onClick={onDeleteReminder} />
+              </>
+            ))}
+          </ListContainer>
         </>
       )}
     </>
@@ -138,12 +136,10 @@ const ButtonReminder = styled.button`
 const ListContainer = styled.ul`
   background-color: #c2fbd7;
   border-radius: 50%;
-  margin: 1.5rem;
+  margin: 0.5rem 1.5rem;
   list-style: none;
   border-radius: 5px;
   border: solid blue 2px;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
 `;
 
 const ReminderList = styled.li`
@@ -152,6 +148,8 @@ const ReminderList = styled.li`
   text-transform: uppercase;
   font-size: 15px;
   color: green;
+  margin-top: 10px;
+  font-style: bold;
 `;
 
 const DateList = styled.li`
@@ -160,5 +158,4 @@ const DateList = styled.li`
   font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
   text-transform: uppercase;
   font-size: 12px;
-  margin-bottom: 20px;
 `;

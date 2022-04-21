@@ -30,17 +30,17 @@ export default function BookmarkPage({
         {todaysReminder.length === 0 ? (
           <></>
         ) : (
-          <ListContainer>
-            {todaysReminder.map(item => (
-              <>
-                <Today>Reminders for Today:</Today>
-                <ReminderList key={item._id}>
-                  {item.plant}
+          <>
+            <Today>Reminders for Today:</Today>
+            <ListContainer>
+              {todaysReminder.map(item => (
+                <>
+                  <ReminderList key={item._id}>{item.plant}</ReminderList>
                   <DeleteReminder id={item._id} onClick={onDeleteReminder} />
-                </ReminderList>
-              </>
-            ))}
-          </ListContainer>
+                </>
+              ))}
+            </ListContainer>
+          </>
         )}
         <ListWrapper role="list" aria-labelledby="Header">
           {savedPlants.map(
@@ -89,11 +89,12 @@ const Wrapper = styled.div`
 const ListContainer = styled.ul`
   background-color: #c2fbd7;
   border-radius: 50%;
-  margin: 1.5rem;
+  margin: 0.5rem 1.5rem 4rem 1.5rem;
   list-style: none;
   border-radius: 5px;
   border: dotted hotpink 2px;
   padding: 1rem;
+  font-style: bold;
 `;
 
 const ReminderList = styled.li`
@@ -102,6 +103,8 @@ const ReminderList = styled.li`
   text-transform: uppercase;
   font-size: 15px;
   color: green;
+  font-style: bold;
+  margin-top: 10px;
 `;
 
 const Today = styled.li`
@@ -110,5 +113,6 @@ const Today = styled.li`
   text-transform: uppercase;
   font-size: 13px;
   color: blue;
-  margin: -10px 0px 5px 0px;
+
+  margin: 3rem 1.5rem 0rem 1.5rem;
 `;
