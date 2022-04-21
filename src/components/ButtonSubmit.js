@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export default function Button() {
   return <ButtonSubmit type="submit">Submit</ButtonSubmit>;
@@ -24,4 +24,12 @@ const ButtonSubmit = styled.button`
   width: 170px;
   margin: 40px 73px;
   background: ${props => (props.isBooked ? 'pink' : '#c2fbd7')};
+
+  ${props =>
+    props.variant === 'reminder' &&
+    css`
+      background-color: green;
+      color: #f4e9c9;
+      border-radius: 30px;
+    `};
 `;

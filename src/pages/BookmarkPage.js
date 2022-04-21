@@ -6,12 +6,30 @@ export default function BookmarkPage({
   onHandleBookmarkClick,
   onDeletePlant,
   onEdit,
+  reminder,
+  handleDeleteReminder,
 }) {
+  const todaysReminder = reminder.filter(el => {
+    // el.date = "2002-04-21"
+    const inputDate = new Date(el.date);
+    // Date Object:  Thur 2022
+    // Get today's date
+    const todaysDate = new Date();
+
+    // call setHours to take the time out of the comparison
+    return inputDate.setHours(0, 0, 0, 0) === todaysDate.setHours(0, 0, 0, 0);
+  });
+
   return (
     <>
       {' '}
       <Wrapper>
         <Header>YOUR SAVED PLANTS</Header>
+        <ul>
+          {todaysReminder.map(item => (
+            <li key={item._id}>{item.plant}</li>
+          ))}
+        </ul>
         <ListWrapper role="list" aria-labelledby="Header">
           {savedPlants.map(
             ({ name, fact, water, spot, info, img, _id, isBooked }) =>
@@ -30,6 +48,7 @@ export default function BookmarkPage({
                     key={_id}
                     onDeletePlant={onDeletePlant}
                     onEdit={onEdit}
+                    onDeleteReminder={handleDeleteReminder}
                   />
                 </li>
               )

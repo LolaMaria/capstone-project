@@ -1,5 +1,5 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import HomePage from './pages/HomePage';
+
 import BookmarkPage from './pages/BookmarkPage';
 import Navigation from './components/Navigation.js';
 import data from './components/data.js';
@@ -10,11 +10,13 @@ import { useLocalStorage } from 'usehooks-ts';
 import ScrollToTop from './components/ScrollToTop';
 import FilterPage from './pages/FilterPage';
 import { useState } from 'react';
-import CalendarPage from './pages/CalendarPage';
+import ReminderPage from './pages/ReminderPage';
 
 export default function App() {
   const [savedPlants, setSavedPlants] = useLocalStorage('plants', data);
   const [filteredPlants, setFilteredPlants] = useState([]);
+  const [plantReminder, setPlantReminder] = useState([]);
+  console.log(plantReminder);
   const navigate = useNavigate();
 
   function onEdit(updatedPlant) {
@@ -75,6 +77,8 @@ export default function App() {
               onHandleBookmarkClick={handleBookmarkClick}
               onDeletePlant={handleDeletePlant}
               onEdit={onEdit}
+              reminder={plantReminder}
+              onDeleteReminder={handleDeleteReminder}
             />
           }
         />
@@ -96,7 +100,16 @@ export default function App() {
             />
           }
         />
-        <Route path="/calendar" element={<CalendarPage />} />
+        <Route
+          path="/reminder"
+          element={
+            <ReminderPage
+              onRemindPlant={handleSubmitRemind}
+              reminder={plantReminder}
+              onDeleteReminder={handleDeleteReminder}
+            />
+          }
+        />
       </Routes>
       <Navigation />
     </AppGrid>
@@ -118,7 +131,7 @@ export default function App() {
       water: inputValueWater,
       info: inputValueInfo,
       img,
-      category: ['Created Plants', 'All plants'],
+      category: ['Created Plants'],
     };
     const newFilteredPlant = {
       _id: nanoid(),
@@ -138,6 +151,18 @@ export default function App() {
   function handleDeletePlant(id) {
     setSavedPlants(savedPlants.filter(card => card._id !== id));
     setFilteredPlants(filteredPlants.filter(card => card._id !== id));
+  }
+
+  function handleSubmitRemind(inputValuePlant, inputValueDate) {
+    const reminder = {
+      _id: nanoid(),
+      plant: inputValuePlant,
+      date: inputValueDate,
+    };
+    setPlantReminder([...plantReminder, reminder]);
+  }
+  function handleDeleteReminder(id) {
+    setPlantReminder(plantReminder.filter(reminder => reminder._id !== id));
   }
 }
 

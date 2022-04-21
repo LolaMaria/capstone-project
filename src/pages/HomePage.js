@@ -1,6 +1,5 @@
 import PlantCard from '../components/PlantCard';
 import styled from 'styled-components';
-//import Searchbar from '../components/Searchbar';
 
 export default function HomePage({
   savedPlants,

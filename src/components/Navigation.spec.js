@@ -3,7 +3,7 @@ import { MemoryRouter as Router } from 'react-router-dom';
 import Navigation from './Navigation';
 
 describe('Navigation', () => {
-  it('renders two links', () => {
+  it('renders four links', () => {
     render(
       <Router>
         <Navigation />
@@ -11,6 +11,6 @@ describe('Navigation', () => {
     );
 
     const navLinks = screen.getAllByRole('link');
-    expect(navLinks).toHaveLength(2);
+    expect(navLinks).toHaveLength(4);
   });
 });
