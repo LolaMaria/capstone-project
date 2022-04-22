@@ -20,7 +20,6 @@ export default function BookmarkPage({
 
   return (
     <>
-      {' '}
       <Wrapper>
         <Header>YOUR SAVED PLANTS</Header>
         {todaysReminder.length === 0 ? (
@@ -29,10 +28,10 @@ export default function BookmarkPage({
           <>
             <Today>Reminders for Today:</Today>
             <ListContainer>
-              {todaysReminder.map(item => (
+              {todaysReminder.map(remind => (
                 <>
-                  <ReminderList key={item._id}>{item.plant}</ReminderList>
-                  <DeleteReminder id={item._id} onClick={onDeleteReminder} />
+                  <ReminderList key={remind._id}>{remind.plant}</ReminderList>
+                  <DeleteReminder id={remind._id} onClick={onDeleteReminder} />
                 </>
               ))}
             </ListContainer>

@@ -49,11 +49,11 @@ export default function ReminderPage({
         <>
           {' '}
           <ListContainer>
-            {reminder.map(el => (
+            {reminder.map(remind => (
               <>
-                <ReminderList key={el._id}>{el.plant}</ReminderList>
-                <DateList key={el._id}>{el.date}</DateList>
-                <DeleteReminder id={el._id} onClick={onDeleteReminder} />
+                <ReminderList key={remind._id}>{remind.plant}</ReminderList>
+                <DateList key={remind._id}>{remind.date}</DateList>
+                <DeleteReminder id={remind._id} onClick={onDeleteReminder} />
               </>
             ))}
           </ListContainer>
