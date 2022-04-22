@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 export default function Navigation() {
   return (
     <Nav>
-      <LinkStyled to="/filter">Perfect plant</LinkStyled>
+      <LinkStyled to="/">Perfect plant</LinkStyled>
       <LinkStyled to="/bookmark">Saved Plants</LinkStyled>
       <LinkStyled to="/input">Create Plant</LinkStyled>
       <LinkStyled to="/reminder">Reminder</LinkStyled>

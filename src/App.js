@@ -58,6 +58,21 @@ export default function App() {
     <AppGrid>
       <ScrollToTop />
       <Routes>
+        {' '}
+        <Route
+          path="/"
+          element={
+            <FilterPage
+              setSavedPlants={setSavedPlants}
+              savedPlants={savedPlants}
+              onHandleBookmarkClick={handleBookmarkClick}
+              onDeletePlant={handleDeletePlant}
+              onEdit={onEdit}
+              filteredPlants={filteredPlants}
+              setFilteredPlants={setFilteredPlants}
+            />
+          }
+        />
         <Route
           path="/bookmark"
           element={
@@ -74,20 +89,6 @@ export default function App() {
         <Route
           path="/input"
           element={<InputPage onCreatePlant={handleSubmitCreate} />}
-        />
-        <Route
-          path="/filter"
-          element={
-            <FilterPage
-              setSavedPlants={setSavedPlants}
-              savedPlants={savedPlants}
-              onHandleBookmarkClick={handleBookmarkClick}
-              onDeletePlant={handleDeletePlant}
-              onEdit={onEdit}
-              filteredPlants={filteredPlants}
-              setFilteredPlants={setFilteredPlants}
-            />
-          }
         />
         <Route
           path="/reminder"
