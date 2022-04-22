@@ -16,7 +16,7 @@ export default function App() {
   const [savedPlants, setSavedPlants] = useLocalStorage('plants', data);
   const [filteredPlants, setFilteredPlants] = useState([]);
   const [plantReminder, setPlantReminder] = useState([]);
-  console.log(plantReminder);
+
   const navigate = useNavigate();
 
   function onEdit(updatedPlant) {
