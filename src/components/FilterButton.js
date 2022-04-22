@@ -9,7 +9,6 @@ const FilterButtons = ({
 }) => {
   return (
     <>
-      {' '}
       <FilterButton
         variant="all"
         onClick={() => setFilteredPlants(savedPlants)}
@@ -38,9 +37,9 @@ const FilterButton = styled.button`
   padding: 0.7em 1.4em 0.7em 1.1em;
   color: white;
   background-color: #097969;
-  margin: 0.1rem;
-  border: none;
 
+  border: none;
+  margin: 5px;
   letter-spacing: 0.05em;
   border-radius: 20em;
 
@@ -53,6 +52,7 @@ const FilterButton = styled.button`
   ${props =>
     props.variant === 'all' &&
     css`
-      font-size: 16px;
+      margin-left: 100px;
+      border: solid pink;
     `};
 `;
