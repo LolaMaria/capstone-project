@@ -12,14 +12,14 @@ export default function DeleteMessage({ onConfirmDelete, onCancelDelete }) {
             type="button"
             onClick={onCancelDelete}
           >
-            NO!
+            Cancel!
           </DeleteMessageButton>
           <DeleteMessageButton
             variant={'confirm'}
             type="button"
             onClick={onConfirmDelete}
           >
-            YES!
+            Delete!
           </DeleteMessageButton>
         </MessageWindowWrapper>
       </MessageContent>

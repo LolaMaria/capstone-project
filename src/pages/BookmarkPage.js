@@ -1,17 +1,42 @@
 import PlantCard from '../components/PlantCard';
 import styled from 'styled-components';
+import DeleteReminder from '../components/DeleteReminderButton';
 
 export default function BookmarkPage({
   savedPlants,
   onHandleBookmarkClick,
   onDeletePlant,
   onEdit,
+  reminder,
+  handleDeleteReminder,
+  onDeleteReminder,
 }) {
+  const todaysReminder = reminder.filter(el => {
+    const inputDate = new Date(el.date);
+    const todaysDate = new Date();
+
+    return inputDate.setHours(0, 0, 0, 0) === todaysDate.setHours(0, 0, 0, 0);
+  });
+
   return (
     <>
-      {' '}
       <Wrapper>
         <Header>YOUR SAVED PLANTS</Header>
+        {todaysReminder.length === 0 ? (
+          <></>
+        ) : (
+          <>
+            <Today>Reminders for Today:</Today>
+            <ListContainer>
+              {todaysReminder.map(remind => (
+                <>
+                  <ReminderList key={remind._id}>{remind.plant}</ReminderList>
+                  <DeleteReminder id={remind._id} onClick={onDeleteReminder} />
+                </>
+              ))}
+            </ListContainer>
+          </>
+        )}
         <ListWrapper role="list" aria-labelledby="Header">
           {savedPlants.map(
             ({ name, fact, water, spot, info, img, _id, isBooked }) =>
@@ -30,6 +55,7 @@ export default function BookmarkPage({
                     key={_id}
                     onDeletePlant={onDeletePlant}
                     onEdit={onEdit}
+                    onDeleteReminder={handleDeleteReminder}
                   />
                 </li>
               )
@@ -53,4 +79,34 @@ const ListWrapper = styled.ul`
 const Wrapper = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
+`;
+
+const ListContainer = styled.ul`
+  background-color: #c2fbd7;
+  border-radius: 50%;
+  margin: 0.5rem 1.5rem 4rem 1.5rem;
+  list-style: none;
+  border-radius: 5px;
+  border: dotted hotpink 2px;
+  padding: 1rem;
+  font-style: bold;
+`;
+
+const ReminderList = styled.li`
+  list-style: none;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  color: green;
+  font-style: bold;
+  margin-top: 10px;
+`;
+
+const Today = styled.li`
+  list-style: none;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: blue;
+  margin: 3rem 1.5rem 0rem 1.5rem;
 `;

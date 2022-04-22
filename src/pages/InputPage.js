@@ -212,6 +212,8 @@ const ImageUpload = styled.div`
       sans-serif;
     color: hotpink;
     border-radius: 100px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+      rgb(209, 213, 219) 0px 0px 0px 1px inset;
   }
 
   label[for='files']:hover {

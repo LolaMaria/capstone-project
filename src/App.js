@@ -1,5 +1,5 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import HomePage from './pages/HomePage';
+
 import BookmarkPage from './pages/BookmarkPage';
 import Navigation from './components/Navigation.js';
 import data from './components/data.js';
@@ -10,10 +10,13 @@ import { useLocalStorage } from 'usehooks-ts';
 import ScrollToTop from './components/ScrollToTop';
 import FilterPage from './pages/FilterPage';
 import { useState } from 'react';
+import ReminderPage from './pages/ReminderPage';
 
 export default function App() {
   const [savedPlants, setSavedPlants] = useLocalStorage('plants', data);
   const [filteredPlants, setFilteredPlants] = useState([]);
+  const [plantReminder, setPlantReminder] = useState([]);
+
   const navigate = useNavigate();
 
   function onEdit(updatedPlant) {
@@ -55,34 +58,9 @@ export default function App() {
     <AppGrid>
       <ScrollToTop />
       <Routes>
+        {' '}
         <Route
           path="/"
-          element={
-            <HomePage
-              savedPlants={savedPlants}
-              onHandleBookmarkClick={handleBookmarkClick}
-              onDeletePlant={handleDeletePlant}
-              onEdit={onEdit}
-            />
-          }
-        />
-        <Route
-          path="/bookmark"
-          element={
-            <BookmarkPage
-              savedPlants={savedPlants}
-              onHandleBookmarkClick={handleBookmarkClick}
-              onDeletePlant={handleDeletePlant}
-              onEdit={onEdit}
-            />
-          }
-        />
-        <Route
-          path="/input"
-          element={<InputPage onCreatePlant={handleSubmitCreate} />}
-        />
-        <Route
-          path="/filter"
           element={
             <FilterPage
               setSavedPlants={setSavedPlants}
@@ -95,8 +73,34 @@ export default function App() {
             />
           }
         />
+        <Route
+          path="/bookmark"
+          element={
+            <BookmarkPage
+              savedPlants={savedPlants}
+              onHandleBookmarkClick={handleBookmarkClick}
+              onDeletePlant={handleDeletePlant}
+              onEdit={onEdit}
+              reminder={plantReminder}
+              onDeleteReminder={handleDeleteReminder}
+            />
+          }
+        />
+        <Route
+          path="/input"
+          element={<InputPage onCreatePlant={handleSubmitCreate} />}
+        />
+        <Route
+          path="/reminder"
+          element={
+            <ReminderPage
+              onRemindPlant={handleSubmitRemind}
+              reminder={plantReminder}
+              onDeleteReminder={handleDeleteReminder}
+            />
+          }
+        />
       </Routes>
-
       <Navigation />
     </AppGrid>
   );
@@ -117,6 +121,7 @@ export default function App() {
       water: inputValueWater,
       info: inputValueInfo,
       img,
+      category: ['Created Plants'],
     };
     const newFilteredPlant = {
       _id: nanoid(),
@@ -129,13 +134,25 @@ export default function App() {
     };
 
     setSavedPlants([...savedPlants, newPlant]);
-    setFilteredPlants([...filteredPlants, newFilteredPlant]);
+    setFilteredPlants([newFilteredPlant, ...filteredPlants]);
 
-    navigate('/');
+    navigate('/filter');
   }
   function handleDeletePlant(id) {
     setSavedPlants(savedPlants.filter(card => card._id !== id));
     setFilteredPlants(filteredPlants.filter(card => card._id !== id));
+  }
+
+  function handleSubmitRemind(inputValuePlant, inputValueDate) {
+    const reminder = {
+      _id: nanoid(),
+      plant: inputValuePlant,
+      date: inputValueDate,
+    };
+    setPlantReminder([...plantReminder, reminder]);
+  }
+  function handleDeleteReminder(id) {
+    setPlantReminder(plantReminder.filter(reminder => reminder._id !== id));
   }
 }
 
