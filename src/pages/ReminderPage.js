@@ -47,12 +47,13 @@ export default function ReminderPage({
         <></>
       ) : (
         <>
-          {' '}
           <ListContainer>
             {reminder.map(remind => (
               <>
-                <ReminderList key={remind._id}>{remind.plant}</ReminderList>
-                <DateList key={remind._id}>{remind.date}</DateList>
+                <ReminderList key={remind._id}>
+                  <Reminder>{remind.plant}</Reminder>
+                  <Date>{remind.date}</Date>
+                </ReminderList>
                 <DeleteReminder id={remind._id} onClick={onDeleteReminder} />
               </>
             ))}
@@ -143,7 +144,7 @@ const ListContainer = styled.ul`
   border: solid blue 2px;
 `;
 
-const ReminderList = styled.li`
+const Reminder = styled.span`
   list-style: none;
   font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
   text-transform: uppercase;
@@ -153,10 +154,14 @@ const ReminderList = styled.li`
   font-style: bold;
 `;
 
-const DateList = styled.li`
+const Date = styled.span`
   color: blue;
   list-style: none;
   font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
   text-transform: uppercase;
   font-size: 12px;
+`;
+const ReminderList = styled.li`
+  display: flex;
+  flex-direction: column;
 `;

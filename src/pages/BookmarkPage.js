@@ -108,6 +108,5 @@ const Today = styled.li`
   text-transform: uppercase;
   font-size: 13px;
   color: blue;
-
   margin: 3rem 1.5rem 0rem 1.5rem;
 `;
