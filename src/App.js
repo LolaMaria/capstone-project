@@ -136,7 +136,7 @@ export default function App() {
     setSavedPlants([...savedPlants, newPlant]);
     setFilteredPlants([newFilteredPlant, ...filteredPlants]);
 
-    navigate('/filter');
+    navigate('/');
   }
   function handleDeletePlant(id) {
     setSavedPlants(savedPlants.filter(card => card._id !== id));
