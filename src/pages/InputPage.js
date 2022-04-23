@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import ButtonSubmit from '../components/ButtonSubmit';
 import { useState } from 'react';
 import axios from 'axios';
+import createHeader from '../images/createHeader.png';
 
 const CLOUDNAME = process.env.REACT_APP_CLOUDINARY_CLOUDNAME;
 const PRESET = process.env.REACT_APP_CLOUDINARY_PRESET;
@@ -36,7 +37,9 @@ export default function InputPage({ onCreatePlant }) {
 
   return (
     <>
-      <CreatePlant id="title-form">CREATE YOUR PLANT</CreatePlant>
+      <Header>
+        <img src={createHeader} width="250rem" alt="Logo" />
+      </Header>
       <FormBox>
         <form
           autoComplete="off"
@@ -156,13 +159,6 @@ export default function InputPage({ onCreatePlant }) {
   }
 }
 
-const CreatePlant = styled.h2`
-  font-size: 1.5rem;
-  color: #5c9875;
-  display: flex;
-  justify-content: center;
-`;
-
 const FormBox = styled.div`
   display: flex;
   justify-content: center;
@@ -187,9 +183,9 @@ const Input = styled.input`
 `;
 
 const Label = styled.label`
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: bold;
-  font-size: 0.7rem;
+
   margin: 0.3rem 0rem 0.3rem 0rem;
   color: #5c9875;
 `;
@@ -219,4 +215,10 @@ const ImageUpload = styled.div`
   label[for='files']:hover {
     background-color: #2e8b57;
   }
+`;
+const Header = styled.h2`
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #5c9875;
 `;

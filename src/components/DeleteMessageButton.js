@@ -4,11 +4,11 @@ export default styled.button`
   font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
   cursor: pointer;
   color: #556b2f;
-  padding: 10px 20px;
+  padding: 8px 18px;
   border-radius: 100%;
   transition-duration: 0.3s;
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 14px;
   width: 50%;
   border: none;
   align-self: center;

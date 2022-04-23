@@ -45,7 +45,7 @@ const plantList = [
     info: 'Such a Hipster plant',
     isBooked: false,
     img: aloevera,
-    category: ['Eat it', 'Hipster plants'],
+    category: ['You can eat it', 'Hipster plants'],
   },
   {
     _id: '3',
@@ -127,20 +127,20 @@ const plantList = [
     info: 'It is really cute',
     isBooked: false,
     img: nasturtium,
-    category: ['Eat it', 'Sunny'],
+    category: ['You can eat it', 'Sunny'],
   },
-  {
-    _id: '10',
-    name: 'Senecio rowleyanus, string of pearls',
-    fact: 'String of pearls bloom tiny white flowers with scent like cinnamon. To encourage spring flowers, cut back on watering and keep the plant in a consistent temperature of 60 degree during winter. Cool and dry condition during winter often promote blooming during summer.',
-    water:
-      'String of Pearls are very sensitive to overwatering, so make sure that you give them just enough water. Recommended amount is once every two weeks.',
-    spot: 'Senecio rowleyanus plants need to be placed in a spot where it can get at least 6 to 8 hours of bright, indirect sunlight per day. ',
-    info: 'The vegetation of Senecio rowleyanus is somewhat poisonous and should not be consumed.',
-    isBooked: false,
-    //img: pearls,
-    category: ['Toxic', 'Smells nice', 'Flowers'],
-  },
+  // {
+  //   _id: '10',
+  //   name: 'Senecio rowleyanus, string of pearls',
+  //   fact: 'String of pearls bloom tiny white flowers with scent like cinnamon. To encourage spring flowers, cut back on watering and keep the plant in a consistent temperature of 60 degree during winter. Cool and dry condition during winter often promote blooming during summer.',
+  //   water:
+  //     'String of Pearls are very sensitive to overwatering, so make sure that you give them just enough water. Recommended amount is once every two weeks.',
+  //   spot: 'Senecio rowleyanus plants need to be placed in a spot where it can get at least 6 to 8 hours of bright, indirect sunlight per day. ',
+  //   info: 'The vegetation of Senecio rowleyanus is somewhat poisonous and should not be consumed.',
+  //   isBooked: false,
+  //   //img: pearls,
+  //   category: ['Toxic', 'Smells nice', 'Flowers'],
+  // },
   {
     _id: '11',
     name: 'Boston fern',
@@ -213,17 +213,17 @@ const plantList = [
     img: africandaisy,
     category: ['Flowers'],
   },
-  {
-    _id: '17',
-    name: 'Echeveria, agavoides',
-    fact: 'Echeveria agavoides is a stemless, star-shaped plant that grows up to 20 cm in diameter',
-    water:
-      'Water moderately at the rate of once every 4-5 days in summer; water every 8-10 days in autumn and spring; in winter reduce watering to a minimum or suspend it if it is very cold.',
-    spot: 'Most varieties of Echeveria react badly to cold weather and should be planted in a sunny spot. Potted Echeverias can be placed outside during the summer months but should be kept indoors during the winter.',
-    info: ' Echeveria plants often drop their leaves during the winter months. It is advisable to collect fallen leaves, as they can be susceptible to fungal infection',
-    //img: echeveria,
-    category: ['Sunny', 'Tropical'],
-  },
+  // {
+  //   _id: '17',
+  //   name: 'Echeveria, agavoides',
+  //   fact: 'Echeveria agavoides is a stemless, star-shaped plant that grows up to 20 cm in diameter',
+  //   water:
+  //     'Water moderately at the rate of once every 4-5 days in summer; water every 8-10 days in autumn and spring; in winter reduce watering to a minimum or suspend it if it is very cold.',
+  //   spot: 'Most varieties of Echeveria react badly to cold weather and should be planted in a sunny spot. Potted Echeverias can be placed outside during the summer months but should be kept indoors during the winter.',
+  //   info: ' Echeveria plants often drop their leaves during the winter months. It is advisable to collect fallen leaves, as they can be susceptible to fungal infection',
+  //   //img: echeveria,
+  //   category: ['Sunny', 'Tropical'],
+  // },
   {
     _id: '18',
     name: 'Fern Arum, Zamioculcas zamiifolia',
@@ -266,7 +266,7 @@ const plantList = [
     spot: ' Rooms with bright light but out of direct sun, temperatur of 10-26°C. ',
     info: '  This plant is not poisonous at all, that means, theoretically you can eat (a little bit of) it.',
     img: rose,
-    category: ['Flowers', 'Eat it'],
+    category: ['Flowers', 'You can eat it'],
   },
   {
     _id: '22',

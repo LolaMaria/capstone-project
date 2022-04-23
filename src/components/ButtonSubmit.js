@@ -19,7 +19,7 @@ const ButtonSubmit = styled.button`
   text-align: center;
   text-decoration: none;
   border: 0;
-  font-size: 10px;
+  font-size: 11px;
   user-select: none;
   width: 170px;
   margin: 40px 73px;

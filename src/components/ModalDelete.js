@@ -12,7 +12,7 @@ export default function DeleteMessage({ onConfirmDelete, onCancelDelete }) {
             type="button"
             onClick={onCancelDelete}
           >
-            Cancel!
+            Cancel
           </DeleteMessageButton>
           <DeleteMessageButton
             variant={'confirm'}
@@ -46,7 +46,7 @@ const MessageContent = styled.div`
   border-radius: 20px;
 
   p {
-    font-size: 0.9rem;
+    font-size: 16px;
     color: #556b2f;
     text-align: center;
   }
