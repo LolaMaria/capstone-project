@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import DeleteReminder from '../components/DeleteReminderButton';
+import reminderHeader from '../images/reminderHeader.png';
 
 export default function ReminderPage({
   onRemindPlant,
@@ -11,7 +12,9 @@ export default function ReminderPage({
   const [plantDate, setPlantDate] = useState('');
   return (
     <>
-      <CreateReminder id="title-form">PLANT REMINDER</CreateReminder>
+      <Header id="title-form">
+        <img src={reminderHeader} width="215rem" alt="Logo" />
+      </Header>
       <FormBox>
         <form
           autoComplete="off"
@@ -74,11 +77,11 @@ export default function ReminderPage({
     setPlantRemind('');
   }
 }
-const CreateReminder = styled.h2`
-  font-size: 1.5rem;
-  color: #5c9875;
+const Header = styled.h2`
   display: flex;
   justify-content: center;
+  font-size: 1.5rem;
+  color: #5c9875;
 `;
 
 const FormBox = styled.div`
@@ -106,9 +109,9 @@ const Input = styled.input`
 `;
 
 const Label = styled.label`
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: bold;
-  font-size: 0.7rem;
+
   margin: 0.3rem 0rem;
   color: #5c9875;
 `;
@@ -128,7 +131,7 @@ const ButtonReminder = styled.button`
   text-align: center;
   text-decoration: none;
   border: solid blue 2px;
-  font-size: 0.7rem;
+  font-size: 11px;
   user-select: none;
   width: 170px;
   margin: 40px 73px;

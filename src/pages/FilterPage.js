@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import React from 'react';
 import FilterButtons from '../components/FilterButton';
 import PlantCard from '../components/PlantCard';
+import perfectHeader from '../images/perfectHeader.png';
 
 export default function FilterPage({
   savedPlants,
@@ -24,15 +25,22 @@ export default function FilterPage({
   return (
     <>
       <Wrapper>
-        <Header>FIND YOUR PERFECT PLANT!</Header>
-        <FilterContainer>
-          <FilterButtons
-            filterPlant={filterPlant}
-            setFilteredPlants={setFilteredPlants}
-            savedPlants={savedPlants}
-            plantCardsFiltered={plantCardsFiltered}
+        <Header>
+          <img
+            src={perfectHeader}
+            width="350
+        rem"
+            alt="Logo"
           />
-        </FilterContainer>
+        </Header>
+
+        <FilterButtons
+          filterPlant={filterPlant}
+          setFilteredPlants={setFilteredPlants}
+          savedPlants={savedPlants}
+          plantCardsFiltered={plantCardsFiltered}
+        />
+
         <ListWrapper role="list" aria-labelledby="Header">
           {filteredPlants.map(
             ({ name, fact, water, spot, info, img, _id, isBooked, image }) => {
@@ -77,4 +85,3 @@ const Wrapper = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
 `;
-const FilterContainer = styled.div``;

@@ -123,7 +123,7 @@ const Card = styled.div`
 `;
 
 const Name = styled.h1`
-  font-size: 1rem;
+  font-size: 17px;
   color: #5c9875;
 `;
 
@@ -135,12 +135,12 @@ const List = styled.ul`
 `;
 const Info = styled.dl`
   font-weight: bold;
-  font-size: 0.7rem;
+  font-size: 14px;
   margin: 0.3rem 0rem;
   color: #5c9875;
 `;
 const ListInfo = styled.li`
-  font-size: 0.7rem;
+  font-size: 13px;
 `;
 
 const PlantIcon = styled.div`
@@ -171,11 +171,13 @@ const FormBox = styled.form`
   flex-direction: column;
   gap: 5px;
   background-color: #d4e5ef;
-  padding: 5px;
+  padding: 8px;
   border-radius: 3%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border: 2px solid blue;
+  width: 100%;
+  margin: 10px;
 `;
 
 const SubmitButton = styled.button`
@@ -195,6 +197,7 @@ const SubmitButton = styled.button`
   text-decoration: none;
   transition: all 250ms;
   border: 0;
-  font-size: 10px;
+  justify-content: space-between;
+  font-size: 11px;
   user-select: none;
 `;

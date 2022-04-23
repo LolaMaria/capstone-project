@@ -28,7 +28,7 @@ const Button = styled.button`
   text-decoration: none;
   transition: all 250ms;
   border: 0;
-  font-size: 10px;
+  font-size: 11px;
   user-select: none;
   background: ${props => (props.isBooked ? 'pink' : '#c2fbd7')};
 `;

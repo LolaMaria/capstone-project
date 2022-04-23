@@ -1,6 +1,7 @@
 import PlantCard from '../components/PlantCard';
 import styled from 'styled-components';
 import DeleteReminder from '../components/DeleteReminderButton';
+import savedHeader from '../images/savedHeader.png';
 
 export default function BookmarkPage({
   savedPlants,
@@ -21,7 +22,9 @@ export default function BookmarkPage({
   return (
     <>
       <Wrapper>
-        <Header>YOUR SAVED PLANTS</Header>
+        <Header>
+          <img src={savedHeader} width="250rem" alt="Logo" />
+        </Header>
         {todaysReminder.length === 0 ? (
           <></>
         ) : (

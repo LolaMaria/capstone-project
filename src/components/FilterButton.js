@@ -39,7 +39,7 @@ const FilterButton = styled.button`
   background-color: #097969;
 
   border: none;
-  margin: 5px;
+  margin: 8px 3px;
   letter-spacing: 0.05em;
   border-radius: 20em;
 
@@ -52,7 +52,7 @@ const FilterButton = styled.button`
   ${props =>
     props.variant === 'all' &&
     css`
-      margin-left: 100px;
+      margin-left: 120px;
       border: solid pink;
     `};
 `;
