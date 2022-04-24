@@ -3,6 +3,7 @@ import ButtonSubmit from '../components/ButtonSubmit';
 import { useState } from 'react';
 import axios from 'axios';
 import createHeader from '../images/createHeader.png';
+import placeholder from '../images/placeholder.jpeg';
 
 const CLOUDNAME = process.env.REACT_APP_CLOUDINARY_CLOUDNAME;
 const PRESET = process.env.REACT_APP_CLOUDINARY_PRESET;
@@ -47,7 +48,7 @@ export default function InputPage({ onCreatePlant }) {
           onSubmit={handleSubmitCreate}
         >
           <CardBox>
-            <Label htmlFor="plant-name">Plant name:</Label>
+            <Label htmlFor="plant-name">Plant NAME:</Label>
             <Input
               id="plant"
               name="plant"
@@ -58,7 +59,7 @@ export default function InputPage({ onCreatePlant }) {
               value={plantName}
               onChange={event => setPlantName(event.target.value)}
             />
-            <Label htmlFor="Fact">Useful and interesting facts:</Label>
+            <Label htmlFor="Fact">Useful and interesting FACTS:</Label>
             <Input
               id="fact"
               name="fact"
@@ -69,7 +70,7 @@ export default function InputPage({ onCreatePlant }) {
               value={plantFact}
               onChange={event => setPlantFact(event.target.value)}
             />
-            <Label htmlFor="water">Whats your plants water intake?</Label>
+            <Label htmlFor="water">Whats your plants WATER intake?</Label>
             <Input
               name="water"
               required
@@ -81,7 +82,7 @@ export default function InputPage({ onCreatePlant }) {
               onChange={event => setPlantWater(event.target.value)}
             />
             <Label htmlFor="plantspot">
-              How much light does your plant need?
+              How much LIGHT does your plant need?
             </Label>
             <Input
               name="spot"
@@ -93,7 +94,7 @@ export default function InputPage({ onCreatePlant }) {
               value={plantSpot}
               onChange={event => setPlantSpot(event.target.value)}
             />
-            <Label htmlFor="info">Additional info about your plant:</Label>
+            <Label htmlFor="info">Additional INFO about your plant:</Label>
             <Input
               name="info"
               maxLength="50"
@@ -108,6 +109,10 @@ export default function InputPage({ onCreatePlant }) {
             {image ? (
               <img
                 src={image}
+                onError={e => {
+                  e.target.onerror = null;
+                  e.target.src = placeholder;
+                }}
                 alt=""
                 style={{
                   width: '40vw',
