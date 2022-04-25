@@ -15,7 +15,7 @@ import ReminderPage from './pages/ReminderPage';
 export default function App() {
   const [savedPlants, setSavedPlants] = useLocalStorage('plants', data);
   const [filteredPlants, setFilteredPlants] = useState([]);
-  const [plantReminder, setPlantReminder] = useState([]);
+  const [plantReminder, setPlantReminder] = useLocalStorage('reminders', []);
 
   const navigate = useNavigate();
 
