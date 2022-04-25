@@ -9,13 +9,12 @@ import { nanoid } from 'nanoid';
 import { useLocalStorage } from 'usehooks-ts';
 import ScrollToTop from './components/ScrollToTop';
 import FilterPage from './pages/FilterPage';
-import { useState } from 'react';
 import ReminderPage from './pages/ReminderPage';
 
 export default function App() {
   const [savedPlants, setSavedPlants] = useLocalStorage('plants', data);
-  const [filteredPlants, setFilteredPlants] = useState([]);
-  const [plantReminder, setPlantReminder] = useState([]);
+  const [filteredPlants, setFilteredPlants] = useLocalStorage('filter', []);
+  const [plantReminder, setPlantReminder] = useLocalStorage('reminders', []);
 
   const navigate = useNavigate();
 
