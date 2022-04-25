@@ -23,7 +23,7 @@ export default function BookmarkPage({
     <>
       <Wrapper>
         <Header>
-          <img src={savedHeader} width="250rem" alt="Logo" />
+          <img src={savedHeader} width="250rem" alt="" />
         </Header>
         {todaysReminder.length === 0 ? (
           <></>
@@ -90,7 +90,7 @@ const ListContainer = styled.ul`
   margin: 0.5rem 1.5rem 4rem 1.5rem;
   list-style: none;
   border-radius: 5px;
-  border: dotted hotpink 2px;
+  border: dotted blue 2px;
   padding: 1rem;
   font-style: bold;
 `;

@@ -17,6 +17,7 @@ export default function FilterPage({
   ];
 
   const filterPlant = category => {
+    console.log(category);
     const perfectPlant = savedPlants.filter(plant => {
       return plant.category.includes(category);
     });
@@ -30,7 +31,7 @@ export default function FilterPage({
             src={perfectHeader}
             width="350
         rem"
-            alt="Logo"
+            alt=""
           />
         </Header>
 

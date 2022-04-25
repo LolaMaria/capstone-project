@@ -3,7 +3,6 @@ import ButtonSubmit from '../components/ButtonSubmit';
 import { useState } from 'react';
 import axios from 'axios';
 import createHeader from '../images/createHeader.png';
-import placeholder from '../images/placeholder.jpeg';
 
 const CLOUDNAME = process.env.REACT_APP_CLOUDINARY_CLOUDNAME;
 const PRESET = process.env.REACT_APP_CLOUDINARY_PRESET;
@@ -39,7 +38,7 @@ export default function InputPage({ onCreatePlant }) {
   return (
     <>
       <Header>
-        <img src={createHeader} width="250rem" alt="Logo" />
+        <img src={createHeader} width="250rem" alt="" />
       </Header>
       <FormBox>
         <form
@@ -109,15 +108,11 @@ export default function InputPage({ onCreatePlant }) {
             {image ? (
               <img
                 src={image}
-                onError={e => {
-                  e.target.onerror = null;
-                  e.target.src = placeholder;
-                }}
                 alt=""
                 style={{
                   width: '40vw',
                   margin: '3vw 12vw 3vw 12vw',
-                  border_radius: '50%',
+                  border_radius: '100%',
                 }}
               />
             ) : (

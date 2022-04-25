@@ -10,6 +10,7 @@ import { useLocalStorage } from 'usehooks-ts';
 import ScrollToTop from './components/ScrollToTop';
 import FilterPage from './pages/FilterPage';
 import ReminderPage from './pages/ReminderPage';
+//import placeholder from './src/images/placeholder.jpeg';
 
 export default function App() {
   const [savedPlants, setSavedPlants] = useLocalStorage('plants', data);
@@ -112,8 +113,15 @@ export default function App() {
     inputValueInfo,
     img
   ) {
+    alert('Your plant was created');
+    //  { img ? (
+    //     <img src={img} alt="" width="100px" />
+    //   ) : (
+    //     <img src={placeholder alt="" />
+    //   );
+    const id = nanoid();
     const newPlant = {
-      _id: nanoid(),
+      _id: id,
       name: inputValue,
       fact: inputValueFact,
       spot: inputValueSpot,
@@ -123,7 +131,7 @@ export default function App() {
       category: ['Created Plants'],
     };
     const newFilteredPlant = {
-      _id: nanoid(),
+      _id: id,
       name: inputValue,
       fact: inputValueFact,
       spot: inputValueSpot,
@@ -137,6 +145,7 @@ export default function App() {
 
     navigate('/');
   }
+  // }
   function handleDeletePlant(id) {
     setSavedPlants(savedPlants.filter(card => card._id !== id));
     setFilteredPlants(filteredPlants.filter(card => card._id !== id));

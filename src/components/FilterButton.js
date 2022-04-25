@@ -15,7 +15,7 @@ const FilterButtons = ({
       >
         All Plants
       </FilterButton>
-      <div>
+      <Container>
         {plantCardsFiltered?.map((category, index) => {
           return (
             <FilterButton onClick={() => filterPlant(category)} key={index}>
@@ -23,7 +23,7 @@ const FilterButtons = ({
             </FilterButton>
           );
         })}
-      </div>
+      </Container>
     </>
   );
 };
@@ -55,4 +55,7 @@ const FilterButton = styled.button`
       margin-left: 120px;
       border: solid pink;
     `};
+`;
+const Container = styled.div`
+  margin: 0 15px;
 `;

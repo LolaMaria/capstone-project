@@ -13,7 +13,7 @@ export default function ReminderPage({
   return (
     <>
       <Header id="title-form">
-        <img src={reminderHeader} width="215rem" alt="Logo" />
+        <img src={reminderHeader} width="215rem" alt="" />
       </Header>
       <FormBox>
         <form
