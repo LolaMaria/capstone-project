@@ -17,7 +17,6 @@ export default function FilterPage({
   ];
 
   const filterPlant = category => {
-    console.log(category);
     const perfectPlant = savedPlants.filter(plant => {
       return plant.category.includes(category);
     });

@@ -113,11 +113,10 @@ export default function App() {
     inputValueInfo,
     img
   ) {
-    alert('Your plant was created');
     //  { img ? (
     //     <img src={img} alt="" width="100px" />
     //   ) : (
-    //     <img src={placeholder alt="" />
+    //     <img src='placeholder' alt="" />
     //   );
     const id = nanoid();
     const newPlant = {
@@ -130,18 +129,18 @@ export default function App() {
       img,
       category: ['Created Plants'],
     };
-    const newFilteredPlant = {
-      _id: id,
-      name: inputValue,
-      fact: inputValueFact,
-      spot: inputValueSpot,
-      water: inputValueWater,
-      info: inputValueInfo,
-      img,
-    };
+    // const newFilteredPlant = {
+    //   _id: id,
+    //   name: inputValue,
+    //   fact: inputValueFact,
+    //   spot: inputValueSpot,
+    //   water: inputValueWater,
+    //   info: inputValueInfo,
+    //   img,
+    // };
 
     setSavedPlants([...savedPlants, newPlant]);
-    setFilteredPlants([newFilteredPlant, ...filteredPlants]);
+    setFilteredPlants([...filteredPlants]);
 
     navigate('/');
   }
