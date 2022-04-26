@@ -12,4 +12,6 @@ Have you ever searched for ages to find the perfect plant for your flat or as a 
 - Javascript
 - Cloudinary
 - nanoid
+- Loacal Storage
 
+This project was created with [Create React App](https://create-react-app.dev/docs/getting-started/).
