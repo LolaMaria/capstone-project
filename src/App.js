@@ -28,14 +28,6 @@ export default function App() {
       return savedPlants;
     });
     setSavedPlants(newPlants);
-    // const newFilteredPlants = filteredPlants.map(filteredPlants => {
-    //   if (filteredPlants._id === updatedPlant._id) {
-    //     const newFilteredPlant = { ...filteredPlants, ...updatedPlant };
-    //     return newFilteredPlant;
-    //   }
-    //   return filteredPlants;
-    // });
-    // setFilteredPlants(newFilteredPlants);
   }
 
   function handleBookmarkClick(_id) {
@@ -46,13 +38,6 @@ export default function App() {
         } else return card;
       })
     );
-    // setFilteredPlants(
-    //   filteredPlants.map(card => {
-    //     if (card._id === _id) {
-    //       return { ...card, isBooked: !card.isBooked };
-    //     } else return card;
-    //   })
-    // );
   }
   return (
     <AppGrid>
@@ -125,9 +110,9 @@ export default function App() {
       category: ['Created Plants'],
     };
 
-    setSavedPlants([newPlant, ...savedPlants]);
+    setSavedPlants([...savedPlants, newPlant]);
 
-    navigate('/');
+    //navigate('/');
   }
 
   function handleDeletePlant(id) {
