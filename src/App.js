@@ -129,18 +129,18 @@ export default function App() {
       img,
       category: ['Created Plants'],
     };
-    // const newFilteredPlant = {
-    //   _id: id,
-    //   name: inputValue,
-    //   fact: inputValueFact,
-    //   spot: inputValueSpot,
-    //   water: inputValueWater,
-    //   info: inputValueInfo,
-    //   img,
-    // };
+    const newFilteredPlant = {
+      _id: id,
+      name: inputValue,
+      fact: inputValueFact,
+      spot: inputValueSpot,
+      water: inputValueWater,
+      info: inputValueInfo,
+      img,
+    };
 
     setSavedPlants([...savedPlants, newPlant]);
-    setFilteredPlants([...filteredPlants]);
+    setFilteredPlants([newFilteredPlant, ...filteredPlants]);
 
     navigate('/');
   }
