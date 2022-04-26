@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, { useState } from 'react';
 import FilterButtons from '../components/FilterButton';
 import PlantCard from '../components/PlantCard';
 import perfectHeader from '../images/perfectHeader.png';
@@ -9,19 +9,24 @@ export default function FilterPage({
   onHandleBookmarkClick,
   onDeletePlant,
   onEdit,
-  setFilteredPlants,
-  filteredPlants,
 }) {
+  const [filter, setFilter] = useState('');
+
   const plantCardsFiltered = [
     ...new Set(savedPlants.flatMap(plant => plant.category)),
   ];
 
   const filterPlant = category => {
-    const perfectPlant = savedPlants.filter(plant => {
-      return plant.category.includes(category);
-    });
-    setFilteredPlants(perfectPlant);
+    setFilter(category);
   };
+
+  const filteredPlants = filter
+    ? savedPlants.filter(plant => {
+        return plant.category.includes(filter);
+      })
+    : savedPlants;
+
+  console.log('#filter plant', filterPlant);
   return (
     <>
       <Wrapper>
@@ -36,7 +41,6 @@ export default function FilterPage({
 
         <FilterButtons
           filterPlant={filterPlant}
-          setFilteredPlants={setFilteredPlants}
           savedPlants={savedPlants}
           plantCardsFiltered={plantCardsFiltered}
         />
@@ -59,7 +63,6 @@ export default function FilterPage({
                     onDeletePlant={onDeletePlant}
                     onEdit={onEdit}
                     image={image}
-                    savedPlants={filteredPlants}
                   />
                 </li>
               );

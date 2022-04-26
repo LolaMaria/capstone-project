@@ -14,7 +14,7 @@ import ReminderPage from './pages/ReminderPage';
 
 export default function App() {
   const [savedPlants, setSavedPlants] = useLocalStorage('plants', data);
-  const [filteredPlants, setFilteredPlants] = useLocalStorage('filter', []);
+  // const [filteredPlants, setFilteredPlants] = useLocalStorage('filter', []);
   const [plantReminder, setPlantReminder] = useLocalStorage('reminders', []);
 
   const navigate = useNavigate();
@@ -28,14 +28,14 @@ export default function App() {
       return savedPlants;
     });
     setSavedPlants(newPlants);
-    const newFilteredPlants = filteredPlants.map(filteredPlants => {
-      if (filteredPlants._id === updatedPlant._id) {
-        const newFilteredPlant = { ...filteredPlants, ...updatedPlant };
-        return newFilteredPlant;
-      }
-      return filteredPlants;
-    });
-    setFilteredPlants(newFilteredPlants);
+    // const newFilteredPlants = filteredPlants.map(filteredPlants => {
+    //   if (filteredPlants._id === updatedPlant._id) {
+    //     const newFilteredPlant = { ...filteredPlants, ...updatedPlant };
+    //     return newFilteredPlant;
+    //   }
+    //   return filteredPlants;
+    // });
+    // setFilteredPlants(newFilteredPlants);
   }
 
   function handleBookmarkClick(_id) {
@@ -46,13 +46,13 @@ export default function App() {
         } else return card;
       })
     );
-    setFilteredPlants(
-      filteredPlants.map(card => {
-        if (card._id === _id) {
-          return { ...card, isBooked: !card.isBooked };
-        } else return card;
-      })
-    );
+    // setFilteredPlants(
+    //   filteredPlants.map(card => {
+    //     if (card._id === _id) {
+    //       return { ...card, isBooked: !card.isBooked };
+    //     } else return card;
+    //   })
+    // );
   }
   return (
     <AppGrid>
@@ -68,8 +68,8 @@ export default function App() {
               onHandleBookmarkClick={handleBookmarkClick}
               onDeletePlant={handleDeletePlant}
               onEdit={onEdit}
-              filteredPlants={filteredPlants}
-              setFilteredPlants={setFilteredPlants}
+              // filteredPlants={filteredPlants}
+              // setFilteredPlants={setFilteredPlants}
             />
           }
         />
@@ -113,11 +113,6 @@ export default function App() {
     inputValueInfo,
     img
   ) {
-    //  { img ? (
-    //     <img src={img} alt="" width="100px" />
-    //   ) : (
-    //     <img src='placeholder' alt="" />
-    //   );
     const id = nanoid();
     const newPlant = {
       _id: id,
@@ -129,25 +124,14 @@ export default function App() {
       img,
       category: ['Created Plants'],
     };
-    const newFilteredPlant = {
-      _id: id,
-      name: inputValue,
-      fact: inputValueFact,
-      spot: inputValueSpot,
-      water: inputValueWater,
-      info: inputValueInfo,
-      img,
-    };
 
-    setSavedPlants([...savedPlants, newPlant]);
-    setFilteredPlants([newFilteredPlant, ...filteredPlants]);
+    setSavedPlants([newPlant, ...savedPlants]);
 
     navigate('/');
   }
-  // }
+
   function handleDeletePlant(id) {
     setSavedPlants(savedPlants.filter(card => card._id !== id));
-    setFilteredPlants(filteredPlants.filter(card => card._id !== id));
   }
 
   function handleSubmitRemind(inputValuePlant, inputValueDate) {

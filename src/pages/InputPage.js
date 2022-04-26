@@ -3,6 +3,7 @@ import ButtonSubmit from '../components/ButtonSubmit';
 import { useState } from 'react';
 import axios from 'axios';
 import createHeader from '../images/createHeader.png';
+import placeholderImage from '../images/placeholder.jpeg';
 
 const CLOUDNAME = process.env.REACT_APP_CLOUDINARY_CLOUDNAME;
 const PRESET = process.env.REACT_APP_CLOUDINARY_PRESET;
@@ -141,7 +142,10 @@ export default function InputPage({ onCreatePlant }) {
     const inputValueSpot = form.elements.spot.value.trim();
     const inputValueWater = form.elements.water.value.trim();
     const inputValueInfo = form.elements.info.value.trim();
-    const img = image;
+    const img = image ? image : placeholderImage;
+    alert(
+      'Your plant was created! You can find it in the category: CREATED PLANT'
+    );
     onCreatePlant(
       inputValue,
       inputValueFact,

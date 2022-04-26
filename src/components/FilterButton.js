@@ -1,18 +1,10 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const FilterButtons = ({
-  filterPlant,
-  plantCardsFiltered,
-  savedPlants,
-  setFilteredPlants,
-}) => {
+const FilterButtons = ({ filterPlant, plantCardsFiltered }) => {
   return (
     <>
-      <FilterButton
-        variant="all"
-        onClick={() => setFilteredPlants(savedPlants)}
-      >
+      <FilterButton variant="all" onClick={() => filterPlant('')}>
         All Plants
       </FilterButton>
       <Container>
