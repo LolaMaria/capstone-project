@@ -77,8 +77,6 @@ export default function FilterPage({
 const Header = styled.h2`
   display: flex;
   justify-content: center;
-  font-size: 1.5rem;
-  color: #5c9875;
 `;
 const ListWrapper = styled.ul`
   margin: 0rem 0rem 5rem -2.5rem;

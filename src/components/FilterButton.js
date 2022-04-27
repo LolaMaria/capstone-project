@@ -45,6 +45,7 @@ const FilterButton = styled.button`
     props.variant === 'all' &&
     css`
       margin-left: 120px;
+      margin-top: 20px;
       border: solid pink;
     `};
 `;

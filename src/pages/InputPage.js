@@ -144,7 +144,7 @@ export default function InputPage({ onCreatePlant }) {
     const inputValueInfo = form.elements.info.value.trim();
     const img = image ? image : placeholderImage;
     alert(
-      'Your plant was created! You can find it in the category: CREATED PLANT'
+      'Your plant was created! You can find it on the Perfect Plant page, in the category "CREATED PLANTS"'
     );
     onCreatePlant(
       inputValue,
@@ -160,6 +160,7 @@ export default function InputPage({ onCreatePlant }) {
     setPlantSpot('');
     setPlantWater('');
     setPlantInfo('');
+    setImage('');
   }
 }
 
@@ -223,6 +224,4 @@ const ImageUpload = styled.div`
 const Header = styled.h2`
   display: flex;
   justify-content: center;
-  font-size: 1.5rem;
-  color: #5c9875;
 `;

@@ -1,4 +1,4 @@
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import BookmarkPage from './pages/BookmarkPage';
 import Navigation from './components/Navigation.js';
@@ -10,14 +10,11 @@ import { useLocalStorage } from 'usehooks-ts';
 import ScrollToTop from './components/ScrollToTop';
 import FilterPage from './pages/FilterPage';
 import ReminderPage from './pages/ReminderPage';
-//import placeholder from './src/images/placeholder.jpeg';
 
 export default function App() {
   const [savedPlants, setSavedPlants] = useLocalStorage('plants', data);
-  // const [filteredPlants, setFilteredPlants] = useLocalStorage('filter', []);
-  const [plantReminder, setPlantReminder] = useLocalStorage('reminders', []);
 
-  const navigate = useNavigate();
+  const [plantReminder, setPlantReminder] = useLocalStorage('reminders', []);
 
   function onEdit(updatedPlant) {
     const newPlants = savedPlants.map(savedPlants => {
@@ -53,8 +50,6 @@ export default function App() {
               onHandleBookmarkClick={handleBookmarkClick}
               onDeletePlant={handleDeletePlant}
               onEdit={onEdit}
-              // filteredPlants={filteredPlants}
-              // setFilteredPlants={setFilteredPlants}
             />
           }
         />
@@ -111,8 +106,6 @@ export default function App() {
     };
 
     setSavedPlants([...savedPlants, newPlant]);
-
-    //navigate('/');
   }
 
   function handleDeletePlant(id) {

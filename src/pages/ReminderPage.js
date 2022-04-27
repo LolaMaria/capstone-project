@@ -80,8 +80,6 @@ export default function ReminderPage({
 const Header = styled.h2`
   display: flex;
   justify-content: center;
-  font-size: 1.5rem;
-  color: #5c9875;
 `;
 
 const FormBox = styled.div`
