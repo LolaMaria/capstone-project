@@ -16,3 +16,19 @@ Have you ever searched for ages to find the perfect plant for your flat or as a 
 - Loacal Storage
 
 This project was created with [Create React App](https://create-react-app.dev/docs/getting-started/).
+
+### Cloudinary Setup
+
+- Create an account on Cloudinary
+- Go to Upload presets
+- Click Enable unsigned uploading
+- Copy the preset name (the 8 character hash below name)
+- Add your cloudname and preset name to .env.local. You can use .env.example to create your own .env.local
+
+### You can clone this repository
+- install all npm dependencies `npm install`
+- run app in development mode via `npm start`
+- open http://localhost:3000 to view it in the browser, or you will be asked to confirm another port if this one isn't available.
+- to run React Testing Library & Jest `npm test`
+- to run Storybook `npm run storybook
+- Create .env.local file (please check if you have added env.local in your .gitignore)
