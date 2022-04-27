@@ -85,7 +85,7 @@ const Wrapper = styled.div`
 const ListContainer = styled.ul`
   background-color: #c2fbd7;
   border-radius: 50%;
-  margin: 0.5rem 1.5rem 2.5rem 1.5rem;
+  margin: 0.5rem 1.5rem 3rem 1.5rem;
   list-style: none;
   border-radius: 5px;
   border: dotted mintcream 2px;
@@ -111,5 +111,5 @@ const Today = styled.li`
   font-size: 12px;
   color: blue;
   font-weight: bold;
-  margin: 30px 1.5rem 0rem 1.5rem;
+  margin: 2.5rem 1.5rem 0.1rem 1.5rem;
 `;
