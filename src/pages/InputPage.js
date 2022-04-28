@@ -3,7 +3,7 @@ import ButtonSubmit from '../components/ButtonSubmit';
 import { useState } from 'react';
 import axios from 'axios';
 import createHeader from '../images/createHeader.png';
-import placeholder from '../images/placeholder.jpeg';
+import placeholderImage from '../images/placeholder.jpeg';
 
 const CLOUDNAME = process.env.REACT_APP_CLOUDINARY_CLOUDNAME;
 const PRESET = process.env.REACT_APP_CLOUDINARY_PRESET;
@@ -39,7 +39,7 @@ export default function InputPage({ onCreatePlant }) {
   return (
     <>
       <Header>
-        <img src={createHeader} width="250rem" alt="Logo" />
+        <img src={createHeader} width="250rem" alt="" />
       </Header>
       <FormBox>
         <form
@@ -109,15 +109,11 @@ export default function InputPage({ onCreatePlant }) {
             {image ? (
               <img
                 src={image}
-                onError={e => {
-                  e.target.onerror = null;
-                  e.target.src = placeholder;
-                }}
                 alt=""
                 style={{
                   width: '40vw',
                   margin: '3vw 12vw 3vw 12vw',
-                  border_radius: '50%',
+                  border_radius: '100%',
                 }}
               />
             ) : (
@@ -146,7 +142,10 @@ export default function InputPage({ onCreatePlant }) {
     const inputValueSpot = form.elements.spot.value.trim();
     const inputValueWater = form.elements.water.value.trim();
     const inputValueInfo = form.elements.info.value.trim();
-    const img = image;
+    const img = image ? image : placeholderImage;
+    alert(
+      'Your plant was created! You can find it on the Perfect Plant page, in the category "CREATED PLANTS"'
+    );
     onCreatePlant(
       inputValue,
       inputValueFact,
@@ -161,6 +160,7 @@ export default function InputPage({ onCreatePlant }) {
     setPlantSpot('');
     setPlantWater('');
     setPlantInfo('');
+    setImage('');
   }
 }
 
@@ -224,6 +224,4 @@ const ImageUpload = styled.div`
 const Header = styled.h2`
   display: flex;
   justify-content: center;
-  font-size: 1.5rem;
-  color: #5c9875;
 `;

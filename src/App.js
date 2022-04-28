@@ -1,4 +1,4 @@
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import BookmarkPage from './pages/BookmarkPage';
 import Navigation from './components/Navigation.js';
@@ -13,10 +13,8 @@ import ReminderPage from './pages/ReminderPage';
 
 export default function App() {
   const [savedPlants, setSavedPlants] = useLocalStorage('plants', data);
-  const [filteredPlants, setFilteredPlants] = useLocalStorage('filter', []);
-  const [plantReminder, setPlantReminder] = useLocalStorage('reminders', []);
 
-  const navigate = useNavigate();
+  const [plantReminder, setPlantReminder] = useLocalStorage('reminders', []);
 
   function onEdit(updatedPlant) {
     const newPlants = savedPlants.map(savedPlants => {
@@ -27,26 +25,11 @@ export default function App() {
       return savedPlants;
     });
     setSavedPlants(newPlants);
-    const newFilteredPlants = filteredPlants.map(filteredPlants => {
-      if (filteredPlants._id === updatedPlant._id) {
-        const newFilteredPlant = { ...filteredPlants, ...updatedPlant };
-        return newFilteredPlant;
-      }
-      return filteredPlants;
-    });
-    setFilteredPlants(newFilteredPlants);
   }
 
   function handleBookmarkClick(_id) {
     setSavedPlants(
       savedPlants.map(card => {
-        if (card._id === _id) {
-          return { ...card, isBooked: !card.isBooked };
-        } else return card;
-      })
-    );
-    setFilteredPlants(
-      filteredPlants.map(card => {
         if (card._id === _id) {
           return { ...card, isBooked: !card.isBooked };
         } else return card;
@@ -67,8 +50,6 @@ export default function App() {
               onHandleBookmarkClick={handleBookmarkClick}
               onDeletePlant={handleDeletePlant}
               onEdit={onEdit}
-              filteredPlants={filteredPlants}
-              setFilteredPlants={setFilteredPlants}
             />
           }
         />
@@ -122,24 +103,12 @@ export default function App() {
       img,
       category: ['Created Plants'],
     };
-    const newFilteredPlant = {
-      _id: nanoid(),
-      name: inputValue,
-      fact: inputValueFact,
-      spot: inputValueSpot,
-      water: inputValueWater,
-      info: inputValueInfo,
-      img,
-    };
 
     setSavedPlants([...savedPlants, newPlant]);
-    setFilteredPlants([newFilteredPlant, ...filteredPlants]);
-
-    navigate('/');
   }
+
   function handleDeletePlant(id) {
     setSavedPlants(savedPlants.filter(card => card._id !== id));
-    setFilteredPlants(filteredPlants.filter(card => card._id !== id));
   }
 
   function handleSubmitRemind(inputValuePlant, inputValueDate) {

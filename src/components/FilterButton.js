@@ -1,29 +1,21 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const FilterButtons = ({
-  filterPlant,
-  plantCardsFiltered,
-  savedPlants,
-  setFilteredPlants,
-}) => {
+const FilterButtons = ({ filterPlant, plantCardsFiltered }) => {
   return (
     <>
-      <FilterButton
-        variant="all"
-        onClick={() => setFilteredPlants(savedPlants)}
-      >
+      <FilterButton variant="all" onClick={() => filterPlant('')}>
         All Plants
       </FilterButton>
-      <div>
+      <Container>
         {plantCardsFiltered?.map((category, index) => {
           return (
-            <FilterButton onClick={() => filterPlant(category)} key={index}>
+            <FilterButton onClick={() => filterPlant(category)} key={category}>
               {category}
             </FilterButton>
           );
         })}
-      </div>
+      </Container>
     </>
   );
 };
@@ -53,6 +45,10 @@ const FilterButton = styled.button`
     props.variant === 'all' &&
     css`
       margin-left: 120px;
+      margin-top: 20px;
       border: solid pink;
     `};
+`;
+const Container = styled.div`
+  margin: 0 15px;
 `;

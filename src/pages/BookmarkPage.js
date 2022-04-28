@@ -23,7 +23,7 @@ export default function BookmarkPage({
     <>
       <Wrapper>
         <Header>
-          <img src={savedHeader} width="250rem" alt="Logo" />
+          <img src={savedHeader} width="250rem" alt="" />
         </Header>
         {todaysReminder.length === 0 ? (
           <></>
@@ -72,8 +72,6 @@ export default function BookmarkPage({
 const Header = styled.h2`
   display: flex;
   justify-content: center;
-  font-size: 1.5rem;
-  color: #5c9875;
 `;
 const ListWrapper = styled.ul`
   margin: 0rem 0rem 5rem -2.5rem;
@@ -87,12 +85,13 @@ const Wrapper = styled.div`
 const ListContainer = styled.ul`
   background-color: #c2fbd7;
   border-radius: 50%;
-  margin: 0.5rem 1.5rem 4rem 1.5rem;
+  margin: 0.5rem 1.5rem 3rem 1.5rem;
   list-style: none;
   border-radius: 5px;
-  border: dotted hotpink 2px;
-  padding: 1rem;
+  border: dotted mintcream 2px;
+  padding: 0.5rem;
   font-style: bold;
+  box-shadow: 0 0 2px 2px blue;
 `;
 
 const ReminderList = styled.li`
@@ -109,7 +108,8 @@ const Today = styled.li`
   list-style: none;
   font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 12px;
   color: blue;
-  margin: 3rem 1.5rem 0rem 1.5rem;
+  font-weight: bold;
+  margin: 2.5rem 1.5rem 0.1rem 1.5rem;
 `;

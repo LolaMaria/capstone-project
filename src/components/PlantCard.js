@@ -162,7 +162,6 @@ const Label = styled.label`
   font-size: 1rem;
   font-weight: bold;
   font-size: 0.7rem;
-
   color: #5c9875;
 `;
 

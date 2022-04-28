@@ -13,7 +13,7 @@ export default function ReminderPage({
   return (
     <>
       <Header id="title-form">
-        <img src={reminderHeader} width="215rem" alt="Logo" />
+        <img src={reminderHeader} width="215rem" alt="" />
       </Header>
       <FormBox>
         <form
@@ -80,8 +80,6 @@ export default function ReminderPage({
 const Header = styled.h2`
   display: flex;
   justify-content: center;
-  font-size: 1.5rem;
-  color: #5c9875;
 `;
 
 const FormBox = styled.div`
