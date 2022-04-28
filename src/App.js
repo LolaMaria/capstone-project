@@ -93,9 +93,8 @@ export default function App() {
     inputValueInfo,
     img
   ) {
-    const id = nanoid();
     const newPlant = {
-      _id: id,
+      _id: nanoid(),
       name: inputValue,
       fact: inputValueFact,
       spot: inputValueSpot,

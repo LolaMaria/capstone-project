@@ -10,7 +10,7 @@ const FilterButtons = ({ filterPlant, plantCardsFiltered }) => {
       <Container>
         {plantCardsFiltered?.map((category, index) => {
           return (
-            <FilterButton onClick={() => filterPlant(category)} key={index}>
+            <FilterButton onClick={() => filterPlant(category)} key={category}>
               {category}
             </FilterButton>
           );

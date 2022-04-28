@@ -26,7 +26,6 @@ export default function FilterPage({
       })
     : savedPlants;
 
-  console.log('#filter plant', filterPlant);
   return (
     <>
       <Wrapper>
